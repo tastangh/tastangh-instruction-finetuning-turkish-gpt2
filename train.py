@@ -59,6 +59,11 @@ class Trainer:
         )
 
         print(f"Model {self.model_name} eğitiliyor...")
+        for step in range(len(train_dataset)):
+            # Eğitim adımlarında bellek temizliği
+            if step % 100 == 0:
+                torch.cuda.empty_cache()
+
         trainer.train()
         model.save_pretrained(self.output_dir)
         tokenizer.save_pretrained(self.output_dir)
@@ -68,12 +73,12 @@ class Trainer:
 if __name__ == "__main__":
     datasets = {
         "v1": "./dataset/v1.csv",
-        # "v2": "./dataset/v2.csv",
-        # "v3": "./dataset/v3.csv",
+        "v2": "./dataset/v2.csv",
+        "v3": "./dataset/v3.csv",
     }
     models = [
         "ytu-ce-cosmos/turkish-gpt2-medium",
-        # "ytu-ce-cosmos/turkish-gpt2-large",
+        "ytu-ce-cosmos/turkish-gpt2-large",
     ]
 
     # Dataset yöneticisi
