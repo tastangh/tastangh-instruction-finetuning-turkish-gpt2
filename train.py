@@ -49,7 +49,7 @@ class Trainer:
         """
         training_args = TrainingArguments(
             output_dir=self.output_dir,
-            per_device_train_batch_size=4,  # Daha büyük batch boyutu
+            per_device_train_batch_size=2,  # gpu error gidermek için 2 ye indirdim
             gradient_accumulation_steps=8,  # Gradyan biriktirme
             num_train_epochs=5,  # Daha uzun eğitim döngüleri
             save_steps=500,
