@@ -8,28 +8,36 @@ from dataset_manager import DatasetManager
 
 class Trainer:
     def __init__(self, model_name: str, output_dir: str):
+        """
+        Args:
+            model_name (str): Modelin ismi veya dizini.
+            output_dir (str): Eğitim çıktılarının kaydedileceği dizin.
+        """
         self.model_name = model_name
         self.output_dir = output_dir
 
     def load_model_and_tokenizer(self):
+        """
+        Model ve tokenizer'ı yükler ve LoRA ayarlarını uygular.
+        """
         tokenizer = AutoTokenizer.from_pretrained(self.model_name)
         model = AutoModelForCausalLM.from_pretrained(self.model_name)
 
-        # Belleği optimize etmek için LoRA kullanımı
+        # LoRA ayarları
         lora_config = LoraConfig(
-            r=4,  # Rank değerini düşük tutarak bellek kullanımını azaltın
-            lora_alpha=16,
-            target_modules=["c_attn", "c_proj"],  # Belirli katmanları optimize edin
-            lora_dropout=0.1,
+            r=16,  # Daha yüksek rank değeri
+            lora_alpha=32,  # Daha güçlü ağırlık faktörü
+            target_modules=["c_attn", "c_proj"],  # Önemli transformer katmanları
+            lora_dropout=0.1,  # Aşırı öğrenmeyi önlemek için
             bias="none",
         )
         model = get_peft_model(model, lora_config)
 
-        # GPU veya CPU seçimi
+        # Cihaz seçimi (GPU veya CPU)
         device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
         model = model.to(device)
 
-        # Tokenizer için pad_token ekleme
+        # Tokenizer için pad_token kontrolü
         if tokenizer.pad_token is None:
             tokenizer.pad_token = tokenizer.eos_token
 
@@ -37,20 +45,25 @@ class Trainer:
 
     def fine_tune(self, model, tokenizer, train_dataset):
         """
-        Modeli verilen veri kümesinde ince ayar yapar.
+        Modeli verilen veri kümesi üzerinde ince ayar yapar.
         """
         training_args = TrainingArguments(
             output_dir=self.output_dir,
-            per_device_train_batch_size=2,  # Küçük batch boyutu
-            gradient_accumulation_steps=4,  # Gradyan biriktirme
-            num_train_epochs=3,
+            per_device_train_batch_size=4,  # Daha büyük batch boyutu
+            gradient_accumulation_steps=8,  # Gradyan biriktirme
+            num_train_epochs=5,  # Daha uzun eğitim döngüleri
             save_steps=500,
             logging_dir=f"{self.output_dir}/logs",
-            learning_rate=5e-5,
+            learning_rate=2e-5,  # Daha küçük öğrenme oranı
             bf16=torch.cuda.is_bf16_supported(),  # GPU BF16 destekliyorsa kullanılır
             fp16=not torch.cuda.is_bf16_supported(),  # Aksi durumda FP16 kullanılır
+            max_grad_norm=1.0,  # Gradyan normu kesimi
+            warmup_steps=100,  # Öğrenme oranını sabitlemek için ısınma adımları
+            weight_decay=0.01,  # Overfitting'i azaltmak için ağırlık sönümleme
+            save_total_limit=2,  # Maksimum kaydedilecek model sayısı
         )
 
+        # Trainer nesnesi
         trainer = SFTTrainer(
             model=model,
             train_dataset=train_dataset,
@@ -66,11 +79,14 @@ class Trainer:
 
 
 if __name__ == "__main__":
+    # Eğitimde kullanılacak veri kümeleri
     datasets = {
         "v1": "./dataset/v1.csv",
         # "v2": "./dataset/v2.csv",
         # "v3": "./dataset/v3.csv",
     }
+
+    # Kullanılacak modeller
     models = [
         "ytu-ce-cosmos/turkish-gpt2-medium",
         # "ytu-ce-cosmos/turkish-gpt2-large",
@@ -79,9 +95,12 @@ if __name__ == "__main__":
     # Dataset yöneticisi
     dataset_manager = DatasetManager(datasets)
 
+    # Her veri kümesi için döngü
     for dataset_name, dataset_path in datasets.items():
-        # Veri kümesini yükle ve formatla
+        # Veri kümesini yükle ve işle
         train_dataset = dataset_manager.load_dataset(dataset_name)
+
+        # Her model için döngü
         for model_name in models:
             # Çıktı dizinini oluştur
             output_dir = f"./models/{model_name.split('/')[-1]}_{dataset_name}"
