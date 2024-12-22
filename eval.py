@@ -47,11 +47,10 @@ class Evaluator:
                 # Yanıt üretimi optimize edilmiş parametrelerle
                 outputs = model.generate(
                     **inputs,
-                    max_length=300,          # Daha uzun yanıtlar için artırıldı
-                    temperature=0.7,         # Yanıt çeşitliliği kontrolü
-                    top_p=0.9,               # Olasılık tabanlı kelime seçimi
-                    repetition_penalty=1.2,  # Tekrarları önlemek için
-                    num_return_sequences=1   # Tek yanıt üret
+                    max_new_tokens=150,       # Daha kısa çıktılar
+                    do_sample=False,          # Deterministik üretim
+                    repetition_penalty=1.2,   # Tekrarları cezalandır
+                    no_repeat_ngram_size=3    # 3-gram tekrarını engelle
                 )
                 model_output = tokenizer.decode(outputs[0], skip_special_tokens=True)
                 model_outputs.append(model_output)
