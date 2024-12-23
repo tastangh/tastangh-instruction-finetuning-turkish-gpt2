@@ -1,8 +1,9 @@
+import os  # Klasör kontrolü ve oluşturma için gerekli
 import pandas as pd
 import torch
 from transformers import AutoModelForCausalLM, AutoTokenizer
 from rouge_score import rouge_scorer
-from nltk.translate.bleu_score import sentence_bleu
+from nltk.translate.bleu_score import sentence_bleu, SmoothingFunction
 from sentence_transformers import SentenceTransformer, util
 
 
@@ -35,7 +36,8 @@ class Evaluator:
         """
         reference_tokens = reference.split()
         prediction_tokens = prediction.split()
-        return sentence_bleu([reference_tokens], prediction_tokens)
+        smooth_fn = SmoothingFunction().method1
+        return sentence_bleu([reference_tokens], prediction_tokens, smoothing_function=smooth_fn)
 
     def calculate_rouge(self, reference, prediction):
         """
@@ -57,6 +59,12 @@ class Evaluator:
         """
         Tüm modelleri test eder ve sonuçları metriklerle birlikte tabloya yazar.
         """
+        # Klasör yoksa oluştur
+        output_dir = os.path.dirname(self.output_excel)
+        if not os.path.exists(output_dir):
+            os.makedirs(output_dir)
+            print(f"Çıktı klasörü oluşturuldu: {output_dir}")
+
         # Test veri kümesini yükle
         test_data = pd.read_csv(self.test_dataset_path)
         results = []
@@ -123,6 +131,7 @@ class Evaluator:
                         f"{'-'*50}\n"
                     )
             print(f"Sonuçlar {txt_file_path} dosyasına kaydedildi.")
+
 
 if __name__ == "__main__":
     # Test için kullanılacak modeller
