@@ -1,7 +1,7 @@
 import torch
 from transformers import AutoModelForCausalLM, AutoTokenizer
 from trl import SFTTrainer
-from transformers import TrainingArguments
+from transformers import TrainingArguments, EarlyStoppingCallback
 from peft import LoraConfig, get_peft_model
 from dataset_manager import DatasetManager
 
@@ -47,12 +47,17 @@ class Trainer:
         """
         Modeli verilen veri kümesi üzerinde ince ayar yapar.
         """
+        # Eğitim argümanları
         training_args = TrainingArguments(
             output_dir=self.output_dir,
-            per_device_train_batch_size=2,  # gpu error gidermek için 2 ye indirdim
+            per_device_train_batch_size=1,  # gpu error gidermek için 2 ye indirdim
             gradient_accumulation_steps=8,  # Gradyan biriktirme
-            num_train_epochs=5,  # Daha uzun eğitim döngüleri
-            save_steps=500,
+            num_train_epochs=100,  # Daha uzun eğitim döngüleri
+            save_steps=1000,  # Her 1000 adımda bir kontrol noktası kaydedilir
+            evaluation_strategy="steps",  # Değerlendirme her belirli adımda yapılır
+            eval_steps=1000,  # Değerlendirme sıklığı save_steps ile uyumlu yapılır
+            save_total_limit=1,  # Yalnızca en iyi modeli sakla
+            load_best_model_at_end=True,  # Eğitim sonunda en iyi modeli yükle
             logging_dir=f"{self.output_dir}/logs",
             learning_rate=2e-5,  # Daha küçük öğrenme oranı
             bf16=torch.cuda.is_bf16_supported(),  # GPU BF16 destekliyorsa kullanılır
@@ -60,9 +65,14 @@ class Trainer:
             max_grad_norm=1.0,  # Gradyan normu kesimi
             warmup_steps=100,  # Öğrenme oranını sabitlemek için ısınma adımları
             weight_decay=0.01,  # Overfitting'i azaltmak için ağırlık sönümleme
-            save_total_limit=2,  # Maksimum kaydedilecek model sayısı
         )
 
+        # Early Stopping Callback
+        early_stopping = EarlyStoppingCallback(
+            early_stopping_patience=5,  # 5 değerlendirme süresince iyileşme olmazsa durur
+            early_stopping_threshold=0.01,  # Minimum iyileşme miktarı (opsiyonel)
+        )
+        
         # Trainer nesnesi
         trainer = SFTTrainer(
             model=model,
