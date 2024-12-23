@@ -1,0 +1,590 @@
+Model: ./models/turkish-gpt2-medium_v1
+Soru: Türkiye Cumhuriyeti devletinin kurucusu kimdir ?
+Referans: Mustafa Kemal Atatürk
+Tahmin: Türkiye Cumhuriyeti devletinin kurucusu kimdir?
+Mustafa Kemal Atatürk, Türkiye Cumhuriyetinin kurucu lideridir. Mustafa Kemal Atatürk'ün doğum tarihi kesin olarak bilinmemektedir ancak 1881 yılında Selanik'te doğduğu tahmin edilmektedir. Babası Ali Rıza Efendi annesi Zübeyde Hanım'dır. Annesi Zübeyde Hanımın ise bir erkek kardeşi vardır ve bu kardeş de Mustafa Kemal'in en büyük destekçisi olmuştur. Bu nedenle Mustafa Kemal, annesinin ölümünden sonra da onun yanında büyümüştür. Ayrıca Mustafa Kemal; "Benden sonra beni benimsemek isteyenler olacaktır ama ben onları değil, beni kabul etmelerini isterim." demiştir. Mustafa kemal Atatürk, Kurtuluş Savaşı sırasında gösterdiği liderlik ile Türk milletinin gönlünde taht kurmuştur. Aynı zamanda Mustafa Kemal Paşa, TBMM tarafından kendisine mareşal rütbesi verilmiştir. MustafaKemal Atatürk, 19 Mayıs 1919 tarihinde Samsun'a çıkarak
+BLEU Skoru: 0.0033
+ROUGE-1: 0.0465
+ROUGE-2: 0.0353
+ROUGE-L: 0.0465
+Semantik Benzerlik: 0.5630
+--------------------------------------------------
+Model: ./models/turkish-gpt2-medium_v1
+Soru: Türkiye Büyük Millet Meclisi Nerededir? 
+Referans: Ankara
+Tahmin: Türkiye Büyük Millet Meclisi Nerededir? 
+
+TBMM, Türkiye Cumhuriyeti'nin yasama organıdır. TBMM, Mustafa Kemal Atatürk tarafından kurulmuştur ve Kurtuluş Savaşı sonrasında kurulan ilk meclistir. Meclisin temel görevi, ülkenin yönetim biçimini belirlemektir. Bu nedenle de bu görev doğrultusunda çalışmalar yürütür. Ayrıca, ülke sorunlarını çözmek için çeşitli kararlar alır. 
+Meclis, aynı zamanda bir danışma meclisi olarak da hizmet verir. Danışma meclisinde milletvekilleri, siyasi parti temsilcileri ile sivil toplum kuruluşları yer alabilir. Aynı zamanda, milletvekillerinin görüşlerini dile getirebileceği bir platform da bulunur.
+
+Büyük Önder Mustafa Kemal ATATÜRK, 1921 yılında Ankara'da yeni Türk devletinin temellerini atmıştır. O günden bugüne kadar birçok önemli reform gerçekleştirilmiştir. Ancak, günümüzde hala bazı sorunlar bulunmaktadır. Örneğin, eğitim sistemi, hukuk sistemi gibi konular halen tartışılmaktadır.
+BLEU Skoru: 0.0000
+ROUGE-1: 0.0118
+ROUGE-2: 0.0000
+ROUGE-L: 0.0118
+Semantik Benzerlik: 0.3521
+--------------------------------------------------
+Model: ./models/turkish-gpt2-medium_v1
+Soru: TUSAŞ tarafından geliştirilen ve Türkiye'nin ilk yerli haberleşme uydusu olan projenin adı nedir?
+Referans: TÜRKSAT 6A
+Tahmin: TUSAŞ tarafından geliştirilen ve Türkiye'nin ilk yerli haberleşme uydusu olan projenin adı nedir?
+Türksat 5A, Türksat 6A, TÜRKSAT 4B, TÜRKsat HD, TAPSİS-3A, TPGS-1A, TKGS-2A, ULAK Haberleşme Uydusunun ismidir. Bu proje ile birlikte Türkiye'de ilk defa bir uyduya sahip olunmuştur. Ayrıca bu uydu sayesinde Türkiye'ye ait birçok veri merkezi de kurulmuştur. Projenin amacı ise; yüksek hızlı internet erişimi sağlamak, ulusal güvenlik için kritik öneme sahip verilerin korunmasını sağlamaktır. Proje kapsamında üretilen uydular, milli imkanlarla geliştirilerek ülkemizin hizmetine sunulmuştur. Bu sayede ülkemiz, uluslararası alanda önemli bir konuma gelmiştir. Projeye dair daha fazla bilgi almak isterseniz https://www.turksat.com/tr/projeler/uydular adresini
+BLEU Skoru: 0.0019
+ROUGE-1: 0.0432
+ROUGE-2: 0.0292
+ROUGE-L: 0.0432
+Semantik Benzerlik: 0.4849
+--------------------------------------------------
+Model: ./models/turkish-gpt2-medium_v1
+Soru: Türkiye'nin ilk kadın tiyatro sanatçısı kimdir?
+Referans: Afife Jale
+Tahmin: Türkiye'nin ilk kadın tiyatro sanatçısı kimdir?
+Türk tiyatrosunun ilk kadın oyuncusu, Türk Dil Kurumu Tiyatro Ödülü sahibi ve Devlet Tiyatroları Genel Müdürü olan Muhsin Ertuğrul'dur. İlk kadın oyuncu olarak bilinen Muhsin Ertuğrul, aynı zamanda Türkiye Cumhuriyeti'nde ilk kadın yönetmendir. Ayrıca ilk kadın opera sanatçısı da yine Muhsin Ertuğrul olmuştur. Muhsin Ertuğrul ayrıca ilk kadın sinema yönetmeni de olmuştur. Bu isimler dışında birçok önemli isim daha vardır. Ancak en bilineni ise; Türk tiyatrosunda ilk kadın yazar olarak kabul edilen Halide Edip Adıvar'dır. Halide Edib Adıvar, 1884 yılında İstanbul'da dünyaya gelmiştir. Yazar, edebiyat alanında pek çok eser kaleme almıştır. Aynı zamanda ilk kadın roman yazarıdır. Romanları ile birlikte "Halide" takma adını kullanan Halide Hanım, eserlerinde Osmanlı Devleti
+BLEU Skoru: 0.0000
+ROUGE-1: 0.0000
+ROUGE-2: 0.0000
+ROUGE-L: 0.0000
+Semantik Benzerlik: 0.1674
+--------------------------------------------------
+Model: ./models/turkish-gpt2-medium_v1
+Soru: Herodot'un yazdığı, Mısır firavununun dilin kökeni deneyinde, doğunca çobana verilerek kapatılan, o dahil kimseyle konuşturulmayan çocuğun söylediği ilk kelime nedir?
+Referans: Ekmek
+Tahmin: Herodot'un yazdığı, Mısır firavununun dilin kökeni deneyinde, doğunca çobana verilerek kapatılan, o dahil kimseyle konuşturulmayan çocuğun söylediği ilk kelime nedir?
+İlk kelimemiz "homo sapiens"tir. Bu kelimenin anlamı "insanlar ve hayvanlar arasındaki iletişimdir." İlk kelimeyi duyduğumuzda bu cümle aklımıza gelir: "Homosapiensin dili". O zaman bu kelime "İnsanlarla hayvanların konuştuğu dil" anlamına gelmektedir. Yani insan ile hayvan arasında bir iletişim vardır. Dolayısıyla bu kelime de "Hayvanların konuştuğu dildir." şeklinde çevrilebilir. Ayrıca bu kelime, "İnsanlar ve insanlar arasındaki iletişimin başlangıcıdır." cümlesiyle bağlantılı olarak da okunabilir. Çünkü bu cümlede "ilk kelimeler"den biri olan "housapis" kelimesi, insanların konuşabildiği dil anlamında kullanılmıştır. Dolayısıyla ilk kelimemizi "hayvanlarla konuşan dil" olarak çevirebiliriz
+BLEU Skoru: 0.0000
+ROUGE-1: 0.0000
+ROUGE-2: 0.0000
+ROUGE-L: 0.0000
+Semantik Benzerlik: 0.2783
+--------------------------------------------------
+Model: ./models/turkish-gpt2-medium_v1
+Soru: Kur'an-ı Kerim'de hangisi üzerine yemin edilmemiştir? Deniz Güneş Arı Kalem
+Referans: Arı
+Tahmin: Kur'an-ı Kerim'de hangisi üzerine yemin edilmemiştir? Deniz Güneş Arı Kalem
+Kuran-� "Allah'ın kitabıdır." şeklinde bir yemin yoktur. Kur'an, Allah tarafından indirilmiştir ve O'nun kelamıdır. Dolayısıyla Kuran- "O'na teslim oldum." diye bir yemin de söz konusu değildir. Bu nedenle Kur'anın tamamı üzerinde yemin etmek mümkün değildir. Ancak bazı ayetlerde bu yeminler vardır: "De ki: Eğer babalarınız, oğullarınız, kardeşleriniz, eşleriniz, hısım akrabanız, kazandığınız mallar, kesada uğramasından korktuğunuz ticaretiniz, hoşlandığınız meskenler size Allah'tan, peygamberinden ve O indirdi (kurban ettiğiniz hayvanlar) da sizin için Allah'tandır. Öyleyse Allah'tân sakının; umulur ki kurtuluşa er
+BLEU Skoru: 0.0021
+ROUGE-1: 0.0141
+ROUGE-2: 0.0000
+ROUGE-L: 0.0141
+Semantik Benzerlik: 0.4100
+--------------------------------------------------
+Model: ./models/turkish-gpt2-medium_v1
+Soru: Osmanlı İmparatorluğu’nun son döneminde ekonomik krizi yönetmek için oluşturulan ve dış borçların tahsilatını düzenleyen kurumun adı nedir?
+Referans: Düyun-u Umumiye İdaresi.
+Tahmin: Osmanlı İmparatorluğu’nun son döneminde ekonomik krizi yönetmek için oluşturulan ve dış borçların tahsilatını düzenleyen kurumun adı nedir?
+1923 yılında kurulan Türkiye Cumhuriyeti Merkez Bankası, Osmanlı Devleti'nin son dönemlerinde uygulanan ekonomik politikaları denetlemek amacıyla kurulmuştur. Bu kurum, ülkenin para politikalarını kontrol etmek ve uygulamakla görevlidir. Ayrıca bu kurum, ülke ekonomisini güçlendirmek adına çeşitli politikalar da geliştirmiştir. Son olarak ise 1929 yılında çıkarılan bir kanunla birlikte Türk Lirası'nın değeri arttırılmıştır. Bu nedenle de Osmanlı İmparatorluğu'nda son dönemde yaşanan ekonomik krizde merkez bankası önemli rol oynamıştır. Ancak günümüzde hala bazı kurumlar bulunmaktadır. Bunlardan biri de Osmanlı Devleti tarafından kurulan Türkiye Cumhuriyet Merkez Bankası'dır. Merkez Bankası'na bağlı olan bu kuruluş, Osmanlı İmparatorluğu zamanında kullanılan para politikalarının denetlenmesi görevini üstlenmiştir. Aynı zamanda bu kuruluşun amacı, ülkedeki finansal sistemi düzenlemektir. Dolayısıyla günümüzdeki birçok banka gibi Osmanlı İmparatorluğu döneminde de bankacılık faaliyetleri
+BLEU Skoru: 0.0000
+ROUGE-1: 0.0278
+ROUGE-2: 0.0000
+ROUGE-L: 0.0278
+Semantik Benzerlik: 0.3106
+--------------------------------------------------
+Model: ./models/turkish-gpt2-medium_v1
+Soru: Osmanlı İmparatorluğu’nun son padişahı Vahdettin midir yoksa Abdülmecid Efendi?
+Referans: Osmanlı İmparatorluğu’nun son padişahı Vahdettin’dir. Ancak Abdülmecid Efendi, Osmanlı’nın son halifesi olarak görev yapmıştır. Bu iki unvan farklıdır.
+Tahmin: Osmanlı İmparatorluğu’nun son padişahı Vahdettin midir yoksa Abdülmecid Efendi?
+Abdülmecid, Osmanlı Devleti'nin son padişahıdır. Sultan II. Abdülhamid olarak da bilinir. 1876 yılında tahta geçmiştir ve 1909 yılına kadar bu görevi sürdürmüştür. Bu süre zarfında birçok önemli olaya imza atmıştır. Ayrıca, Türkiye Cumhuriyeti'ni kuran ilk padişahtır. Son Osmanlı Padişahı olan Vahdettin ise, Osmanlı İmparatorluğu'nu yöneten en büyük kişidir. Ancak, Vahdettin, Osmanlı Hanedanı'nın son padişahlarından biri değildir. Bunun yerine, Osmanlı hanedanının son padişahlarındandır. Dolayısıyla, Vahdetttin, bir Osmanlı padişah� ne yazık ki değildir. Bununla birlikte, Osmanlı hanedanı, Osmanlı İmparatorluğunun kurucusudur. Yani, Osmanlı imparatorluğu, Osmanlı padişahları tarafından yönetilmiştir. Buna ek olarak, Osmanlı devleti,
+BLEU Skoru: 0.0270
+ROUGE-1: 0.2500
+ROUGE-2: 0.1579
+ROUGE-L: 0.2083
+Semantik Benzerlik: 0.7812
+--------------------------------------------------
+Model: ./models/turkish-gpt2-medium_v1
+Soru: Işık hızına ulaşan bir cismin kütlesi sıfır mı olur yoksa sonsuz mu?
+Referans: Hiçbiri! Işık hızına ulaşan cisimler madde olamaz; sadece foton gibi kütlesiz parçacıklar ışık hızında hareket edebilir.
+Tahmin: Işık hızına ulaşan bir cismin kütlesi sıfır mı olur yoksa sonsuz mu?
+Eğer ışık hızı saniyede 100.000 km ise bu durumda kütle sıfıra eşit olacaktır ve dolayısıyla ışık hızında hareket eden herhangi bir cisim sonsuza kadar var olmayacaktır. Bu nedenle eğer ışık hızının 1/10'u ile 10/100'ü arasında kalan sürede bir cisim varsa, o zaman kütlenin sıfır olması gerekir ki bu da ışığın dalga boyunun 0.00000099999999999999 olduğu anlamına gelir. Dolayısıyla ışık hızını aşan herhangi bir cismin kütlesinin sıfır olması için ışıktan daha hızlı olan bir cisme ihtiyaç vardır. Ancak bu durum tam olarak doğru değildir çünkü ışıktan çok daha yavaş olan bir cisim de olabilir. Örneğin; bir uçak gibi. Eğer ışık hızından daha hızlı olsaydı, uçağın kütlesi ışık hızıyla aynı olurdu ancak bu durumda uçaktaki ağırlık miktarı
+BLEU Skoru: 0.0119
+ROUGE-1: 0.1308
+ROUGE-2: 0.0943
+ROUGE-L: 0.1215
+Semantik Benzerlik: 0.6215
+--------------------------------------------------
+Model: ./models/turkish-gpt2-medium_v1
+Soru: Güneş bir gezegen midir yoksa bir yıldız mı?
+Referans: Yıldızdır, ancak halk arasında yanlışlıkla "gezegenimiz Güneş" ifadeleri kullanılabilir.
+Tahmin: Güneş bir gezegen midir yoksa bir yıldız mı?
+Bir gezegenin Güneş'e göre daha büyük olması nedeniyle, güneş sistemi dışında kalan gezegenler de vardır. Bu nedenle bu soruya cevap vermek zordur. Ancak bazı bilim insanları, güneşin bir gezegen olduğunu ve Dünya'dan çok uzakta bulunduğunu öne sürmektedir. Ayrıca, Güneş sisteminin dışındaki gezegenlerin varlığı da tartışmalıdır. Örneğin, Jüpiter gibi dev bir gökcismi olan Satürn, Güneş Sistemi dışında yer alır. Buna karşılık, Plüton gibi küçük bir gök cisminin varlığı ise tartışma konusudur. Öte yandan, Güneş sistemindeki diğer gezegenler arasında, Venüs, Mars, Uranüs, Neptün, Jüpiter, Satürn, Uranos, Neptünyen bulunur. Dolayısıyla, Güneş sisteminde bulunan tüm gezegenler birer gezegendir. Bir yıldızın Güneş'ten yaklaşık olarak 10 kat daha büyük
+BLEU Skoru: 0.0000
+ROUGE-1: 0.0968
+ROUGE-2: 0.0326
+ROUGE-L: 0.0860
+Semantik Benzerlik: 0.7124
+--------------------------------------------------
+Model: ./models/turkish-gpt2-medium_v1
+Soru: 0, asal bir sayı mıdır yoksa değil midir?
+Referans: Değildir! Çünkü asal sayılar, sadece kendisi ve 1’e bölünebilen pozitif tam sayılardır.
+Tahmin: 0, asal bir sayı mıdır yoksa değil midir?
+Asaldır. 0'ın asal olduğunu söylemek mümkün değildir çünkü bu durumda 1 sayısı asaldır ve 2 sayısının da asal olduğu söylenebilir. Bu nedenle de 0 ile 1 arasında herhangi bir ilişki kurulamaz. Ancak 0'a göre daha küçük olan asal sayılar vardır ki bunlar asal olmayan sayılardır. Örneğin 
+1 = 10'dur.
+
+Bu durumda 1 + 10 eşitliğinden 10+10=100 bulunur. 100 ise 100/1000 olur. Yani 100/100 = 1000 olur.
+
+ sırasıyla:
+(2) = (3) = 3'tür.
+                                          
+Yani 100/8000 = 8000/9000 olur.
+Buna göre 9000/
+BLEU Skoru: 0.0027
+ROUGE-1: 0.1690
+ROUGE-2: 0.0857
+ROUGE-L: 0.1268
+Semantik Benzerlik: 0.6284
+--------------------------------------------------
+Model: ./models/turkish-gpt2-medium_v1
+Soru: Türkiye’nin en uzun nehri hangisidir?
+Referans: Kızılırmak.
+Tahmin: Türkiye’nin en uzun nehri hangisidir?
+Fırat Nehri, Türkiye'nin en büyük ve en uzun nehirlerinden biridir. Fırat Nehri, Güneydoğu Anadolu Bölgesi ile Suriye arasında yer alır. Bu nedenle de Türkiye'de en uzun ikinci nehirdir. Ayrıca bu nehrin uzunluğu da yaklaşık olarak 6 bin kilometredir. Fırat, aynı zamanda Türkiye'ye komşu olan İran, Irak ve Ermenistan gibi ülkelerin sınırlarından geçmektedir. Dolayısıyla da Türkiye'yi Doğu Akdeniz üzerinden geçerek Avrupa'ya bağlayan bir nehirdir diyebiliriz. Fırat'ın toplam uzunluğu ise yaklaşık olarak 8 bin kilometre civarındadır. Fırat'tan sonra gelen Dicle Nehri ise Türkiye'in en uzun üçüncü nehridir. Toplam uzunluğu 4 bin 500 kilometreyi bulan Dicle Nehri, ülkemizin en uzun dördüncü nehridir ve toplamda 7 bin 100 kilometrelik bir uzunluktadır. Dicle Nehri'
+BLEU Skoru: 0.0000
+ROUGE-1: 0.0120
+ROUGE-2: 0.0000
+ROUGE-L: 0.0120
+Semantik Benzerlik: 0.4894
+--------------------------------------------------
+Model: ./models/turkish-gpt2-medium_v1
+Soru: Schrödinger'in kedisi deneysel bir durum mudur yoksa bir düşünce deneyi mi?
+Referans: Bir düşünce deneyi.
+Tahmin: Schrödinger'in kedisi deneysel bir durum mudur yoksa bir düşünce deneyi mi?
+Bu soru, Schröger'in kedisinin deneyden ziyade bir fikir olduğunu ima eder. Bu nedenle bu sorunun cevabı "Deneysel Bir Durumdur." şeklinde olmalıdır. Ancak bu cevap kesin değildir ve farklı görüşler de mevcuttur. Örneğin; bazı bilim insanları, kedinin bilimsel olarak kanıtlanabilecek bir durumu olmadığını düşünmektedir. Bunun nedeni ise kedilerin, insanların aksine, kendi başlarına karar verebilmeleridir. Dolayısıyla bu soruya verilen cevap, "Kediyi Deneysel Olarak Düşünmek Mümkün Değildir." şeklindedir. Ayrıca bu cevap, kedileri, insan gibi düşünen hayvanlar kategorisine sokmaz. Çünkü kediler, sadece insanlardan daha zekidirler. Kediler, insanlarla aynı şekilde düşünme yeteneğine sahip değillerdir. Dolayısıyla böyle bir soruyu yanıtlamak için, kedilerin neden
+BLEU Skoru: 0.0020
+ROUGE-1: 0.0548
+ROUGE-2: 0.0417
+ROUGE-L: 0.0548
+Semantik Benzerlik: 0.5380
+--------------------------------------------------
+Model: ./models/turkish-gpt2-medium_v1
+Soru: İnsan psikolojisinde, bir bireyin aynı anda hem bir şeyi istemesi hem de ondan kaçınmak istemesi durumu hangi terimle açıklanır?
+Referans: Yaklaşma-kaçınma çatışması.
+Tahmin: İnsan psikolojisinde, bir bireyin aynı anda hem bir şeyi istemesi hem de ondan kaçınmak istemesi durumu hangi terimle açıklanır?
+Bireyin aynı anda bir şeyi istememesi ve ondan kaçınması durumudur. Bu durum kişinin kendi isteklerinden vazgeçmesi olarak da tanımlanabilir. Bireyin bu durumdan kaçmak için farklı yollar denemesi ise "kaçınma davranışı" olarak adlandırılır. Kaçınma davranışının temelinde yatan neden ise kişinin sürekli olarak kendini kontrol etmesi ve her şeyin en iyisini yapmaya çalışmasıdır. Bu nedenle kişi sürekli olarak kendisini kontrol etmeli ve yaptığı her şeyde daha iyi olmaya çalışmalıdır. Ayrıca kaçma davranışını tetikleyen durumlar arasında; aşırı stres, kaygı bozukluğu, depresyon gibi psikolojik sorunlar yer alır. Bu durumlarda kişi genellikle kaçmayı tercih eder ancak bazen de kaçmaya çalışır. Ancak bu durumda da kişinin kendine olan güveni azalır ve bu durum kişiyi rahatsız edebilir. Dolayısıyla kaçma davranışı, kişinin kendisine zarar verme korkusu nedeniyle ortaya çıkar.
+BLEU Skoru: 0.0000
+ROUGE-1: 0.0415
+ROUGE-2: 0.0105
+ROUGE-L: 0.0311
+Semantik Benzerlik: 0.5181
+--------------------------------------------------
+Model: ./models/turkish-gpt2-medium_v1
+Soru: Galatasaray Futbol Takımı, UEFA Kupası'nı hangi yıl kazanmıştır?
+Referans: 2000 yılında.
+Tahmin: Galatasaray Futbol Takımı, UEFA Kupası'nı hangi yıl kazanmıştır?
+UEFA Kupası'nın kazanılmasında en büyük pay sahibi olan Galatasaray futbol takımıdır. Bu kupayı kazanan takım ise Real Madrid'dir. Ayrıca bu kupa tarihinde ilk kez bir Türk takımına verilmiştir ve o da Fenerbahçe olmuştur. Galatasaray ayrıca Avrupa kupalarında en çok şampiyonluk yaşayan takım olarak tarihe geçmiştir. Galatasaray, UEFA Şampiyonlar Ligi'nde de şampiyon olmuş ve çeyrek finale kadar yükselmiştir. Ancak daha sonra gelen başarısız sonuçlar nedeniyle elenmiştir. Daha sonrasında ise tekrar Avrupa arenasına geri dönmüştür. Galatasaray bu sezon UEFA Süper Kupa finalinde Beşiktaş ile karşı karşıya gelmiştir. Maçta rakibine 2-1 mağlup olan sarı kırmızılılar, yarı finalde de Trabzonspor'a 3-2 yenilerek elendi. Böylece Galatasaray, 2018 yılında UEFA Şampiyonlar Liginde final oynamıştır. Galatasaray aynı zamanda Türkiye Kupası'
+BLEU Skoru: 0.0000
+ROUGE-1: 0.0323
+ROUGE-2: 0.0217
+ROUGE-L: 0.0323
+Semantik Benzerlik: 0.3314
+--------------------------------------------------
+Model: ./models/turkish-gpt2-medium_v1
+Soru: İnsanlar neden soğuk havada nefes verdiklerinde "buhar" görür?
+Referans: Solunan sıcak hava, soğuk hava ile karşılaştığında yoğunlaşır ve küçük su damlacıkları oluşturur.
+Tahmin: İnsanlar neden soğuk havada nefes verdiklerinde "buhar" görür?
+Bu durum, insanların hava yoluyla oksijen almalarına bağlıdır. Bu nedenle insanlar genellikle sıcak havalarda daha fazla buhar görürler ve bu da onları serinletir. Ancak, bazı durumlarda, insanlar soğuk havaya maruz kaldıklarında solunum problemleri yaşayabilir veya hatta ölebilirler. Bu gibi durumlar için tıbbi yardım almak önemlidir. Ayrıca, insanlar genellikle soğuk havayı solumak yerine iç mekanlarda vakit geçirmeyi tercih ederler çünkü dışarıda olmak onlara enerji verir. Bu yüzden de soğuk havanın solunması sağlık sorunlarına yol açabilir. Bu durumda, tıbbi yardıma başvurmak en iyisidir. Ayrıca insanlar genellikle kapalı alanlarda zaman geçirirler. Kapalı alanlar, özellikle yaşlılar ve çocuklar için çok tehlikelidir. Dolayısıyla, açık alanda bulunmak, yaşlıların sağlığı açısından büyük önem taşır. Bu sebeple, mümkün olduğunca içeride kalınmalıdır. Ayrıca soğuk havadan kaçınmak için
+BLEU Skoru: 0.0020
+ROUGE-1: 0.1137
+ROUGE-2: 0.0191
+ROUGE-L: 0.0758
+Semantik Benzerlik: 0.5385
+--------------------------------------------------
+Model: ./models/turkish-gpt2-medium_v1
+Soru: Newton’un üçüncü hareket yasası olan "Her etkiye karşı eşit ve zıt bir tepki vardır" ilkesi, gerçek hayatta nasıl örneklenebilir?
+Referans: Roketlerin uzaya fırlatılmasında görülür. Roket, egzoz gazlarını aşağı doğru iterken gazlar, roketi eşit ve zıt bir kuvvetle yukarı doğru iter.
+Tahmin: Newton’un üçüncü hareket yasası olan "Her etkiye karşı eşit ve zıt bir tepki vardır" ilkesi, gerçek hayatta nasıl örneklenebilir?
+Bir şeyin her şeye aynı tepkiyi vermesi mümkün değildir. Örneğin; bir arabanın tekerleğinin dönmesi için gerekli kuvvetin değişmesi gerekir. Bu durumda tekerlek dönmez ise araba çalışmaz. Dolayısıyla bu durum da Newton'a göre yanlıştır. Ancak bunun tersi de mümkündür: Bir cismin herhangi bir etkiden etkilenmesi durumunda o cisim harekete geçer. Yani bir şey her şeye farklı tepkiler verebilir. Buna karşın her şeye eşit ve karşıt bir tepki olması imkansızdır. Çünkü her şey kendi içinde farklıdır. Her şey kendine özgüdür. O yüzden de her şeye karşı eşit veya zıt bir tepkiye sahip olmak mümkün değildir." (sf.16)
+Bu nedenle de her şeyi birbirine benzetmek doğru olmaz. Mesela; bir elma ağacının yaprakları birbirinden farklıdır. Elma ağacı yapraklarını döktüğünde
+BLEU Skoru: 0.0178
+ROUGE-1: 0.1364
+ROUGE-2: 0.0550
+ROUGE-L: 0.1091
+Semantik Benzerlik: 0.5067
+--------------------------------------------------
+Model: ./models/turkish-gpt2-medium_v1
+Soru: Placebo etkisi” nedir ve tedavilerde nasıl bir rol oynar?
+Referans: Placebo etkisi, hastaya gerçek bir ilaç verilmeden sadece inandırıcı bir tedavi uygulandığında bile iyileşme göstermesidir. Bu, bireyin psikolojik inancının fiziksel sonuçları nasıl etkileyebileceğini gösterir ve klinik araştırmalarda kontrol grubu olarak sıkça kullanılır.
+Tahmin: Placebo etkisi” nedir ve tedavilerde nasıl bir rol oynar?
+plasebo etkisi, kişinin kendi kendine yaptığı telkinler sonucunda ortaya çıkan psikolojik etkidir. Bu etkinin altında yatan sebep ise kişinin bilinçaltına yerleşmiş olan olumsuz düşüncelerdir. Placebo etkisinin temelinde ise kişinin kendini kötü hissetmesi yatmaktadır. Kişi bu negatif düşünceleri fark ettiğinde ise daha fazla stres yaşar ve kendisini iyi hissetmek için çaba sarf eder. Ancak placebo etkisini ortadan kaldırmak mümkün değildir çünkü kişi bunu fark ettiği anda artık o kişiyi sevmeyecektir. Dolayısıyla da tedavi süreci de sekteye uğrayacaktır. Ayrıca placebonun aksine olumlu düşünmek kişiye pozitif enerji verir ve kişinin kendini iyi hissetmesini sağlar. Yani placepo etkisi sayesinde kişiler kendilerini çok daha mutlu hisseder ve hayata karşı bakış açıları değişir. Plasebo etkisinden kurtulmak içinse öncelikle kişinin kendini tanıması gerekir. Ardından ise
+BLEU Skoru: 0.0023
+ROUGE-1: 0.1644
+ROUGE-2: 0.0184
+ROUGE-L: 0.0822
+Semantik Benzerlik: 0.6012
+--------------------------------------------------
+Model: ./models/turkish-gpt2-medium_v1
+Soru: Osmanlı’da Lale Devri, sanatsal ve kültürel gelişmelerin yanı sıra diplomatik ilişkilerin güçlendiği bir dönem olarak bilinir. Bu dönemin mimarlarından olan Sadrazam Nevşehirli Damat İbrahim Paşa, hangi olayla görevden alınmıştır?
+Referans: Patrona Halil İsyanı ile.
+Tahmin: Osmanlı’da Lale Devri, sanatsal ve kültürel gelişmelerin yanı sıra diplomatik ilişkilerin güçlendiği bir dönem olarak bilinir. Bu dönemin mimarlarından olan Sadrazam Nevşehirli Damat İbrahim Paşa, hangi olayla görevden alınmıştır?
+Nevşehirli Damat İbrahimli'nin sadrazamı olduğu dönemde Osmanlı Devleti ile Fransa arasında diplomatik ilişkiler kurulmaya başlanmıştır. Bunun sonucunda da Fransız elçisi İstanbul'da görevlendirilmiştir. Ancak bu görev sırasında Damat İbrahim paşa, Fransız elçisine hakaret ettiği gerekçesiyle görevinden uzaklaştırılmıştır. Ardından ise Damat İbrahim paşanın yerine Nevşehirli İbrahim Paşa getirilmiştir. Böylece de Damat İbrahim Paşanın sadrazamlığı sona ermiştir. Ayrıca Damat İbrahimpaşanın sadaretten azledilmesi üzerine de Nevşehirli İbrahimin sadareti başlamıştır. Bu olay sonrasında da Damat İbrahimpaşa sadrazamlık görevine devam etmiştir. Daha sonra ise Nevşehirli ibn-i İbrahim Paşa sadrazamlıktan azledilerek Nevşehirli İbn- i İbrahim Paşa adıyla yeni bir sadrazam atanmıştır. Bu
+BLEU Skoru: 0.0000
+ROUGE-1: 0.0183
+ROUGE-2: 0.0000
+ROUGE-L: 0.0183
+Semantik Benzerlik: 0.4951
+--------------------------------------------------
+Model: ./models/turkish-gpt2-medium_v1
+Soru: Karbonun allotroplarından biri olan elmas, kristal yapısındaki kovalent bağlarla bilinir. Bu bağlar, elmasın sertliğini nasıl etkiler ve endüstriyel kullanımlarını hangi yönüyle mümkün kılar?
+Referans: Kovalent bağlar elmasın atomlarını sıkıca bir arada tutar, bu da sertliğini sağlar. Sert yapısı sayesinde elmas, kesici aletlerde ve endüstriyel delme işlemlerinde kullanılır.
+Tahmin: Karbonun allotroplarından biri olan elmas, kristal yapısındaki kovalent bağlarla bilinir. Bu bağlar, elmasın sertliğini nasıl etkiler ve endüstriyel kullanımlarını hangi yönüyle mümkün kılar?
+Elmas, karbon atomlarının bir araya gelmesiyle oluşur. Elmaslar, yüksek sıcaklıklarda erir ve bu nedenle kırılgandır. Ancak, elmasların kimyasal özellikleri, diğer elementlere göre daha yüksektir. Örneğin, elmaslar, doğada en çok bulunan elementtir. Ayrıca, elmas, birçok farklı alanda yaygın olarak kullanılmaktadır: inşaat sektörü, madencilik, enerji üretimi, tıpta ve dişçilikte. Elmasın ana özelliklerinden bazıları şunlardır: kolay işlenebilirlik, düşük maliyetli olması, hafif olması, korozyona karşı dirençli olması, yüksek sertlik ve aşınma direncidir. Elmas ayrıca, değerli taşlardan biridir. Elmas, genellikle mücevher yapımında kullanılır. Bununla birlikte, elmastan yapılmış ürünler de vardır. Bunlar arasında, değerli taşlar, mücevherler, saatler, takılar ve
+BLEU Skoru: 0.0046
+ROUGE-1: 0.2326
+ROUGE-2: 0.1033
+ROUGE-L: 0.1488
+Semantik Benzerlik: 0.6604
+--------------------------------------------------
+Model: ./models/turkish-gpt2-medium_v1
+Soru: İnternetin temeli olarak kabul edilen ARPANET, hangi amaçla geliştirilmiştir ve günümüz internetine dönüşmesi nasıl gerçekleşmiştir?
+Referans: ARPANET, askeri ve akademik araştırmalar arasında veri paylaşımını sağlamak için geliştirilmiştir. Protokollerinin yaygınlaşması ile modern internete dönüşmüştür.
+Tahmin: İnternetin temeli olarak kabul edilen ARPANET, hangi amaçla geliştirilmiştir ve günümüz internetine dönüşmesi nasıl gerçekleşmiştir?
+ARPANET'i ilk kullanan kişi olan Amerikalı mucit Alan Turing, bilgisayarların temellerinin atılmasına neden olmuştur. Bu nedenle de internetin temelleri atılmıştır diyebiliriz. Ancak günümüzde hala birçok insan bu ağın bir parçası olmak için çaba sarf etmektedir. Çünkü insanlar artık bilgiye daha hızlı ulaşabiliyor ve istedikleri bilgilere çok kısa sürede erişebiliyor. Ayrıca ARPANet sayesinde iletişim kurmak da kolaylaşmıştır. Dolayısıyla internetin temelinde ARPANE yer almaktadır denilebilir. Günümüzde ise internete erişim sağlayan her cihaz ARPANETE bağlanmaktadır. Yani internet üzerinden herhangi bir işlem yapmak isteyen herkes ARPANETİ kullanmaktadır. İnternete bağlanmak için kullanılan cihazlar arasında bilgisayarlar, cep telefonları, tabletler gibi çeşitli araçlar bulunmaktadır. Bunların yanı sıra bazı durumlarda bilgisayarlara ihtiyaç duyulabilir. Örneğin; oyun oynamak veya video izlemek amacıyla bilgisayara
+BLEU Skoru: 0.0021
+ROUGE-1: 0.1786
+ROUGE-2: 0.0721
+ROUGE-L: 0.0893
+Semantik Benzerlik: 0.7019
+--------------------------------------------------
+Model: ./models/turkish-gpt2-medium_v1
+Soru: Esad rejiminin devrilmesinden sonra Suriye’nin uluslararası toplumla ilişkileri nasıl şekillenmektedir?
+Referans: Yeni yönetim, bazı Batılı ülkelerle diplomatik ilişkilerini yeniden kurmaya çalışırken İran ve Rusya ile güçlü ilişkilerini sürdürmektedir. Ancak Suriye, ekonomik ve siyasi izolasyondan tamamen kurtulamamıştır.
+Tahmin: Esad rejiminin devrilmesinden sonra Suriye’nin uluslararası toplumla ilişkileri nasıl şekillenmektedir?
+Suriye'nin uluslararası toplum ile ilişkilerinin şekillenmesinde, Birleşmiş Milletler Güvenlik Konseyi (BMGK) daimi üyeleri ve Arap Birliği gibi önemli aktörler rol oynamaktadır. Bu bağlamda, BMGK daimi üyelerinin yanı sıra, Arap Ligi de bu süreçte aktif bir şekilde yer almaktadır. Ayrıca, Türkiye, Rusya ve İran da Suriye'deki gelişmeleri yakından takip etmektedir. Dolayısıyla, Suriye'nin yeniden yapılandırılması sürecinde, özellikle de siyasi sürecin hızlandırılmasında, Türkiye'nin rolü büyük olacaktır. Öte yandan, Türkiye-Rusya-İran üçlüsünün yakın iş birliği içerisinde hareket etmesi, Suriye krizinin çözümünde etkili olabilir. Nitekim, Astana süreci kapsamında, İdlib başta olmak üzere, Suriye'de yaşanan insani krizlerin çözümü için ortak çaba sarf edilmesi, krizin çözümüne yönelik olumlu adımlar atılmasını sağlayabilir. Diğer taraftan
+BLEU Skoru: 0.0025
+ROUGE-1: 0.1659
+ROUGE-2: 0.0093
+ROUGE-L: 0.0829
+Semantik Benzerlik: 0.6786
+--------------------------------------------------
+Model: ./models/turkish-gpt2-medium_v1
+Soru: 2024 Avrupa Futbol Şampiyonası'nda Türkiye Milli Takımı hangi aşamaya kadar ilerlemiştir ve turnuvadaki performansı nasıl değerlendirilmiştir?
+Referans: Türkiye Milli Takımı, 2024 Avrupa Futbol Şampiyonası'nda çeyrek finale kadar yükselmiştir. Takımın performansı, genç oyuncuların katkısı ve mücadeleci oyun anlayışıyla olumlu değerlendirilmiştir.
+Tahmin: 2024 Avrupa Futbol Şampiyonası'nda Türkiye Milli Takımı hangi aşamaya kadar ilerlemiştir ve turnuvadaki performansı nasıl değerlendirilmiştir?
+Türkiye, 2024 Avrupa Futbol Şampiyonasında grup aşamasında Portekiz ile eşleşmiş ancak Portekiz maçı 2-1 kaybederek turnuvaya veda etmiştir. Turnuvada ikinci olan takım ise Hırvatistan olmuştur. Bu aşamada Türkiye, ilk iki sırayı alan takımlar arasında yer almıştır. Ancak Hırvatistan, son maçta penaltı atışları sonucunda elenmiştir. Böylece Türkiye, turnuvada üçüncü sırada kalmıştır. Ayrıca bu aşamada Türkiye'de milli takımda bulunan oyuncular da önemli bir performans sergilemiştir. Örneğin; Burak Yılmaz, Zeki Çelik gibi isimler turnuvanın en iyi oyuncuları arasına girmiştir. Aynı zamanda Arda Turan, Emre Belözoğlu, Hakan Çalhanoğlu gibi isimlerin de turnuva performansları oldukça yüksekti. Dolayısıyla Türkiye, 2023 yılında düzenlenecek Dünya Kupası için büyük umutlar beslemektedir. Fakat turnuva sonrasında yapılan değerlendirmelerde Türkiye'nin daha üst sıralarda olduğu görülmüştür. Buna
+BLEU Skoru: 0.0220
+ROUGE-1: 0.2025
+ROUGE-2: 0.0936
+ROUGE-L: 0.1519
+Semantik Benzerlik: 0.7981
+--------------------------------------------------
+Model: ./models/turkish-gpt2-medium_v1
+Soru: 2024 yılında düzenlenen 41. İstanbul Film Festivali'nde "En İyi Film" ödülünü kazanan yapım hangisidir ve filmin konusu nedir?
+Referans: 2024 turizm sezonunda Türkiye'ye gelen yabancı turist sayısı 45 milyona ulaşmıştır. En çok ziyaret edilen bölgeler arasında İstanbul, Antalya ve Kapadokya öne çıkmaktadır.
+Tahmin: 2024 yılında düzenlenen 41. İstanbul Film Festivali'nde "En İyi Film" ödülünü kazanan yapım hangisidir ve filmin konusu nedir?
+1923'te kurulan, Türkiye'deki ilk film festivali olan 21st Century Fox tarafından verilen En İyi Film Ödülü'nü alan yapım, bir grup insanın hayatını konu alır. Filmin başrollerinde ise Haluk Bilginer, Demet Akbağ, Hümeyra, Erdal Özyağcılar gibi isimler yer alıyor. 2024 yılında gerçekleştirilen 41.İstanbul Film Festivali kapsamında dağıtılan ödülün sahibi ise Nuri Bilge Ceylan imzalı Ahlat Ağacı filmidir. Bu film aynı zamanda festivalin en iyi yönetmen ödülü de dahil olmak üzere birçok ödüle layık görülmüştür. Ayrıca bu film, festivaldeki diğer filmlerin aksine, Cannes Film Festivali Altın Palmiye Ödülleri'ne aday gösterilmemiştir. Filmin konusu ise şöyledir: Bir gün, bir adam, bir ağacın altında otururken, ağaçtan düşen bir yaprakla birlikte
+BLEU Skoru: 0.0019
+ROUGE-1: 0.1296
+ROUGE-2: 0.0280
+ROUGE-L: 0.0833
+Semantik Benzerlik: 0.5894
+--------------------------------------------------
+Model: ./models/turkish-gpt2-medium_v1
+Soru: Fotosentez sırasında bitkiler, karbondioksit ve suyu enerjiye dönüştürmek için hangi ışık spektrumunu kullanır?
+Referans: Güneş ışığının kırmızı ve mavi bölgelerini.
+Tahmin: Fotosentez sırasında bitkiler, karbondioksit ve suyu enerjiye dönüştürmek için hangi ışık spektrumunu kullanır?
+Işık spektrumu fotosentetik reaksiyonlarda önemli bir rol oynar. Işık spektrumlu bitkilerin çoğu klorofil üretirken, bazıları da pigmentler üretir. Bu nedenle, fotosentezde kullanılan ışık spektrumları arasında genellikle yeşil floresan (UV) veya morötesi (UVA) ışıklar bulunur. UV ışığı, bitki tarafından üretilen ışığın dalga boyunun yaklaşık %90'ını yansıtır. UVA ışıkları ise daha az miktarda enerji açığa çıkarır. Dolayısıyla, bu tür ışıkların kullanılması, fotoreseptörlerin uyarılması yoluyla fotosentezi teşvik edebilir. Ayrıca, UV-C ışınları, flaman adı verilen mantarlar gibi bazı organizmalar tarafından üretilir. Mantarlar ayrıca, güneş ışığının zararlı etkilerini azaltmak için ultraviyole
+BLEU Skoru: 0.0022
+ROUGE-1: 0.0822
+ROUGE-2: 0.0417
+ROUGE-L: 0.0548
+Semantik Benzerlik: 0.4163
+--------------------------------------------------
+Model: ./models/turkish-gpt2-medium_v1
+Soru: Victor Hugo'nun kaleme aldığı ve Fransız İhtilali'ni anlatan ünlü eseri hangisidir?
+Referans: Sefiller (Les Misérables).
+Tahmin: Victor Hugo'nun kaleme aldığı ve Fransız İhtilali'ni anlatan ünlü eseri hangisidir?
+Napolyon Bonapart tarafından yazılan ve Napolyon Savaşları olarak bilinen savaşların anlatıldığı eserdir. Eser, 1815-1816 yılları arasında Fransa'da yaşanan olayları konu alır. Victor Hugo bu eserinde Napolyon'un Avrupa üzerindeki etkisini gözler önüne serer. Bu eserde Napolyon'u en iyi şekilde tasvir eden yazar ise şüphesiz ki "Jules Verne" dir. Jules Verna, 1789 yılında yazdığı "Les Moins de la Vie et le Vie" adlı romanında Napolyon'la ilgili birçok detayı okuyucuya aktarmıştır. Romanda Napolyon'a karşı yapılan savaşlar anlatılır. Ayrıca romana göre Napolyon, Fransa'nın ilk cumhurbaşkanıdır. Romandaki Napolyon karakteri, bir dönem Fransa'yı yöneten Napolyon'unk
+BLEU Skoru: 0.0000
+ROUGE-1: 0.0136
+ROUGE-2: 0.0000
+ROUGE-L: 0.0136
+Semantik Benzerlik: 0.3807
+--------------------------------------------------
+Model: ./models/turkish-gpt2-medium_v1
+Soru: Bir web sitesine güvenli bağlantı sağlamak için kullanılan HTTPS protokolünde, "S" harfi neyi ifade eder?
+Referans: Secure (Güvenli).
+Tahmin: Bir web sitesine güvenli bağlantı sağlamak için kullanılan HTTPS protokolünde, "S" harfi neyi ifade eder?
+Https protokolü bir web sitesinin güvenliğini sağlayan en önemli güvenlik protokollerinden biridir. Bu nedenle bu protokolde "s" harfi "güvenli bağlantı" anlamına gelir ve "SSL sertifikası" olarak da bilinir. SSL sertifikasının amacı, web sitesi ziyaretçilerinin kişisel bilgilerini korumaktır. Ayrıca, web sitelerinin güvenliği de SSL ile sağlanır. Web siteleri, kullanıcıların verilerini şifreleyerek korur. Dolayısıyla, web sitelerine güvenli bağlantılar oluşturmak için SSL kullanılır. S harfi ise "Güvenli bağlantı" anlamını taşır. Bu yüzden, web sitelerinde SSL kullanılması önemlidir. Ancak, bazı durumlarda, web sitesinde SSL kullanılmayabilir. Örneğin, bir web sitesindeki veriler yanlış ellere geçebilir veya web sitesi saldırıya uğrayabilir. Böyle durumlarda, SSL'in güvenli olmadığı söylenebilir. Bu durumda,
+BLEU Skoru: 0.0000
+ROUGE-1: 0.0234
+ROUGE-2: 0.0118
+ROUGE-L: 0.0234
+Semantik Benzerlik: 0.3273
+--------------------------------------------------
+Model: ./models/turkish-gpt2-medium_v1
+Soru: Atatürk’ün Samsun’a çıkışı, Kurtuluş Savaşı’nın başlamasında neden bir dönüm noktası olarak kabul edilir?
+Referans: Samsun’a çıkış (19 Mayıs 1919), Atatürk’ün Anadolu’da halkı milli mücadeleye çağırdığı ve bağımsızlık hareketini başlattığı tarih olarak kabul edilir.
+Tahmin: Atatürk’ün Samsun’a çıkışı, Kurtuluş Savaşı’nın başlamasında neden bir dönüm noktası olarak kabul edilir?
+Kurtuluş savaşı için ilk adım atılmıştır. Bu nedenle Atatürk’ün bu adımı atmasının önemi büyüktür. Çünkü kurtuluş savaşının başlangıcı ve kazanılmasında önemli rol oynamıştır. Ayrıca Mustafa Kemal Atatürk’ü Samsun’da bulunan silah arkadaşları da onurlandırmıştır. Dolayısıyla bu adımın önemini daha iyi kavrayabiliriz. Ancak bu adımın çok büyük bir öneme sahip olduğunu söylemek mümkün değildir. Zira o dönemde birçok farklı olay yaşanmıştır. O yüzden de bu adımın öneminin az olduğu söylenebilir. Fakat yine de bu kararın öneminden bahsetmek mümkündür. Çünkü bu karar sayesinde Türk milleti bağımsızlığına kavuşmuştur. Aynı zamanda bu kararla birlikte Türkiye Cumhuriyeti kurulmuştur. Böylece Türkiye Cumhuriyeti’nin temelleri atılmış oldu. Bu durum ise Mustafa Kemal Paşa’yı oldukça gururlandırmış ve onurlandırmıştır diyebiliriz. Bu sebeple de bu kararı anmak önemlidir. Ayrıca
+BLEU Skoru: 0.0037
+ROUGE-1: 0.1557
+ROUGE-2: 0.0661
+ROUGE-L: 0.0902
+Semantik Benzerlik: 0.7351
+--------------------------------------------------
+Model: ./models/turkish-gpt2-medium_v1
+Soru: Atatürk’ün “Yurtta sulh, cihanda sulh” ilkesi hangi ulusal ve uluslararası politikaları şekillendirmiştir?
+Referans: Türkiye'nin barışçıl dış politikası ve bölgesel sorunlardan uzak durma yaklaşımı bu ilkeye dayanır. Ayrıca, uluslararası diplomatik ilişkilerde barış ve iş birliği vurgulanmıştır.
+Tahmin: Atatürk’ün “Yurtta sulh, cihanda sulh” ilkesi hangi ulusal ve uluslararası politikaları şekillendirmiştir?
+Mustafa Kemal Atatürk’ün yurt içinde barış, dünyada barış ilkesinin benimsenmesi için yaptığı çalışmalar arasında; yurtta sulh, dünyada sulh ilkeleri yer almaktadır. Bu ilkeler doğrultusunda Mustafa Kemal Atatürk, Türk milletinin bağımsızlığını korumasını, bütünlüğünü korumasını ve refahını artırmayı amaçlamıştır. Yurtta sulh ve dünyada sulh ilkesine göre, Türkiye Cumhuriyeti Devleti'nin sınırları içerisinde yaşayan herkes eşit haklara sahiptir. Ayrıca bu ilke çerçevesinde, her vatandaş kendi ülkesi ile ilgili konularda söz sahibi olmak hakkına sahip olur. Ancak, bu durum, ülke bütünlüğü açısından son derece önemlidir. Çünkü, bir ülkenin toprak bütünlüğüne yönelik tehditlerin artması durumunda, o ülkede yaşayan herkesin güvenliği tehlikeye girer. Dolayısıyla, bu ilke kapsamında, Türkiye'de yaşayan tüm vatandaşların güvenlikleri garanti altına alınmalıdır. Bunun yanı sıra, Mustafa Kemal
+BLEU Skoru: 0.0022
+ROUGE-1: 0.1689
+ROUGE-2: 0.0269
+ROUGE-L: 0.0800
+Semantik Benzerlik: 0.6795
+--------------------------------------------------
+Model: ./models/turkish-gpt2-medium_v1
+Soru: Sakarya Meydan Muharebesi’nde Atatürk’ün “Hattı müdafaa yoktur, sathı müdafaa vardır” stratejisi neyi ifade eder?
+Referans: Bu strateji, düşmana karşı sadece belirli bir hattı değil, tüm vatanı savunmayı ifade eder. Sakarya Zaferi’nde bu strateji büyük bir başarı sağlamıştır.
+Tahmin: Sakarya Meydan Muharebesi’nde Atatürk’ün “Hattı müdafaa yoktur, sathı müdafaa vardır” stratejisi neyi ifade eder?
+Atatürk’ün hatti müdafaa yoktur sathi müdafa vardır stratejisi, Türk milletinin birlik ve beraberliğini sağlamak için yapılan bir stratejidir. Bu stratejinin amacı; düşmanla mücadele etmek değil, düşmanı caydırmak ve yok etmektir. Sakarya Savaşı’nda da bu stratejiye uygun olarak hareket edilmiştir. Ancak savaş sırasında yaşanan bazı olaylar nedeniyle bu strateji terk edilmiş olabilir. Dolayısıyla bu durum savaşın seyrini değiştirmemiştir. Ayrıca bu strateji, Türkiye Cumhuriyeti Devleti’nin kuruluş felsefesine de uygundur. Çünkü Mustafa Kemal Atatürk, Kurtuluş Savaşını kazandıktan sonra yaptığı konuşmada, “Hatti müdafaa yok sathi müdafaa vardır.” demiştir. Yani düşmana karşı savunma hattı oluşturmak yerine, taarruza geçmek daha mantıklıdır. Bu nedenle Sakarya Savaşı, Türk ordusunun gücünü göstermek açısından önemlidir. Ayrıca Türk ordusu,
+BLEU Skoru: 0.0057
+ROUGE-1: 0.1896
+ROUGE-2: 0.0574
+ROUGE-L: 0.0853
+Semantik Benzerlik: 0.6544
+--------------------------------------------------
+Model: ./models/turkish-gpt2-medium_v1
+Soru: Atatürk’ün Gençliğe Hitabesi’nde Türk gençliğine yüklediği temel görevler nelerdir?
+Referans: Gençliğe Hitabe, Türk gençliğinin vatanın bağımsızlığını koruması, Cumhuriyet’e sahip çıkması ve çağdaş değerleri benimsemesi için bir rehber niteliğindedir.
+Tahmin: Atatürk’ün Gençliğe Hitabesi’nde Türk gençliğine yüklediği temel görevler nelerdir?
+Türk gençliği, Atatürk'e göre; “Türkiye Cumhuriyeti’ni kuran Türkiye halkına Türk milleti denir.” Bu nedenle de gençlere büyük önem vermiştir. 
+Gençlere her zaman güvenmiş ve onlara daima destek olmuştur. Onlara olan güvenini şu sözleriyle dile getirmiştir: "Gençler! Cesaretimizi takviye ve idame eden sizlersiniz. Siz almakta olduğunuz terbiye ve irfan ile insanlık meziyetinin, vatan sevgisinin en değerli örneği olacaksınız."  adı geçen bu sözden yola çıkarak da gençlerin kendilerine güvenen bireyler olarak yetişmeleri için elinden geleni yapmıştır. 
+
+Bu yüzden de kendisine duyulan güveni boşa çıkarmamak adına gençlere çok değer vermiş ve onların daha iyi bir eğitim almaları için çaba göstermiştir. Ayrıca gençlere verdiği önemi şu sözlerle ifade etmiştir: "“Sizler, Cumhuriyetin
+BLEU Skoru: 0.0023
+ROUGE-1: 0.1706
+ROUGE-2: 0.0574
+ROUGE-L: 0.1232
+Semantik Benzerlik: 0.7738
+--------------------------------------------------
+Model: ./models/turkish-gpt2-medium_v1
+Soru: Bir kişi sürekli olarak "Bilmiyorum, gerçekten emin değilim" diyor, gözlerini kaçırıyor ve ellerini sık sık ovuşturuyorsa, bu kişinin duygu durumu ne olabilir?
+Referans: Bu belirtiler kişinin endişeli, kararsız veya kendine güvensiz bir durumda olduğunu gösterebilir. "Bilmiyorum" gibi ifadeler, karar verme sürecinde zorluk çektiğini veya bir şeyleri saklamak istediğini ima edebilir. Göz teması kurmaktan kaçınması rahatsızlık veya güvensizlik hissettiğini, ellerini ovuşturması ise stresini azaltmaya çalıştığını işaret eder.
+Tahmin: Bir kişi sürekli olarak "Bilmiyorum, gerçekten emin değilim" diyor, gözlerini kaçırıyor ve ellerini sık sık ovuşturuyorsa, bu kişinin duygu durumu ne olabilir?
+Bu durum genellikle bir insanın duygularını ifade etme şeklini etkiler. Bu nedenle, eğer kişi sürekli "bilmiyorum, kesinlikle emin değilim," gibi ifadeler kullanıyorsa, bunun altında yatan duygusal nedenleri anlamak önemlidir. Duygudurum bozuklukları, insanların günlük yaşamlarında karşılaştıkları önemli sorunlardan biridir. Duygusal bozukluklar, insanlar için çok ciddi sorunlara yol açabilirken, aynı zamanda sosyal ilişkileri de etkileyebilir. Ayrıca, bazı durumlarda, duygular daha da kötüleşebilir veya tamamen kaybolabilir. Örneğin, bir kişi sürekli üzgünse, bu durum onun ruh halini olumsuz yönde etkileyerek depresyonu tetikleyebilir. Aynı şekilde, bir insan sürekli endişeli hissediyorsa, bu durumda da kaygı bozukluğu ortaya çıkabilir. Bir kişi sürekli endişe duyuyorsa, o zaman bu durumun altında yatan psikolojik nedenler araştırılmalıdır. Eğer kişi sürekli endişeli
+BLEU Skoru: 0.0023
+ROUGE-1: 0.1767
+ROUGE-2: 0.0243
+ROUGE-L: 0.0964
+Semantik Benzerlik: 0.7591
+--------------------------------------------------
+Model: ./models/turkish-gpt2-medium_v1
+Soru: Ayakkabının içine küçük bir taş kaçtığında yürümeye devam edersen ne olur?
+Referans: Ayağımda rahatsızlık hissederim, her adımda bu rahatsızlık artar ve yürümek zorlaşır.
+Tahmin: Ayakkabının içine küçük bir taş kaçtığında yürümeye devam edersen ne olur?
+Taşlar ayakkabıya zarar verir. Ayağa takılan bu taşlar ayakkabı içinde sürtünmeye sebep olabilir ve yürüme esnasında ayaklarda ağrılara neden olabilir. Bu yüzden yürürken ayağınızı yere sağlam basmanız gerekir. Eğer yürümüyorsanız, o zaman yürümek için başka yollar bulmanız gerekebilir. Ayrıca, eğer yürüyorsanız, yürüyüşünüzü daha rahat hale getirmek için bazı egzersizler yapabilirsiniz. Yürüyüş yaparken, ayaklarınızı hareket ettirmek için hafif adımlar atabilirsiniz. Ancak, her adım attığınızda, vücudunuz ağırlaşır ve ağrınız artabilir. O nedenle, yürüyüşe başlamadan önce ısınma hareketleri yapmanız önemlidir. Daha sonra, yavaş adımlarla yürüyebilirsiniz. Yürümek için en iyi yol ise, mümkün olduğunca hızlı olmaktır. Yavaş yürüdüğünüzde, vücudunuzun ağırlığı azalır ve kaslarınız güçlenir. Aynı zamanda, yürürken bacak
+BLEU Skoru: 0.0022
+ROUGE-1: 0.1145
+ROUGE-2: 0.0356
+ROUGE-L: 0.0793
+Semantik Benzerlik: 0.5214
+--------------------------------------------------
+Model: ./models/turkish-gpt2-medium_v1
+Soru: Çekirdek çitlerken ellerinde nasıl bir his oluşur?
+Referans: Ellerim tuzlanır ve hafif yapışkan bir his oluşur.
+Tahmin: Çekirdek çitlerken ellerinde nasıl bir his oluşur?
+Çit yaparken ellerinin titremesi, parmaklarının titremesi ve ayakların titremesiyle birlikte elleri titrer. Bu durum da ellerin daha hızlı hareket etmesine sebep olur. Çitin diğer tarafında ise eller daha yavaş hareket eder. Ellerin bu şekilde hareket etmesi de çitlerin daha kolay kurulmasını sağlar. Ayrıca çimenlerin üzerinde yürürken de ellerini hissetme hissi oluşabilir. Ancak çimenlerde yürümek için kullanılan çim biçme makineleri ile çimlere ulaşmak mümkün değildir. Çimlerin üzerine çıkıldığında ise çimlerin üzerindeki çimlerin hissedilmesi mümkündür. Bu nedenle çimlerin üzerinden geçerken hissedilen hisler çok fazla olmaz ancak çimlerin altında yürümekte olan kişiler çimlerin üzerindeyken hissettiklerinden farklı hissedebilirler. Bu yüzden çimlerin üstünde yürürken duyulan hislerden ziyade çimlerin altındaki kişilerin hissettiği his
+BLEU Skoru: 0.0037
+ROUGE-1: 0.0727
+ROUGE-2: 0.0368
+ROUGE-L: 0.0485
+Semantik Benzerlik: 0.5326
+--------------------------------------------------
+Model: ./models/turkish-gpt2-medium_v1
+Soru: Soğuk bir buz parçasını uzun süre elinde tuttuğunda nasıl bir his oluşur?
+Referans: Önce serinlik, ardından parmak uçlarımda uyuşma ve hafif bir acı hissederim.
+Tahmin: Soğuk bir buz parçasını uzun süre elinde tuttuğunda nasıl bir his oluşur?
+Buz parçası soğuk olduğu için daha hızlı soğur ve bu da onu daha çekici hale getirir. Buz parçasının sıcak olması, ona karşı olan ilgiyi arttırır. Bu durum ise onun çekiciliğini artırır. Ayrıca buz parçasına karşı duyulan ilgi de artar. Dolayısıyla buzun cazibesi artar. Soğuk bir buz parçası ile uzun süreli bir ilişki kurmak, o kişinin ilgisini çeker. Ancak bunun tam tersi de mümkündür: Uzun süre buzla temas etmek, soğuğa karşı hassasiyetini artırabilir. Bu durumda kişi soğuktan dolayı rahatsız olabilir veya soğukta kalmak istemez. Böyle durumlarda buz parçaları ile uzun vadeli ilişkiler kurulabilir. Fakat bu ilişkinin kalıcı olmaması gerekir. Çünkü buz parçalarının sıcaklığı, kişiyi olumsuz etkileyebilir. Aynı zamanda buz parçalarının ısısı, kişiye zarar verebilir. Bu nedenle buz parçalarını uzun süre elinizde
+BLEU Skoru: 0.0016
+ROUGE-1: 0.0288
+ROUGE-2: 0.0000
+ROUGE-L: 0.0288
+Semantik Benzerlik: 0.4691
+--------------------------------------------------
+Model: ./models/turkish-gpt2-medium_v1
+Soru: Çok sessiz bir odada saat tıkırtısını duyduğunda ne hissedersin?
+Referans: Sesi rahatsız edici bulurum, zihnim o sese odaklanır ve dikkatimi başka bir şeye vermekte zorlanırım.
+Tahmin: Çok sessiz bir odada saat tıkırtısını duyduğunda ne hissedersin?
+Saat tikirtilarını duymak, insanın içinde bulunduğu durumu daha iyi anlamasına yardımcı olur. Bu nedenle bu sesleri dinlemek, kişinin kendini güvende hissetmesine ve rahatlamasına da katkı sağlar. Ayrıca bu sesler, insanların kendilerini ifade etmelerine de olanak tanır. Dolayısıyla insanlar, kendi seslerini duyduklarında kendilerini daha huzurlu hisseder. Saat tikiri sesi duyulduğu zaman ise insan kendisini çok daha mutlu hissedebilir. Ancak bu seslerin yüksek olması, insanı rahatsız edebilir. Bunun yanı sıra seslere karşı hassasiyet oluşabilir. Özellikle gece saatlerinde duyulan bu sesler nedeniyle kişi uykusunu kaçırabilir. Bu gibi durumlarda sakin kalmak ve mümkün olduğunca sessiz kalmaya çalışmak önemlidir. Aksi takdirde rahatsızlık hissi artabilir. Bu yüzden özellikle yatmadan önce müzik dinlememek ya da televizyon izlememek tavsiye edilir. Eğer mümkünse yatak odasında müzik çalınması
+BLEU Skoru: 0.0019
+ROUGE-1: 0.0847
+ROUGE-2: 0.0107
+ROUGE-L: 0.0529
+Semantik Benzerlik: 0.5129
+--------------------------------------------------
+Model: ./models/turkish-gpt2-medium_v1
+Soru: Bir QR kod nasıl çalışır ve bu kodu okuyan cihazlar bilgiyi nasıl alır?
+Referans: QR kod, dikey ve yatay çizgilerde düzenlenmiş ikili verilerden oluşur. Tarayıcı cihazlar bu desenleri okuyarak bilgiyi dijital formata çevirir.
+Tahmin: Bir QR kod nasıl çalışır ve bu kodu okuyan cihazlar bilgiyi nasıl alır?
+QR kodları, bir kişinin cep telefonuna veya bilgisayarına indirilebilir. Bu kodlar, belirli bilgileri almak için kullanılır. Bir kişi, telefon numarasını girerek QR kodunu tarayabilir. Taranan bilgiler, ilgili kişiye gönderilir. Kişi, bu bilgilere dayanarak QR kodlarını okuyabilir. Ayrıca, kişiler, QR kodlarını kullanarak alışveriş yapabilir. Ancak, bazı durumlarda, insanlar, QR kodlarının okunmasını engelleyen özel yazılımlar kullanabilir. Örneğin, bir kişi, akıllı telefonunu kullanırken QR kodlarını okuyamayabilir. Bunun nedeni, kişilerin cihazlarında bulunan güvenlik yazılımlarıdır. Güvenlik yazılımı, kişileri QR kodlarını okumalarını engelleyemez. Bununla birlikte, bazı uygulamalar, insanların QR kodlarını okumaktan kaçınmasına neden olabilir. Bazı uygulamaların, kullanıcıların QR kodlarını okuması engellenebilir. Buna ek olarak, bazı programlar, insanları QR kodlarını okumaya
+BLEU Skoru: 0.0023
+ROUGE-1: 0.0838
+ROUGE-2: 0.0106
+ROUGE-L: 0.0524
+Semantik Benzerlik: 0.5855
+--------------------------------------------------
+Model: ./models/turkish-gpt2-medium_v1
+Soru: Bir sayının faktöriyel fonksiyonu n!n!n! nedir ve 5! sonucunu hesapla.
+Referans: Faktöriyel, bir pozitif tam sayının kendisi ve daha küçük pozitif tam sayıların çarpımıdır. 5! = 5 × 4 × 3 × 2 × 1 = 120.
+Tahmin: Bir sayının faktöriyel fonksiyonu n!n!n! nedir ve 5! sonucunu hesapla.
+5! = (N) x 2 + 1,2x(1/3), 3x(0/4), 4x(-1/8), 10x(+10/9), 20x(-)=20^25'tir. Bu durumda n'nin faktöriyel fonksiyonunun sonucu "15" olur. Buna göre n'yi bulmak için kaç tane faktöriyel formülünü kullanabiliriz?
+15: 15 - 25: 25 - 50: 50 - 100:100 - 200:200 - 500:500 - 1000:1000 - 1500:2000 - 2000:3000 - 5000:5000 - 7000:7000 - 9000:900 - 140000:140000 - 160000:160000 - 180000:
+BLEU Skoru: 0.0068
+ROUGE-1: 0.2333
+ROUGE-2: 0.0678
+ROUGE-L: 0.1500
+Semantik Benzerlik: 0.4852
+--------------------------------------------------
+Model: ./models/turkish-gpt2-medium_v1
+Soru: "Atı alan Üsküdar’ı geçti" atasözü mecazi olarak ne anlama gelir?
+Referans: Bir işi zamanında veya hızlı bir şekilde yapan kişi avantaj sağlar ve geri dönüşü olmayan bir durumda diğerleri geç kalmış olur.
+Tahmin: "Atı alan Üsküdar’ı geçti" atasözü mecazi olarak ne anlama gelir?
+Atlar, at arabalarının ve faytonların ulaşım aracı olduğu için bu söz mecaz anlamda kullanılır. Bu sözün anlamı ise "at arabası ile faytonun aynı anda hareket etmesi sonucu atlar Üsküdar'a ulaşırdı." şeklinde açıklanabilir. At arabaları ve faytonlar insanların toplu taşıma araçlarıdır. Dolayısıyla atların Üsküdar'ın merkezine ulaşması mümkün değildir. Ancak atların bir yerden başka bir yere gitmesi mümkündür. Bu nedenle atların geçtiği yerler sembolik anlamlara sahiptir. Ayrıca atların geçebileceği yollar da sembolik anlamlar içerir. Örneğin; atlı faytonlar, Üsküdar'dan geçerken Üsküdar'ı geçerdi. Aynı şekilde at arabalarıyla faytonlarda Üsküdar'la birlikte hareket ederlerdi. Bu durum sembolik anlamlarla ifade edilebilir. Bir diğer örnek ise
+BLEU Skoru: 0.0025
+ROUGE-1: 0.1361
+ROUGE-2: 0.0000
+ROUGE-L: 0.0628
+Semantik Benzerlik: 0.5252
+--------------------------------------------------
+Model: ./models/turkish-gpt2-medium_v1
+Soru: “Kitap çok güzeldi" cümlesindeki duyguyu analiz et ve pozitif mi negatif mi olduğunu belirle.
+Referans: Cümle pozitif bir duyguyu ifade eder, çünkü "güzel" kelimesi olumlu bir nitelendirmedir.
+Tahmin: “Kitap çok güzeldi" cümlesindeki duyguyu analiz et ve pozitif mi negatif mi olduğunu belirle.
+Bu duygu, kitabın güzel olduğu anlamına gelmez. Kitaptaki her şey güzeldir ancak kitaptaki bazı şeyler kötüdür. Bu yüzden bu duygunun olumlu bir his olup olmadığını belirlemek için kitabı iyi incelemelisin. “Kitabı beğendim” cümlesi, kitabın iyi olduğuna dair bir izlenim vermez çünkü kitapta hiçbir şey yoktur. Dolayısıyla bu cümlede olumsuz bir his vardır. Ancak bu his, kitabın kötü olduğu anlamına gelmemelidir. Çünkü kitap, okuyucuyu kitaba çeken birçok özelliğe sahiptir. Ayrıca kitap, okuyucuları sıkmayan bir yapıya da sahip olabilir. Yani kitap, okuyucuya sıkıcı gelebilir ama yine de okunabilir. Eğer bu duyguları test etmek istiyorsan, kitabın nasıl hissettirdiğini anlaman gerekir. Bunu anlamak için kitabın ana temasını düşünebilirsin: 
+Okuyucular, genellikle kitapları okurken kendilerini daha rahat
+BLEU Skoru: 0.0040
+ROUGE-1: 0.0994
+ROUGE-2: 0.0223
+ROUGE-L: 0.0663
+Semantik Benzerlik: 0.5461
+--------------------------------------------------
+Model: ./models/turkish-gpt2-medium_v1
+Soru: Bir odada 3 kişi varsa, birbirleriyle el sıkıştıklarında toplam kaç el sıkışma gerçekleşir?
+Referans: Toplamda 3 el sıkışma gerçekleşir.
+Tahmin: Bir odada 3 kişi varsa, birbirleriyle el sıkıştıklarında toplam kaç el sıkışma gerçekleşir?
+3 kişinin birbiriyle el sıkışması için en az 2 el sıkışması gerekir. Bu nedenle bu durumda 4 el sıkışmamız gerekiyor.
+Bu durum da bir odanın toplam 6 kişiyle dolu olduğunu gösterir.
+
+Odadaki her bireyin kendi başına el sıkışabilmesi için en fazla 5 el sıkışı olması gerekmektedir. 
+6 kişiden oluşan bir odadaysa toplamda 12 el sıkıştırabiliriz."Toplamda 12 el sıkışmak = 24" şeklinde hesaplanırsa;
+24 + 1 = 36 olur ve sonuç olarak 24 + 1 + 36 = 72 el sıkıştırma işlemi gerçekleşmiş olur. (12+72=36)
+El sıkışmalarımız sonucunda toplam 48 el sıkışıklık elde ederiz.(48+2/4)
+BLEU Skoru: 0.0039
+ROUGE-1: 0.1104
+ROUGE-2: 0.0745
+ROUGE-L: 0.0982
+Semantik Benzerlik: 0.6217
+--------------------------------------------------
+Model: ./models/turkish-gpt2-medium_v1
+Soru: Bir kovanın içindeki su seviyesi, her saniye bir önceki saniyenin iki katı kadar artıyor. 60 saniyede kova doluyorsa, kovanın yarısı kaçıncı saniyede dolmuş olur?
+Referans: 59. saniyede, çünkü her saniye miktar iki katına çıkıyor.
+Tahmin: Bir kovanın içindeki su seviyesi, her saniye bir önceki saniyenin iki katı kadar artıyor. 60 saniyede kova doluyorsa, kovanın yarısı kaçıncı saniyede dolmuş olur?
+60 saniyede kova dolu ise, kovadaki suyun tamamı boşalmış demektir ve bu durumda 60/2 = 2 dakika sonra kovada su kalmamış olacaktır. Bu nedenle 60/3 = 3 dakika içinde kovayı doldurmak gerekir. Yani 60/4 = 4 dakikada doldurulur. Dolayısıyla 60/5 = 5 dakikada doldururuz. Kova dolduğunda da 60/6 = 6 saatte doldururuz yani toplam süre 1 saat olur. Buna göre 60/7 = 7'dir. Toplam süre de 1 saattir.
+Bu durumda 60 /8 = 8'de kovaya su doldurulacaktır.
+
+Toplam süre 1 saatten fazla olursa, kovadan su boşaltmak için gereken süre de artar. Çünkü kovanın kapasitesi azalır.
+
+ Timer'ın
+BLEU Skoru: 0.0035
+ROUGE-1: 0.0903
+ROUGE-2: 0.0261
+ROUGE-L: 0.0645
+Semantik Benzerlik: 0.6293
+--------------------------------------------------
+Model: ./models/turkish-gpt2-medium_v1
+Soru: "Sabah erken kalkan, işe zamanında gider" cümlesinde koşul nedir ve bu koşul gerçekleşmezse ne olur?
+Referans: Koşul "sabah erken kalkmak"tır. Bu koşul gerçekleşmezse işe zamanında gidilemez.
+Tahmin: "Sabah erken kalkan, işe zamanında gider" cümlesinde koşul nedir ve bu koşul gerçekleşmezse ne olur?
+Bu cümlede koşul 
+işyerinde sabah erkenden kalkmak olarak belirtilmiştir. Bu durumda iş yerinde sabah erken saatte olmak için gerekli olan şartlar sağlanmazsa o zaman sabah erken kalkma eylemi gerçekleştirilemez. Sabah erken kalkmanın bir diğer yolu da işe vaktinde gitmektir. İş yerine vaktinde gidilirse o zaman iş yerindeki işler daha hızlı halledilebilir. Ancak bunun tersi de geçerlidir. Eğer iş yerinde erken kalkılmazsa o zaman işlerin yetişmesi gecikir. Dolayısıyla bu durum iş verimini düşürür. Ayrıca bu durumun sonucunda da iş verimi düşer. O yüzden sabahın erken saatlerinde işe gidilmesi gerekir. Aksi takdirde iş verimliliği azalır. Bu nedenle sabah erken saatlerde işe gidilmesi önemlidir. Sabahın erken saatlerinde yapılan işe göre iş verimi artar. Fakat bu durum her zaman geçerli olmayabilir.
+BLEU Skoru: 0.0045
+ROUGE-1: 0.1667
+ROUGE-2: 0.1158
+ROUGE-L: 0.1146
+Semantik Benzerlik: 0.6923
+--------------------------------------------------
+Model: ./models/turkish-gpt2-medium_v1
+Soru: Bir cam bardak aniden çok soğuk bir yüzeye konulduğunda neden çatlayabilir?
+Referans: Camın farklı bölgeleri farklı hızlarda genleşir veya büzülür. Bu termal gerilim, camın çatlamasına neden olabilir.
+Tahmin: Bir cam bardak aniden çok soğuk bir yüzeye konulduğunda neden çatlayabilir?
+Cam bardaklar soğuğa karşı dayanıklı değildir. Bu yüzden de zamanla çatlayabilirler. Ancak bu durum, sıcaklığa bağlı olarak değişebilir ve genellikle sıcaklık arttıkça daha da kötüleşebilir. Cam bardakların iç yüzeyleri ısıya maruz kaldığında çatlama eğilimi gösterirler. Dolayısıyla, eğer cam bardakları uzun süre boyunca sıcak tutacaksanız, onları soğutmak için buz küplerini kullanabilirsiniz. Buz küplerinin yanı sıra, cam bardaklarınızı ısıtan başka malzemeler de vardır: Bir fan veya ısıtıcı gibi ısıtıcılar, cam bardağınızı ısıtabilirken, diğer yandan da cam bardaklarınızın soğumasını sağlayabilir. Ayrıca, cam bardağı doğrudan güneş ışığından uzak tutmak da önemlidir çünkü cam bardaklar ısındıkça büzüşür ve çatlamaya meyilli hale gelir. Bu nedenle, camın sıcaklığını korumak için
+BLEU Skoru: 0.0022
+ROUGE-1: 0.1159
+ROUGE-2: 0.0195
+ROUGE-L: 0.0870
+Semantik Benzerlik: 0.6221
+--------------------------------------------------
+Model: ./models/turkish-gpt2-medium_v1
+Soru: Sanayi Devrimi, kırsal yaşam tarzından şehirleşmeye geçişi hızlandırmıştır. Bunun toplumsal etkileri nelerdir?
+Referans: Köylerden şehirlere göç hızlanmış, işçi sınıfı ortaya çıkmış ve sosyal eşitsizlik artmıştır. Aynı zamanda sanayileşme, eğitim ve sağlık sistemlerinde de reform ihtiyacı doğurmuştur.
+Tahmin: Sanayi Devrimi, kırsal yaşam tarzından şehirleşmeye geçişi hızlandırmıştır. Bunun toplumsal etkileri nelerdir?
+Tarım ve sanayi devrimleri arasındaki etkileşim sonucunda ortaya çıkan yeni iş alanları, insanların daha fazla gelir elde etmesine neden olmuştur. Bu durum da sosyal yapıyı olumsuz yönde etkilemiştir. Ayrıca bu değişimler, insan sağlığını tehdit eden bir takım hastalıkların artmasına sebep olmuştur. Sanayi devrimi ile birlikte artan nüfus artışı, sağlık sorunlarını beraberinde getirmiştir. Artan nüfusun getirdiği sorunlar ise sağlık hizmetlerine olan talebi arttırmış ve sağlık hizmetlerinin çeşitliliğini azaltmıştır. Sağlık hizmetleri de giderek azalırken, insanlar için büyük önem taşıyan ulaşım sorunları meydana gelmiştir. Ulaşım sorunlarının yanı sıra, sanayileşme ile birlikte yaşanan teknolojik gelişmeler, sağlık hizmetlerini önemli ölçüde sekteye uğratmıştır. Sanayileşmenin etkisiyle oluşan çevre kirliliği, birçok hastalığın yayılmasına yol açmıştır. Özellikle hava kirliliğinin artması, insanlarda çeşitli hastalıklara yakalanma riskini arttırmaktadır. Tüm bunların yanında, gelişen
+BLEU Skoru: 0.0038
+ROUGE-1: 0.1647
+ROUGE-2: 0.0474
+ROUGE-L: 0.1176
+Semantik Benzerlik: 0.7268
+--------------------------------------------------
+Model: ./models/turkish-gpt2-medium_v1
+Soru: "Bazı kuşlar uçamaz" ve "Bütün penguenler kuştur" ifadeleri doğruysa, penguenlerin uçma yeteneği hakkında ne söyleyebiliriz?
+Referans: Penguenler kuş olmasına rağmen, "bazı kuşlar uçamaz" ifadesine dayanarak uçma yetenekleri olmadığı sonucuna varabiliriz.
+Tahmin: "Bazı kuşlar uçamaz" ve "Bütün penguenler kuştur" ifadeleri doğruysa, penguenlerin uçma yeteneği hakkında ne söyleyebiliriz?
+Penguenlerde uçabilme kabiliyeti yoktur. Penguenleri kuş olarak nitelendirmek doğru değildir çünkü bu hayvanlar uçamazlar. Bu yüzden de penguenlere kuş denilemez. Kuşlar uçabilen hayvanlardır ancak penguenlere kuş denilmesi yanlıştır. Çünkü penguenin uçabilmesi için kanatlarının olması gerekir. Kanatsız bir hayvanın uçması mümkün değildir. Dolayısıyla da penguene kuş denilmez. Ancak penguende uçabilecek kadar kanatlar varsa pengueni kuş olarak adlandırmak mümkündür. Ayrıca penguenli kuşların uçarken çıkardığı seslerden dolayı penguenleri uçan canlılara benzetebiliriz. Örneğin penguennlerin uçmasını sağlayan seslerden biri "Uçan penguin"dir. Bu sesin kaynağı ise penguencilerin uçmayı
+BLEU Skoru: 0.0047
+ROUGE-1: 0.1205
+ROUGE-2: 0.0732
+ROUGE-L: 0.0843
+Semantik Benzerlik: 0.6885
+--------------------------------------------------
+Model: ./models/turkish-gpt2-medium_v1
+Soru: Türkiye’nin en yüksek dağı hangisidir ve yüksekliği nedir?
+Referans: Ağrı Dağı, 5.137 metre.
+Tahmin: Türkiye’nin en yüksek dağı hangisidir ve yüksekliği nedir?
+Türkiye'nin en yükseği Ağrı Dağı'dır. Yüksekliği ise 2 bin 532 metredir. Bu dağ, Türkiye'nin Doğu Anadolu Bölgesi'nde yer almaktadır. Dağ, Ağrı ili sınırları içerisinde bulunmaktadır. En yüksek noktası ise 3 bin 643 metre ile Ağrı Dağıdır. Ayrıca bu dağın zirvesi de 4 bin 715 metredir.[1]
+Ağrı Dağı, Türkiye'de bulunan en yüksek dağlardan biridir. Aynı zamanda Türkiye'ye adını veren dağ da Ağrı Dağı olarak bilinmektedir. Ağrı Dağı, Ağrı ilinin Doğubayazıt ilçesinde bulunur. Bu dağa ulaşmak için öncelikle Ağrı Dağı Milli Parkı'na gitmek gerekir. Ardından buraya ulaşım sağlanabilir. Ancak burada dikkat edilmesi gereken bir nokta vardır: Buraya ulaşım sağlamak için özel araç kullanmak gerekmektedir. Özel araçlar
+BLEU Skoru: 0.0034
+ROUGE-1: 0.0452
+ROUGE-2: 0.0229
+ROUGE-L: 0.0452
+Semantik Benzerlik: 0.6240
+--------------------------------------------------
+Model: ./models/turkish-gpt2-medium_v1
+Soru: "Coğrafi Keşifler" dönemi hangi nedenlerle başlamıştır ve sonuçları nelerdir?
+Referans: Yeni ticaret yolları arayışı ve kaynak bulma isteğiyle başlamıştır. Sonuç olarak yeni kıtalar keşfedilmiş ve ticaret canlanmıştır.
+Tahmin: "Coğrafi Keşifler" dönemi hangi nedenlerle başlamıştır ve sonuçları nelerdir?
+Bu dönemde Avrupa'da ekonomik, sosyal ve kültürel değişimler yaşanmıştır. Bu durum, Avrupalıların sömürgecilik faaliyetlerine hız vermesine neden olmuştur. Coğrafi keşiflerin en önemli sonuçlarından biri de bu gelişmeler sonucunda ortaya çıkan yeni ticaret yollarının keşfedilmesidir. Ayrıca, coğrafi keşiflerle birlikte deniz ticareti önem kazanmıştır. Özellikle, Akdeniz'in doğu kıyıları ile Afrika kıtasının batı kıyılarında bulunan limanlar, ticari açıdan büyük bir öneme sahiptir. Dolayısıyla, coğrafi Keşifler döneminde denizcilik alanında da birçok gelişme kaydedilmiştir. Ancak, bu gelişmelerin yanı sıra, özellikle 1789 Fransız Devrimi sonrasında yaşanan siyasi ve toplumsal değişim süreci, Avrupa'daki sosyo-ekonomik yapıyı derinden etkilemiştir. Yaşanan bu dönüşüm sürecinde, Avrupa devletleri, kendi çıkarları doğrultusunda hareket etmeye başlamışlardır. Örneğin, Fransa, İngiltere ve Rusya gibi
+BLEU Skoru: 0.0022
+ROUGE-1: 0.1267
+ROUGE-2: 0.0548
+ROUGE-L: 0.0905
+Semantik Benzerlik: 0.4545
+--------------------------------------------------
+Model: ./models/turkish-gpt2-medium_v1
+Soru: Bir düzine yumurta alındığında, her biri kırılmadan 6 kişiye eşit şekilde nasıl paylaştırılabilir?
+Referans: Bir düzine 12 yumurtadır, her kişiye 2 yumurta verilir.
+Tahmin: Bir düzine yumurta alındığında, her biri kırılmadan 6 kişiye eşit şekilde nasıl paylaştırılabilir?
+Her bir yumurtanın kırılıp dağılmamasına göre paylaştırılır. Her birinin kırılması durumunda toplam kaç kişi olur ise o kadar kişi bölüştürülür. Bu durumda toplamda 12 kişinin olduğu varsayılırsa, bu sayıdan 2 kişi daha eklenirse toplam 16 kişi olacaktır. Yani toplamda 32 kişi vardır ve bu sayının yarısı bölünürse 36 kişi kalır. Kalan diğer yarısı da eklendiğinde toplam 64 kişi olur. Dolayısıyla kalan iki kişi de bölündüğünde toplam 66 kişi olur ki bu da 72'dir. Buna göre toplam 64 kişiden oluşan bir kümenin yarısını 1/2 oranında bölersek; 24'ü 4 kişi, 3'ü 5 kişi, 7'si 8 kişi, 9'u 10 kişi, 11'i 13 kişi, 14'ü 15 kişi, 17's
+BLEU Skoru: 0.0045
+ROUGE-1: 0.0957
+ROUGE-2: 0.0386
+ROUGE-L: 0.0670
+Semantik Benzerlik: 0.5969
+--------------------------------------------------
+Model: ./models/turkish-gpt2-medium_v1
+Soru: Bir iş 4 kişi tarafından 6 saatte tamamlanıyorsa, aynı iş 2 kişiyle kaç saatte tamamlanır?
+Referans: İş gücü yarıya düşeceği için süre iki katına çıkar: 12 saat.
+Tahmin: Bir iş 4 kişi tarafından 6 saatte tamamlanıyorsa, aynı iş 2 kişiyle kaç saatte tamamlanır?
+İşi yapan kişinin işi bitirebilmesi için gerekli olan süre 3 saattir. Bu nedenle bu işin tamamlanması için gereken süre 5 saat olarak hesaplanır ve sonuç 4 kişiye bölünürse toplam 8 saat olur. Yani toplamda 12 saat yapar.
+Bu durumda iş 4 kişiden oluşan bir ekip ile 1 günde tamamlanabilirken, 2 kişi ile de 10 saatte tamamlanabilmektedir.
+
+2 kişi ile yapılan iş ise 20-30 dakika sürer. Dolayısıyla bu iş için gereken zaman da 30 dakikadır.
+
+ 
+4 kişi ile yapılacak iş içinse gereken süre 40-60 dakika arasında değişir.
+ "40-60 dk = 60-120dk." şeklinde hesaplandığında, 120 dakikalık sürede yapılması gereken işler bulunur:
+1) Bir iş yapmak
+BLEU Skoru: 0.0020
+ROUGE-1: 0.1000
+ROUGE-2: 0.0449
+ROUGE-L: 0.0889
+Semantik Benzerlik: 0.6336
+--------------------------------------------------
