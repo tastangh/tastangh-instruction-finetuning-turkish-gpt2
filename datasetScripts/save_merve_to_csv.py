@@ -20,13 +20,6 @@ def save_merve_dataset_to_csv(output_path: str):
     # Hugging Face Dataset'i pandas DataFrame'e dönüştür
     df = pd.DataFrame(train_data)
 
-    # Sütunları düzenle (isteğe bağlı, Türkçe sütun isimlerini koruyabilirsiniz)
-    df = df.rename(columns={
-        "talimat": "instruction",
-        "giriş": "input",
-        "çıktı": "output"
-    })
-
     # DataFrame'i CSV olarak kaydet
     df.to_csv(output_path, index=False, encoding="utf-8")
     print(f"Veri kümesi başarıyla {output_path} dosyasına kaydedildi.")

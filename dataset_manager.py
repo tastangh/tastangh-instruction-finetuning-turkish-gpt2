@@ -18,6 +18,7 @@ class DatasetManager:
 
         # Veri kümesini yükle
         df = pd.read_csv(self.dataset_paths[dataset_name])
+        df.columns = df.columns.str.strip()  # Sütun adlarındaki boşlukları temizle
         print(f"{dataset_name} başarıyla yüklendi. Sütunlar: {df.columns.tolist()}")
 
         # Dataset formatlama
