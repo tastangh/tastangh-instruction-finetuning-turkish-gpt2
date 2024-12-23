@@ -51,7 +51,7 @@ class Trainer:
         """
         training_args = TrainingArguments(
             output_dir=self.output_dir,
-            per_device_train_batch_size=2,  #  Gpu error gidermek için 2 ye indirdim , colab nvdia pro'da 8 yapılabilir.
+            per_device_train_batch_size=8,  #  Gpu error gidermek için 2 ye indirdim , colab nvdia pro'da 8 yapılabilir.
             gradient_accumulation_steps=16,  # Gradyan biriktirme
             num_train_epochs=5, 
             save_steps=2000,
