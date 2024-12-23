@@ -101,11 +101,28 @@ class Evaluator:
 
             print(f"Model {model_dir} test işlemi tamamlandı.")
 
-        # Sonuçları Excel dosyasına kaydet
-        results_df = pd.DataFrame(results)
-        results_df.to_excel(self.output_excel, index=False, engine="openpyxl")
-        print(f"Sonuçlar {self.output_excel} dosyasına kaydedildi.")
+            # Sonuçları Excel dosyasına kaydet
+            results_df = pd.DataFrame(results)
+            results_df.to_excel(self.output_excel, index=False, engine="openpyxl")
+            print(f"Sonuçlar {self.output_excel} dosyasına kaydedildi.")
 
+            # Sonuçları TXT dosyasına kaydet
+            txt_file_path = self.output_excel.replace(".xlsx", ".txt")  # Aynı isimli bir .txt dosyası oluştur
+            with open(txt_file_path, "w", encoding="utf-8") as txt_file:
+                for result in results:
+                    txt_file.write(
+                        f"Model: {result['model']}\n"
+                        f"Soru: {result['question']}\n"
+                        f"Referans: {result['reference']}\n"
+                        f"Tahmin: {result['prediction']}\n"
+                        f"BLEU Skoru: {result['bleu']:.4f}\n"
+                        f"ROUGE-1: {result['rouge1']:.4f}\n"
+                        f"ROUGE-2: {result['rouge2']:.4f}\n"
+                        f"ROUGE-L: {result['rougeL']:.4f}\n"
+                        f"Semantik Benzerlik: {result['semantic_similarity']:.4f}\n"
+                        f"{'-'*50}\n"
+                    )
+            print(f"Sonuçlar {txt_file_path} dosyasına kaydedildi.")
 
 if __name__ == "__main__":
     # Test için kullanılacak modeller
