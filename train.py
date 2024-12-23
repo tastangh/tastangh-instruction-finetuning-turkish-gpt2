@@ -104,12 +104,6 @@ if __name__ == "__main__":
     ]
 
     # Paralel işlem havuzu oluştur
-    tasks = []
-    with ProcessPoolExecutor(max_workers=2) as executor:  # Aynı anda en fazla 2 işlem
-        for dataset_name, dataset_path in datasets.items():
-            for model_name in models:
-                tasks.append(executor.submit(train_model, model_name, dataset_name, dataset_path))
-
-        # Tüm görevlerin tamamlanmasını bekle
-        for task in tasks:
-            task.result()
+    for dataset_name, dataset_path in datasets.items():
+        for model_name in models:
+            train_model(model_name, dataset_name, dataset_path)
