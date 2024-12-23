@@ -62,7 +62,7 @@ class Trainer:
             max_grad_norm=1.0,  # Gradyan normu kesimi
             warmup_steps=100,  # Öğrenme oranını sabitlemek için ısınma adımları
             weight_decay=0.01,  # Overfitting'i azaltmak için ağırlık sönümleme
-            save_total_limit=11,  # Maksimum kaydedilecek model sayısı
+            save_total_limit=1,  # Maksimum kaydedilecek model sayısı
         )
 
         # Trainer nesnesi
