@@ -4,7 +4,9 @@ from trl import SFTTrainer
 from transformers import TrainingArguments, EarlyStoppingCallback
 from peft import LoraConfig, get_peft_model
 from dataset_manager import DatasetManager
-
+import os
+import shutil
+from google.colab import files  # Colab için gerekli
 
 class Trainer:
     def __init__(self, model_name: str, output_dir: str):
@@ -103,6 +105,11 @@ class Trainer:
         model.save_pretrained(self.output_dir)
         tokenizer.save_pretrained(self.output_dir)
         print(f"Model {self.output_dir} dizinine kaydedildi.")
+
+        zip_path = f"{self.output_dir}.zip"
+        shutil.make_archive(self.output_dir, 'zip', self.output_dir)
+        print(f"{zip_path} dosyası oluşturuldu. İndirme başlıyor...")
+        files.download(zip_path)
 
 
 
