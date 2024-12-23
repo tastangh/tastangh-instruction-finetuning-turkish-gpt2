@@ -19,12 +19,13 @@ class Trainer:
         model = AutoModelForCausalLM.from_pretrained(self.model_name)
 
         lora_config = LoraConfig(
-            r=64,
-            lora_alpha=32,
-            target_modules=["c_attn", "c_proj", "q_attn", "v_proj"],
-            lora_dropout=0.2,
-            bias="none",
+            r=32,  # Daha yüksek kapasite için
+            lora_alpha=64,  # Modelin öğrenme kapasitesini artırır
+            target_modules=["c_attn", "c_proj", "q_attn", "v_proj"],  # Dikkat mekanizması katmanları
+            lora_dropout=0.1,  # Aşırı öğrenmeyi engellemek için düşük dropout
+            bias="none",  # Bias terimlerini dondur
         )
+
         model = get_peft_model(model, lora_config)
 
         device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
@@ -38,18 +39,16 @@ class Trainer:
     def fine_tune(self, model, tokenizer, train_dataset):
         training_args = TrainingArguments(
             output_dir=self.output_dir,
-            per_device_train_batch_size=1,
-            gradient_accumulation_steps=16,
+            per_device_train_batch_size=8,  # GPU bellek sınırına göre ayarlanabilir
+            gradient_accumulation_steps=4,
             num_train_epochs=5,
-            save_steps=2000,
+            save_steps=5000,
             logging_dir=f"{self.output_dir}/logs",
-            learning_rate=1e-5,
-            bf16=torch.cuda.is_bf16_supported(),
-            fp16=not torch.cuda.is_bf16_supported(),
-            max_grad_norm=1.0,
-            warmup_steps=100,
+            learning_rate=5e-5,
+            warmup_steps=500,
             weight_decay=0.01,
-            save_total_limit=1,
+            fp16=True,
+            save_total_limit=2,
         )
 
         trainer = SFTTrainer(
@@ -65,6 +64,7 @@ class Trainer:
         tokenizer.save_pretrained(self.output_dir)
         print(f"Model {self.output_dir} dizinine kaydedildi.")
         shutil.make_archive(self.output_dir, 'zip', self.output_dir)
+
 
 
 def train_model(model_name, dataset_name, dataset_path):
@@ -105,7 +105,7 @@ if __name__ == "__main__":
 
     # Paralel işlem havuzu oluştur
     tasks = []
-    with ProcessPoolExecutor() as executor:
+    with ProcessPoolExecutor(max_workers=2) as executor:  # Aynı anda en fazla 2 işlem
         for dataset_name, dataset_path in datasets.items():
             for model_name in models:
                 tasks.append(executor.submit(train_model, model_name, dataset_name, dataset_path))
