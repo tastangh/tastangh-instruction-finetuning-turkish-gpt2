@@ -80,8 +80,6 @@ class Trainer:
         print(f"Model {self.output_dir} dizinine kaydedildi.")
         zip_path = f"{self.output_dir}.zip"
         shutil.make_archive(self.output_dir, 'zip', self.output_dir)
-        print(f"{zip_path} dosyası oluşturuldu. İndirme başlıyor...")
-        files.download(zip_path)
 
 if __name__ == "__main__":
     # Eğitimde kullanılacak veri kümeleri
