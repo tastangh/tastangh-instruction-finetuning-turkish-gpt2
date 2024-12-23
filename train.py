@@ -27,10 +27,10 @@ class Trainer:
 
         # LoRA ayarları
         lora_config = LoraConfig(
-            r=16,  # Daha yüksek rank değeri
+            r=64,  
             lora_alpha=32,  # Daha güçlü ağırlık faktörü
-            target_modules=["c_attn", "c_proj"],  # Önemli transformer katmanları
-            lora_dropout=0.1,  # Aşırı öğrenmeyi önlemek için
+            target_modules=["c_attn", "c_proj", "q_attn", "v_proj"],
+            lora_dropout=0.2,  
             bias="none",
         )
         model = get_peft_model(model, lora_config)
@@ -51,18 +51,18 @@ class Trainer:
         """
         training_args = TrainingArguments(
             output_dir=self.output_dir,
-            per_device_train_batch_size=2,  # gpu error gidermek için 2 ye indirdim
-            gradient_accumulation_steps=8,  # Gradyan biriktirme
-            num_train_epochs=5,  # Daha uzun eğitim döngüleri
-            save_steps=500,
+            per_device_train_batch_size=2,  #  Gpu error gidermek için 2 ye indirdim , colab nvdia pro'da 8 yapılabilir.
+            gradient_accumulation_steps=16,  # Gradyan biriktirme
+            num_train_epochs=5, 
+            save_steps=2000,
             logging_dir=f"{self.output_dir}/logs",
-            learning_rate=2e-5,  # Daha küçük öğrenme oranı
+            learning_rate=1e-5,  
             bf16=torch.cuda.is_bf16_supported(),  # GPU BF16 destekliyorsa kullanılır
-            fp16=not torch.cuda.is_bf16_supported(),  # Aksi durumda FP16 kullanılır
-            max_grad_norm=1.0,  # Gradyan normu kesimi
+            fp16=not torch.cuda.is_bf16_supported(), 
+            max_grad_norm=1.0, 
             warmup_steps=100,  # Öğrenme oranını sabitlemek için ısınma adımları
             weight_decay=0.01,  # Overfitting'i azaltmak için ağırlık sönümleme
-            save_total_limit=1,  # Maksimum kaydedilecek model sayısı
+            save_total_limit=1, 
         )
 
         # Trainer nesnesi
@@ -85,14 +85,14 @@ if __name__ == "__main__":
     # Eğitimde kullanılacak veri kümeleri
     datasets = {
         "v1": "./dataset/v1.csv",
-        # "v2": "./dataset/v2.csv",
-        # "v3": "./dataset/v3.csv",
+        "v2": "./dataset/v2.csv",
+        "v3": "./dataset/v3.csv",
     }
 
     # Kullanılacak modeller
     models = [
         "ytu-ce-cosmos/turkish-gpt2-medium",
-        # "ytu-ce-cosmos/turkish-gpt2-large",
+        "ytu-ce-cosmos/turkish-gpt2-large",
     ]
 
     # Dataset yöneticisi

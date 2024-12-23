@@ -7,7 +7,7 @@ BLEU Skoru: 0.0033
 ROUGE-1: 0.0465
 ROUGE-2: 0.0353
 ROUGE-L: 0.0465
-Semantik Benzerlik: 0.5630
+Semantik Benzerlik: 0.7487
 --------------------------------------------------
 Model: ./models/turkish-gpt2-medium_v1
 Soru: Türkiye Büyük Millet Meclisi Nerededir? 
@@ -22,7 +22,7 @@ BLEU Skoru: 0.0000
 ROUGE-1: 0.0118
 ROUGE-2: 0.0000
 ROUGE-L: 0.0118
-Semantik Benzerlik: 0.3521
+Semantik Benzerlik: 0.5345
 --------------------------------------------------
 Model: ./models/turkish-gpt2-medium_v1
 Soru: TUSAŞ tarafından geliştirilen ve Türkiye'nin ilk yerli haberleşme uydusu olan projenin adı nedir?
@@ -33,7 +33,7 @@ BLEU Skoru: 0.0019
 ROUGE-1: 0.0432
 ROUGE-2: 0.0292
 ROUGE-L: 0.0432
-Semantik Benzerlik: 0.4849
+Semantik Benzerlik: 0.7363
 --------------------------------------------------
 Model: ./models/turkish-gpt2-medium_v1
 Soru: Türkiye'nin ilk kadın tiyatro sanatçısı kimdir?
@@ -44,7 +44,7 @@ BLEU Skoru: 0.0000
 ROUGE-1: 0.0000
 ROUGE-2: 0.0000
 ROUGE-L: 0.0000
-Semantik Benzerlik: 0.1674
+Semantik Benzerlik: 0.6280
 --------------------------------------------------
 Model: ./models/turkish-gpt2-medium_v1
 Soru: Herodot'un yazdığı, Mısır firavununun dilin kökeni deneyinde, doğunca çobana verilerek kapatılan, o dahil kimseyle konuşturulmayan çocuğun söylediği ilk kelime nedir?
@@ -55,7 +55,7 @@ BLEU Skoru: 0.0000
 ROUGE-1: 0.0000
 ROUGE-2: 0.0000
 ROUGE-L: 0.0000
-Semantik Benzerlik: 0.2783
+Semantik Benzerlik: 0.5338
 --------------------------------------------------
 Model: ./models/turkish-gpt2-medium_v1
 Soru: Kur'an-ı Kerim'de hangisi üzerine yemin edilmemiştir? Deniz Güneş Arı Kalem
@@ -66,7 +66,7 @@ BLEU Skoru: 0.0021
 ROUGE-1: 0.0141
 ROUGE-2: 0.0000
 ROUGE-L: 0.0141
-Semantik Benzerlik: 0.4100
+Semantik Benzerlik: 0.4877
 --------------------------------------------------
 Model: ./models/turkish-gpt2-medium_v1
 Soru: Osmanlı İmparatorluğu’nun son döneminde ekonomik krizi yönetmek için oluşturulan ve dış borçların tahsilatını düzenleyen kurumun adı nedir?
@@ -77,7 +77,7 @@ BLEU Skoru: 0.0000
 ROUGE-1: 0.0278
 ROUGE-2: 0.0000
 ROUGE-L: 0.0278
-Semantik Benzerlik: 0.3106
+Semantik Benzerlik: 0.5922
 --------------------------------------------------
 Model: ./models/turkish-gpt2-medium_v1
 Soru: Osmanlı İmparatorluğu’nun son padişahı Vahdettin midir yoksa Abdülmecid Efendi?
@@ -88,7 +88,7 @@ BLEU Skoru: 0.0270
 ROUGE-1: 0.2500
 ROUGE-2: 0.1579
 ROUGE-L: 0.2083
-Semantik Benzerlik: 0.7812
+Semantik Benzerlik: 0.9388
 --------------------------------------------------
 Model: ./models/turkish-gpt2-medium_v1
 Soru: Işık hızına ulaşan bir cismin kütlesi sıfır mı olur yoksa sonsuz mu?
@@ -99,7 +99,7 @@ BLEU Skoru: 0.0119
 ROUGE-1: 0.1308
 ROUGE-2: 0.0943
 ROUGE-L: 0.1215
-Semantik Benzerlik: 0.6215
+Semantik Benzerlik: 0.8562
 --------------------------------------------------
 Model: ./models/turkish-gpt2-medium_v1
 Soru: Güneş bir gezegen midir yoksa bir yıldız mı?
@@ -110,7 +110,7 @@ BLEU Skoru: 0.0000
 ROUGE-1: 0.0968
 ROUGE-2: 0.0326
 ROUGE-L: 0.0860
-Semantik Benzerlik: 0.7124
+Semantik Benzerlik: 0.8134
 --------------------------------------------------
 Model: ./models/turkish-gpt2-medium_v1
 Soru: 0, asal bir sayı mıdır yoksa değil midir?
@@ -130,7 +130,7 @@ BLEU Skoru: 0.0027
 ROUGE-1: 0.1690
 ROUGE-2: 0.0857
 ROUGE-L: 0.1268
-Semantik Benzerlik: 0.6284
+Semantik Benzerlik: 0.8612
 --------------------------------------------------
 Model: ./models/turkish-gpt2-medium_v1
 Soru: Türkiye’nin en uzun nehri hangisidir?
@@ -141,7 +141,7 @@ BLEU Skoru: 0.0000
 ROUGE-1: 0.0120
 ROUGE-2: 0.0000
 ROUGE-L: 0.0120
-Semantik Benzerlik: 0.4894
+Semantik Benzerlik: 0.6101
 --------------------------------------------------
 Model: ./models/turkish-gpt2-medium_v1
 Soru: Schrödinger'in kedisi deneysel bir durum mudur yoksa bir düşünce deneyi mi?
@@ -152,7 +152,7 @@ BLEU Skoru: 0.0020
 ROUGE-1: 0.0548
 ROUGE-2: 0.0417
 ROUGE-L: 0.0548
-Semantik Benzerlik: 0.5380
+Semantik Benzerlik: 0.7391
 --------------------------------------------------
 Model: ./models/turkish-gpt2-medium_v1
 Soru: İnsan psikolojisinde, bir bireyin aynı anda hem bir şeyi istemesi hem de ondan kaçınmak istemesi durumu hangi terimle açıklanır?
@@ -163,7 +163,7 @@ BLEU Skoru: 0.0000
 ROUGE-1: 0.0415
 ROUGE-2: 0.0105
 ROUGE-L: 0.0311
-Semantik Benzerlik: 0.5181
+Semantik Benzerlik: 0.7546
 --------------------------------------------------
 Model: ./models/turkish-gpt2-medium_v1
 Soru: Galatasaray Futbol Takımı, UEFA Kupası'nı hangi yıl kazanmıştır?
@@ -174,7 +174,7 @@ BLEU Skoru: 0.0000
 ROUGE-1: 0.0323
 ROUGE-2: 0.0217
 ROUGE-L: 0.0323
-Semantik Benzerlik: 0.3314
+Semantik Benzerlik: 0.6175
 --------------------------------------------------
 Model: ./models/turkish-gpt2-medium_v1
 Soru: İnsanlar neden soğuk havada nefes verdiklerinde "buhar" görür?
@@ -185,7 +185,7 @@ BLEU Skoru: 0.0020
 ROUGE-1: 0.1137
 ROUGE-2: 0.0191
 ROUGE-L: 0.0758
-Semantik Benzerlik: 0.5385
+Semantik Benzerlik: 0.8420
 --------------------------------------------------
 Model: ./models/turkish-gpt2-medium_v1
 Soru: Newton’un üçüncü hareket yasası olan "Her etkiye karşı eşit ve zıt bir tepki vardır" ilkesi, gerçek hayatta nasıl örneklenebilir?
@@ -197,7 +197,7 @@ BLEU Skoru: 0.0178
 ROUGE-1: 0.1364
 ROUGE-2: 0.0550
 ROUGE-L: 0.1091
-Semantik Benzerlik: 0.5067
+Semantik Benzerlik: 0.8242
 --------------------------------------------------
 Model: ./models/turkish-gpt2-medium_v1
 Soru: Placebo etkisi” nedir ve tedavilerde nasıl bir rol oynar?
@@ -208,7 +208,7 @@ BLEU Skoru: 0.0023
 ROUGE-1: 0.1644
 ROUGE-2: 0.0184
 ROUGE-L: 0.0822
-Semantik Benzerlik: 0.6012
+Semantik Benzerlik: 0.8957
 --------------------------------------------------
 Model: ./models/turkish-gpt2-medium_v1
 Soru: Osmanlı’da Lale Devri, sanatsal ve kültürel gelişmelerin yanı sıra diplomatik ilişkilerin güçlendiği bir dönem olarak bilinir. Bu dönemin mimarlarından olan Sadrazam Nevşehirli Damat İbrahim Paşa, hangi olayla görevden alınmıştır?
@@ -219,7 +219,7 @@ BLEU Skoru: 0.0000
 ROUGE-1: 0.0183
 ROUGE-2: 0.0000
 ROUGE-L: 0.0183
-Semantik Benzerlik: 0.4951
+Semantik Benzerlik: 0.6814
 --------------------------------------------------
 Model: ./models/turkish-gpt2-medium_v1
 Soru: Karbonun allotroplarından biri olan elmas, kristal yapısındaki kovalent bağlarla bilinir. Bu bağlar, elmasın sertliğini nasıl etkiler ve endüstriyel kullanımlarını hangi yönüyle mümkün kılar?
@@ -230,7 +230,7 @@ BLEU Skoru: 0.0046
 ROUGE-1: 0.2326
 ROUGE-2: 0.1033
 ROUGE-L: 0.1488
-Semantik Benzerlik: 0.6604
+Semantik Benzerlik: 0.9018
 --------------------------------------------------
 Model: ./models/turkish-gpt2-medium_v1
 Soru: İnternetin temeli olarak kabul edilen ARPANET, hangi amaçla geliştirilmiştir ve günümüz internetine dönüşmesi nasıl gerçekleşmiştir?
@@ -241,7 +241,7 @@ BLEU Skoru: 0.0021
 ROUGE-1: 0.1786
 ROUGE-2: 0.0721
 ROUGE-L: 0.0893
-Semantik Benzerlik: 0.7019
+Semantik Benzerlik: 0.8773
 --------------------------------------------------
 Model: ./models/turkish-gpt2-medium_v1
 Soru: Esad rejiminin devrilmesinden sonra Suriye’nin uluslararası toplumla ilişkileri nasıl şekillenmektedir?
@@ -252,7 +252,7 @@ BLEU Skoru: 0.0025
 ROUGE-1: 0.1659
 ROUGE-2: 0.0093
 ROUGE-L: 0.0829
-Semantik Benzerlik: 0.6786
+Semantik Benzerlik: 0.8879
 --------------------------------------------------
 Model: ./models/turkish-gpt2-medium_v1
 Soru: 2024 Avrupa Futbol Şampiyonası'nda Türkiye Milli Takımı hangi aşamaya kadar ilerlemiştir ve turnuvadaki performansı nasıl değerlendirilmiştir?
@@ -263,7 +263,7 @@ BLEU Skoru: 0.0220
 ROUGE-1: 0.2025
 ROUGE-2: 0.0936
 ROUGE-L: 0.1519
-Semantik Benzerlik: 0.7981
+Semantik Benzerlik: 0.9155
 --------------------------------------------------
 Model: ./models/turkish-gpt2-medium_v1
 Soru: 2024 yılında düzenlenen 41. İstanbul Film Festivali'nde "En İyi Film" ödülünü kazanan yapım hangisidir ve filmin konusu nedir?
@@ -274,7 +274,7 @@ BLEU Skoru: 0.0019
 ROUGE-1: 0.1296
 ROUGE-2: 0.0280
 ROUGE-L: 0.0833
-Semantik Benzerlik: 0.5894
+Semantik Benzerlik: 0.7822
 --------------------------------------------------
 Model: ./models/turkish-gpt2-medium_v1
 Soru: Fotosentez sırasında bitkiler, karbondioksit ve suyu enerjiye dönüştürmek için hangi ışık spektrumunu kullanır?
@@ -285,7 +285,7 @@ BLEU Skoru: 0.0022
 ROUGE-1: 0.0822
 ROUGE-2: 0.0417
 ROUGE-L: 0.0548
-Semantik Benzerlik: 0.4163
+Semantik Benzerlik: 0.7953
 --------------------------------------------------
 Model: ./models/turkish-gpt2-medium_v1
 Soru: Victor Hugo'nun kaleme aldığı ve Fransız İhtilali'ni anlatan ünlü eseri hangisidir?
@@ -296,7 +296,7 @@ BLEU Skoru: 0.0000
 ROUGE-1: 0.0136
 ROUGE-2: 0.0000
 ROUGE-L: 0.0136
-Semantik Benzerlik: 0.3807
+Semantik Benzerlik: 0.6961
 --------------------------------------------------
 Model: ./models/turkish-gpt2-medium_v1
 Soru: Bir web sitesine güvenli bağlantı sağlamak için kullanılan HTTPS protokolünde, "S" harfi neyi ifade eder?
@@ -307,7 +307,7 @@ BLEU Skoru: 0.0000
 ROUGE-1: 0.0234
 ROUGE-2: 0.0118
 ROUGE-L: 0.0234
-Semantik Benzerlik: 0.3273
+Semantik Benzerlik: 0.7632
 --------------------------------------------------
 Model: ./models/turkish-gpt2-medium_v1
 Soru: Atatürk’ün Samsun’a çıkışı, Kurtuluş Savaşı’nın başlamasında neden bir dönüm noktası olarak kabul edilir?
@@ -318,7 +318,7 @@ BLEU Skoru: 0.0037
 ROUGE-1: 0.1557
 ROUGE-2: 0.0661
 ROUGE-L: 0.0902
-Semantik Benzerlik: 0.7351
+Semantik Benzerlik: 0.8556
 --------------------------------------------------
 Model: ./models/turkish-gpt2-medium_v1
 Soru: Atatürk’ün “Yurtta sulh, cihanda sulh” ilkesi hangi ulusal ve uluslararası politikaları şekillendirmiştir?
@@ -329,7 +329,7 @@ BLEU Skoru: 0.0022
 ROUGE-1: 0.1689
 ROUGE-2: 0.0269
 ROUGE-L: 0.0800
-Semantik Benzerlik: 0.6795
+Semantik Benzerlik: 0.8879
 --------------------------------------------------
 Model: ./models/turkish-gpt2-medium_v1
 Soru: Sakarya Meydan Muharebesi’nde Atatürk’ün “Hattı müdafaa yoktur, sathı müdafaa vardır” stratejisi neyi ifade eder?
@@ -340,7 +340,7 @@ BLEU Skoru: 0.0057
 ROUGE-1: 0.1896
 ROUGE-2: 0.0574
 ROUGE-L: 0.0853
-Semantik Benzerlik: 0.6544
+Semantik Benzerlik: 0.9155
 --------------------------------------------------
 Model: ./models/turkish-gpt2-medium_v1
 Soru: Atatürk’ün Gençliğe Hitabesi’nde Türk gençliğine yüklediği temel görevler nelerdir?
@@ -354,7 +354,7 @@ BLEU Skoru: 0.0023
 ROUGE-1: 0.1706
 ROUGE-2: 0.0574
 ROUGE-L: 0.1232
-Semantik Benzerlik: 0.7738
+Semantik Benzerlik: 0.8635
 --------------------------------------------------
 Model: ./models/turkish-gpt2-medium_v1
 Soru: Bir kişi sürekli olarak "Bilmiyorum, gerçekten emin değilim" diyor, gözlerini kaçırıyor ve ellerini sık sık ovuşturuyorsa, bu kişinin duygu durumu ne olabilir?
@@ -365,7 +365,7 @@ BLEU Skoru: 0.0023
 ROUGE-1: 0.1767
 ROUGE-2: 0.0243
 ROUGE-L: 0.0964
-Semantik Benzerlik: 0.7591
+Semantik Benzerlik: 0.9042
 --------------------------------------------------
 Model: ./models/turkish-gpt2-medium_v1
 Soru: Ayakkabının içine küçük bir taş kaçtığında yürümeye devam edersen ne olur?
@@ -376,7 +376,7 @@ BLEU Skoru: 0.0022
 ROUGE-1: 0.1145
 ROUGE-2: 0.0356
 ROUGE-L: 0.0793
-Semantik Benzerlik: 0.5214
+Semantik Benzerlik: 0.8337
 --------------------------------------------------
 Model: ./models/turkish-gpt2-medium_v1
 Soru: Çekirdek çitlerken ellerinde nasıl bir his oluşur?
@@ -387,7 +387,7 @@ BLEU Skoru: 0.0037
 ROUGE-1: 0.0727
 ROUGE-2: 0.0368
 ROUGE-L: 0.0485
-Semantik Benzerlik: 0.5326
+Semantik Benzerlik: 0.7416
 --------------------------------------------------
 Model: ./models/turkish-gpt2-medium_v1
 Soru: Soğuk bir buz parçasını uzun süre elinde tuttuğunda nasıl bir his oluşur?
@@ -398,7 +398,7 @@ BLEU Skoru: 0.0016
 ROUGE-1: 0.0288
 ROUGE-2: 0.0000
 ROUGE-L: 0.0288
-Semantik Benzerlik: 0.4691
+Semantik Benzerlik: 0.7189
 --------------------------------------------------
 Model: ./models/turkish-gpt2-medium_v1
 Soru: Çok sessiz bir odada saat tıkırtısını duyduğunda ne hissedersin?
@@ -409,7 +409,7 @@ BLEU Skoru: 0.0019
 ROUGE-1: 0.0847
 ROUGE-2: 0.0107
 ROUGE-L: 0.0529
-Semantik Benzerlik: 0.5129
+Semantik Benzerlik: 0.8183
 --------------------------------------------------
 Model: ./models/turkish-gpt2-medium_v1
 Soru: Bir QR kod nasıl çalışır ve bu kodu okuyan cihazlar bilgiyi nasıl alır?
@@ -420,7 +420,7 @@ BLEU Skoru: 0.0023
 ROUGE-1: 0.0838
 ROUGE-2: 0.0106
 ROUGE-L: 0.0524
-Semantik Benzerlik: 0.5855
+Semantik Benzerlik: 0.8347
 --------------------------------------------------
 Model: ./models/turkish-gpt2-medium_v1
 Soru: Bir sayının faktöriyel fonksiyonu n!n!n! nedir ve 5! sonucunu hesapla.
@@ -432,7 +432,7 @@ BLEU Skoru: 0.0068
 ROUGE-1: 0.2333
 ROUGE-2: 0.0678
 ROUGE-L: 0.1500
-Semantik Benzerlik: 0.4852
+Semantik Benzerlik: 0.8206
 --------------------------------------------------
 Model: ./models/turkish-gpt2-medium_v1
 Soru: "Atı alan Üsküdar’ı geçti" atasözü mecazi olarak ne anlama gelir?
@@ -443,7 +443,7 @@ BLEU Skoru: 0.0025
 ROUGE-1: 0.1361
 ROUGE-2: 0.0000
 ROUGE-L: 0.0628
-Semantik Benzerlik: 0.5252
+Semantik Benzerlik: 0.7886
 --------------------------------------------------
 Model: ./models/turkish-gpt2-medium_v1
 Soru: “Kitap çok güzeldi" cümlesindeki duyguyu analiz et ve pozitif mi negatif mi olduğunu belirle.
@@ -455,7 +455,7 @@ BLEU Skoru: 0.0040
 ROUGE-1: 0.0994
 ROUGE-2: 0.0223
 ROUGE-L: 0.0663
-Semantik Benzerlik: 0.5461
+Semantik Benzerlik: 0.8433
 --------------------------------------------------
 Model: ./models/turkish-gpt2-medium_v1
 Soru: Bir odada 3 kişi varsa, birbirleriyle el sıkıştıklarında toplam kaç el sıkışma gerçekleşir?
@@ -472,7 +472,7 @@ BLEU Skoru: 0.0039
 ROUGE-1: 0.1104
 ROUGE-2: 0.0745
 ROUGE-L: 0.0982
-Semantik Benzerlik: 0.6217
+Semantik Benzerlik: 0.7758
 --------------------------------------------------
 Model: ./models/turkish-gpt2-medium_v1
 Soru: Bir kovanın içindeki su seviyesi, her saniye bir önceki saniyenin iki katı kadar artıyor. 60 saniyede kova doluyorsa, kovanın yarısı kaçıncı saniyede dolmuş olur?
@@ -488,7 +488,7 @@ BLEU Skoru: 0.0035
 ROUGE-1: 0.0903
 ROUGE-2: 0.0261
 ROUGE-L: 0.0645
-Semantik Benzerlik: 0.6293
+Semantik Benzerlik: 0.8069
 --------------------------------------------------
 Model: ./models/turkish-gpt2-medium_v1
 Soru: "Sabah erken kalkan, işe zamanında gider" cümlesinde koşul nedir ve bu koşul gerçekleşmezse ne olur?
@@ -500,7 +500,7 @@ BLEU Skoru: 0.0045
 ROUGE-1: 0.1667
 ROUGE-2: 0.1158
 ROUGE-L: 0.1146
-Semantik Benzerlik: 0.6923
+Semantik Benzerlik: 0.8701
 --------------------------------------------------
 Model: ./models/turkish-gpt2-medium_v1
 Soru: Bir cam bardak aniden çok soğuk bir yüzeye konulduğunda neden çatlayabilir?
@@ -511,7 +511,7 @@ BLEU Skoru: 0.0022
 ROUGE-1: 0.1159
 ROUGE-2: 0.0195
 ROUGE-L: 0.0870
-Semantik Benzerlik: 0.6221
+Semantik Benzerlik: 0.8775
 --------------------------------------------------
 Model: ./models/turkish-gpt2-medium_v1
 Soru: Sanayi Devrimi, kırsal yaşam tarzından şehirleşmeye geçişi hızlandırmıştır. Bunun toplumsal etkileri nelerdir?
@@ -522,7 +522,7 @@ BLEU Skoru: 0.0038
 ROUGE-1: 0.1647
 ROUGE-2: 0.0474
 ROUGE-L: 0.1176
-Semantik Benzerlik: 0.7268
+Semantik Benzerlik: 0.9168
 --------------------------------------------------
 Model: ./models/turkish-gpt2-medium_v1
 Soru: "Bazı kuşlar uçamaz" ve "Bütün penguenler kuştur" ifadeleri doğruysa, penguenlerin uçma yeteneği hakkında ne söyleyebiliriz?
@@ -533,7 +533,7 @@ BLEU Skoru: 0.0047
 ROUGE-1: 0.1205
 ROUGE-2: 0.0732
 ROUGE-L: 0.0843
-Semantik Benzerlik: 0.6885
+Semantik Benzerlik: 0.8796
 --------------------------------------------------
 Model: ./models/turkish-gpt2-medium_v1
 Soru: Türkiye’nin en yüksek dağı hangisidir ve yüksekliği nedir?
@@ -545,7 +545,7 @@ BLEU Skoru: 0.0034
 ROUGE-1: 0.0452
 ROUGE-2: 0.0229
 ROUGE-L: 0.0452
-Semantik Benzerlik: 0.6240
+Semantik Benzerlik: 0.8177
 --------------------------------------------------
 Model: ./models/turkish-gpt2-medium_v1
 Soru: "Coğrafi Keşifler" dönemi hangi nedenlerle başlamıştır ve sonuçları nelerdir?
@@ -556,7 +556,7 @@ BLEU Skoru: 0.0022
 ROUGE-1: 0.1267
 ROUGE-2: 0.0548
 ROUGE-L: 0.0905
-Semantik Benzerlik: 0.4545
+Semantik Benzerlik: 0.8709
 --------------------------------------------------
 Model: ./models/turkish-gpt2-medium_v1
 Soru: Bir düzine yumurta alındığında, her biri kırılmadan 6 kişiye eşit şekilde nasıl paylaştırılabilir?
@@ -567,7 +567,7 @@ BLEU Skoru: 0.0045
 ROUGE-1: 0.0957
 ROUGE-2: 0.0386
 ROUGE-L: 0.0670
-Semantik Benzerlik: 0.5969
+Semantik Benzerlik: 0.8255
 --------------------------------------------------
 Model: ./models/turkish-gpt2-medium_v1
 Soru: Bir iş 4 kişi tarafından 6 saatte tamamlanıyorsa, aynı iş 2 kişiyle kaç saatte tamamlanır?
@@ -586,5 +586,5 @@ BLEU Skoru: 0.0020
 ROUGE-1: 0.1000
 ROUGE-2: 0.0449
 ROUGE-L: 0.0889
-Semantik Benzerlik: 0.6336
+Semantik Benzerlik: 0.8074
 --------------------------------------------------

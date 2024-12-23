@@ -18,7 +18,7 @@ class Evaluator:
         self.model_dirs = model_dirs
         self.test_dataset_path = test_dataset_path
         self.output_excel = output_excel
-        self.semantic_model = SentenceTransformer("sentence-transformers/all-MiniLM-L6-v2")
+        self.semantic_model = SentenceTransformer("dbmdz/bert-base-turkish-cased")
 
     def load_model_and_tokenizer(self, model_dir):
         """
