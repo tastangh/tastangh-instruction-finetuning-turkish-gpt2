@@ -1,7 +1,7 @@
 import torch
 from transformers import AutoModelForCausalLM, AutoTokenizer
 from trl import SFTTrainer
-from transformers import TrainingArguments, EarlyStoppingCallback
+from transformers import TrainingArguments
 from peft import LoraConfig, get_peft_model
 from dataset_manager import DatasetManager
 import os
@@ -27,12 +27,11 @@ class Trainer:
 
         # LoRA ayarları
         lora_config = LoraConfig(
-            r=16,
-            lora_alpha=32,
-            target_modules=["c_attn", "c_proj"],
-            lora_dropout=0.1,
+            r=16,  # Daha yüksek rank değeri
+            lora_alpha=32,  # Daha güçlü ağırlık faktörü
+            target_modules=["c_attn", "c_proj"],  # Önemli transformer katmanları
+            lora_dropout=0.1,  # Aşırı öğrenmeyi önlemek için
             bias="none",
-            fan_in_fan_out=True,  # Conv1D için doğru yapılandırma
         )
         model = get_peft_model(model, lora_config)
 
@@ -46,58 +45,33 @@ class Trainer:
 
         return model, tokenizer
 
-    def fine_tune(self, model, tokenizer, train_dataset, validation_dataset):
+    def fine_tune(self, model, tokenizer, train_dataset):
         """
         Modeli verilen veri kümesi üzerinde ince ayar yapar.
-        Args:
-            model: Eğitim için kullanılacak model.
-            tokenizer: Tokenizer nesnesi.
-            train_dataset: Eğitim veri kümesi.
-            validation_dataset: Doğrulama veri kümesi.
         """
-
-        # Metrik hesaplama fonksiyonu
-        def compute_metrics(eval_pred):
-            logits, labels = eval_pred
-            predictions = torch.argmax(torch.tensor(logits), dim=-1)
-            labels = torch.tensor(labels)
-            accuracy = (predictions == labels).float().mean().item()
-            return {"accuracy": accuracy, "eval_loss": logits.mean().item()}
-
-        # Eğitim argümanları
         training_args = TrainingArguments(
             output_dir=self.output_dir,
-            per_device_train_batch_size=1,  # GPU hata çözümü için 1
-            gradient_accumulation_steps=8,
-            num_train_epochs=50,  # Daha kısa eğitim döngüleri
-            save_total_limit=1,
+            per_device_train_batch_size=2,  # gpu error gidermek için 2 ye indirdim
+            gradient_accumulation_steps=8,  # Gradyan biriktirme
+            num_train_epochs=50,  # Daha uzun eğitim döngüleri
+            save_steps=500,
             logging_dir=f"{self.output_dir}/logs",
-            learning_rate=2e-5,
-            bf16=torch.cuda.is_bf16_supported(),
-            fp16=not torch.cuda.is_bf16_supported(),
-            max_grad_norm=1.0,
-            warmup_steps=100,
-            weight_decay=0.01,
-            eval_strategy="steps",  # Her birkaç adımda bir değerlendirme yapılır
-            eval_steps=500,
-            load_best_model_at_end=True,  # En iyi modeli yüklemek için gerekli
-        )
-
-        # Early Stopping Callback
-        early_stopping = EarlyStoppingCallback(
-            early_stopping_patience=3,  # Erken durdurma için patience azaltıldı
-            early_stopping_threshold=0.01,
+            learning_rate=2e-5,  # Daha küçük öğrenme oranı
+            bf16=torch.cuda.is_bf16_supported(),  # GPU BF16 destekliyorsa kullanılır
+            fp16=not torch.cuda.is_bf16_supported(),  # Aksi durumda FP16 kullanılır
+            max_grad_norm=1.0,  # Gradyan normu kesimi
+            warmup_steps=100,  # Öğrenme oranını sabitlemek için ısınma adımları
+            weight_decay=0.01,  # Overfitting'i azaltmak için ağırlık sönümleme
+            save_total_limit=2,  # Maksimum kaydedilecek model sayısı
         )
 
         # Trainer nesnesi
         trainer = SFTTrainer(
             model=model,
             train_dataset=train_dataset,
-            eval_dataset=validation_dataset,  
             tokenizer=tokenizer,
             args=training_args,
-            compute_metrics=compute_metrics,  # Metrik hesaplama fonksiyonu eklendi
-            callbacks=[early_stopping],
+            fan_in_fan_out=True,
         )
 
         print(f"Model {self.model_name} eğitiliyor...")
@@ -105,13 +79,10 @@ class Trainer:
         model.save_pretrained(self.output_dir)
         tokenizer.save_pretrained(self.output_dir)
         print(f"Model {self.output_dir} dizinine kaydedildi.")
-
         zip_path = f"{self.output_dir}.zip"
         shutil.make_archive(self.output_dir, 'zip', self.output_dir)
         print(f"{zip_path} dosyası oluşturuldu. İndirme başlıyor...")
         files.download(zip_path)
-
-
 
 if __name__ == "__main__":
     # Eğitimde kullanılacak veri kümeleri
@@ -132,13 +103,12 @@ if __name__ == "__main__":
 
     # Her veri kümesi için döngü
     for dataset_name, dataset_path in datasets.items():
-        # Veri kümesini yükle ve böl
-        train_dataset, validation_dataset = dataset_manager.load_dataset(
-            dataset_name, validation_size=0.2
-        )
+        # Veri kümesini yükle ve işle
+        train_dataset = dataset_manager.load_dataset(dataset_name)
 
         # Her model için döngü
         for model_name in models:
+            # Çıktı dizinini oluştur
             output_dir = f"./models/{model_name.split('/')[-1]}_{dataset_name}"
             trainer = Trainer(model_name, output_dir)
 
@@ -146,6 +116,4 @@ if __name__ == "__main__":
             model, tokenizer = trainer.load_model_and_tokenizer()
 
             # Modeli ince ayar yaparak eğit
-            trainer.fine_tune(model, tokenizer, train_dataset, validation_dataset)
-
-    print("Tüm modeller eğitildi.")
+            trainer.fine_tune(model, tokenizer, train_dataset)

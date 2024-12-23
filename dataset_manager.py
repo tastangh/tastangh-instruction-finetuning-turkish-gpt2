@@ -9,17 +9,9 @@ class DatasetManager:
         """
         self.dataset_paths = dataset_paths
 
-    def load_dataset(self, dataset_name: str, validation_size: float = 0.2):
+    def load_dataset(self, dataset_name: str):
         """
-        Belirtilen veri kümesini yükler, Hugging Face Dataset formatına dönüştürür
-        ve train-validation olarak ayırır.
-
-        Args:
-            dataset_name (str): Veri kümesi adı.
-            validation_size (float): Validation set oranı (default: 0.2).
-
-        Returns:
-            tuple: (train_dataset, validation_dataset)
+        Belirtilen veri kümesini yükler ve Hugging Face Dataset formatına dönüştürür.
         """
         if dataset_name not in self.dataset_paths:
             raise ValueError(f"{dataset_name} için bir dosya yolu belirtilmemiş.")
@@ -31,17 +23,7 @@ class DatasetManager:
         # Dataset formatlama
         dataset = Dataset.from_pandas(df)
         dataset = self.format_dataset(dataset, dataset_name)
-
-        # Train-validation olarak ayırma
-        dataset_split = dataset.train_test_split(test_size=validation_size)
-        train_dataset = dataset_split["train"]
-        validation_dataset = dataset_split["test"]
-
-        print(f"{dataset_name} veri kümesi başarıyla bölündü:")
-        print(f"  Train set boyutu: {len(train_dataset)}")
-        print(f"  Validation set boyutu: {len(validation_dataset)}")
-
-        return train_dataset, validation_dataset
+        return dataset
 
     def format_dataset(self, dataset, dataset_name: str):
         """
