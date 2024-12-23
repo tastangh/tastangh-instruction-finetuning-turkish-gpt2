@@ -68,12 +68,7 @@ class Trainer:
             per_device_train_batch_size=1,  # GPU hata çözümü için 1
             gradient_accumulation_steps=8,
             num_train_epochs=50,  # Daha kısa eğitim döngüleri
-            save_steps=500,
-            eval_strategy="steps",  # Değerlendirme belirli adımlarla yapılır
-            eval_steps=500,
             save_total_limit=1,
-            load_best_model_at_end=True,
-            metric_for_best_model="accuracy",  # Değerlendirme için accuracy metriğini kullan
             logging_dir=f"{self.output_dir}/logs",
             learning_rate=2e-5,
             bf16=torch.cuda.is_bf16_supported(),
@@ -81,6 +76,9 @@ class Trainer:
             max_grad_norm=1.0,
             warmup_steps=100,
             weight_decay=0.01,
+            eval_strategy="steps",  # Her birkaç adımda bir değerlendirme yapılır
+            eval_steps=500,
+            load_best_model_at_end=True,  # En iyi modeli yüklemek için gerekli
         )
 
         # Early Stopping Callback
@@ -105,6 +103,7 @@ class Trainer:
         model.save_pretrained(self.output_dir)
         tokenizer.save_pretrained(self.output_dir)
         print(f"Model {self.output_dir} dizinine kaydedildi.")
+
 
 
 if __name__ == "__main__":

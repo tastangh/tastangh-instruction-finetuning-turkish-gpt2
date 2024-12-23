@@ -111,11 +111,11 @@ if __name__ == "__main__":
     # Test için kullanılacak modeller
     models = [
         "./models/turkish-gpt2-medium_v1",
-        "./models/turkish-gpt2-medium_v2",
-        "./models/turkish-gpt2-medium_v3",
-        "./models/turkish-gpt2-large_v1",
-        "./models/turkish-gpt2-large_v2",
-        "./models/turkish-gpt2-large_v3",
+        # "./models/turkish-gpt2-medium_v2",
+        # "./models/turkish-gpt2-medium_v3",
+        # "./models/turkish-gpt2-large_v1",
+        # "./models/turkish-gpt2-large_v2",
+        # "./models/turkish-gpt2-large_v3",
     ]
 
     # Test veri kümesi ve çıktı dosyası
