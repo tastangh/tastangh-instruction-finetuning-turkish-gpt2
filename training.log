@@ -1,0 +1,4 @@
+2024-12-24 12:31:18,321 - INFO - [INFO] Eğitim başlıyor: Model=ytu-ce-cosmos/turkish-gpt2-medium, Dataset=v1
+2024-12-24 12:31:19,301 - INFO - Model ve tokenizer yükleniyor: ytu-ce-cosmos/turkish-gpt2-medium
+2024-12-24 12:31:25,078 - INFO - Model ve tokenizer başarıyla yüklendi.
+2024-12-24 12:31:25,684 - INFO - Model ytu-ce-cosmos/turkish-gpt2-medium eğitiliyor...

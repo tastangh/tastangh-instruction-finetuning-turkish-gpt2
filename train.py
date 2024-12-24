@@ -1,11 +1,51 @@
 import torch
-from transformers import AutoModelForCausalLM, AutoTokenizer
+from transformers import AutoModelForCausalLM, AutoTokenizer, TrainerCallback
 from trl import SFTTrainer
 from transformers import TrainingArguments
 from peft import LoraConfig, get_peft_model
 from dataset_manager import DatasetManager
 import os
 import shutil
+import logging
+import sys
+
+
+# Terminal çıktısını bir dosyaya yönlendirme
+class Logger:
+    def __init__(self, filename="training.log"):
+        self.terminal = sys.stdout
+        self.logfile = open(filename, "a")
+
+    def write(self, message):
+        self.terminal.write(message)  # Terminalde yazmaya devam et
+        self.logfile.write(message)  # Log dosyasına yaz
+
+    def flush(self):
+        self.logfile.flush()
+        self.terminal.flush()
+
+
+sys.stdout = Logger("training.log")
+sys.stderr = sys.stdout  # Hatalar da aynı log dosyasına yazılır
+
+
+# Logging Ayarları
+logging.basicConfig(
+    filename="training.log",  # Çıkışların kaydedileceği dosya
+    level=logging.INFO,  # Kaydedilecek minimum seviye
+    format="%(asctime)s - %(levelname)s - %(message)s",  # Log formatı
+)
+console_handler = logging.StreamHandler()  # Konsol için bir handler
+console_handler.setLevel(logging.INFO)  # Konsol seviyesini belirleyin
+logging.getLogger().addHandler(console_handler)  # Konsol çıktısını ekle
+
+
+# Özel Callback Sınıfı
+class LoggingCallback(TrainerCallback):
+    def on_log(self, args, state, control, logs=None, **kwargs):
+        """Her loglama adımında metrikleri kaydet"""
+        if logs is not None:
+            logging.info(f"Adım: {state.global_step}, Metrikler: {logs}")
 
 
 class Trainer:
@@ -14,6 +54,7 @@ class Trainer:
         self.output_dir = output_dir
 
     def load_model_and_tokenizer(self):
+        logging.info(f"Model ve tokenizer yükleniyor: {self.model_name}")
         tokenizer = AutoTokenizer.from_pretrained(self.model_name)
         model = AutoModelForCausalLM.from_pretrained(self.model_name)
 
@@ -33,6 +74,7 @@ class Trainer:
         if tokenizer.pad_token is None:
             tokenizer.pad_token = tokenizer.eos_token
 
+        logging.info("Model ve tokenizer başarıyla yüklendi.")
         return model, tokenizer
 
     def fine_tune(self, model, tokenizer, train_dataset):
@@ -40,8 +82,9 @@ class Trainer:
             output_dir=self.output_dir,
             per_device_train_batch_size=1,  # GPU bellek sınırına göre ayarlanabilir 
             gradient_accumulation_steps=4,
-            num_train_epochs=3,
+            num_train_epochs=3,  # 5 10 20 ile de denedim çok bir şey değişmedi o yüzden 3 yaptım.
             logging_dir=f"{self.output_dir}/logs",
+            logging_steps=100,  # Daha sık loglama için ayarlandı
             learning_rate=5e-5,
             warmup_steps=500,
             weight_decay=0.01,
@@ -56,22 +99,24 @@ class Trainer:
             train_dataset=train_dataset,
             tokenizer=tokenizer,
             args=training_args,
+            callbacks=[LoggingCallback()],  # Özel callback eklendi
         )
 
-        print(f"Model {self.model_name} eğitiliyor...")
+        logging.info(f"Model {self.model_name} eğitiliyor...")
         trainer.train()
+
+        logging.info(f"Model ve tokenizer kaydediliyor: {self.output_dir}")
         model.save_pretrained(self.output_dir)
         tokenizer.save_pretrained(self.output_dir)
-        print(f"Model {self.output_dir} dizinine kaydedildi.")
         shutil.make_archive(self.output_dir, 'zip', self.output_dir)
-
+        logging.info(f"Model {self.output_dir} dizinine başarıyla kaydedildi.")
 
 
 def train_model(model_name, dataset_name, dataset_path):
     """
     Her model-dataset kombinasyonu için eğitim işlemini yürütür.
     """
-    print(f"[INFO] Başlıyor: Model={model_name}, Dataset={dataset_name}")
+    logging.info(f"[INFO] Eğitim başlıyor: Model={model_name}, Dataset={dataset_name}")
 
     # Dataset yöneticisi ve yükleme
     dataset_manager = DatasetManager({dataset_name: dataset_path})
@@ -87,7 +132,7 @@ def train_model(model_name, dataset_name, dataset_path):
     # Modeli ince ayar yaparak eğit
     trainer.fine_tune(model, tokenizer, train_dataset)
 
-    print(f"[SUCCESS] Eğitim tamamlandı: Model={model_name}, Dataset={dataset_name}")
+    logging.info(f"[SUCCESS] Eğitim tamamlandı: Model={model_name}, Dataset={dataset_name}")
 
 
 if __name__ == "__main__":
