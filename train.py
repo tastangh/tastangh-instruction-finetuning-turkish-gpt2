@@ -7,51 +7,42 @@ from dataset_manager import DatasetManager
 import os
 import shutil
 import logging
-import sys
 
 
-# Terminal çıktısını bir dosyaya yönlendirme
-class Logger:
-    def __init__(self, filename="training.log"):
-        self.terminal = sys.stdout
-        self.logfile = open(filename, "a")
-
-    def write(self, message):
-        self.terminal.write(message)  # Terminalde yazmaya devam et
-        self.logfile.write(message)  # Log dosyasına yaz
-
-    def flush(self):
-        self.logfile.flush()
-        self.terminal.flush()
-
-
-sys.stdout = Logger("training.log")
-sys.stderr = sys.stdout  # Hatalar da aynı log dosyasına yazılır
+# Logging Yapılandırması
+def setup_logging(log_file):
+    # Loglama ayarları
+    logging.basicConfig(
+        filename=log_file,
+        filemode="w",  # Her çalıştırmada log dosyasını sıfırlar
+        level=logging.INFO,
+        format="%(asctime)s - %(levelname)s - %(message)s",
+    )
+    console_handler = logging.StreamHandler()  # Konsol için handler
+    console_handler.setLevel(logging.INFO)  # Konsol seviyesini belirle
+    console_handler.setFormatter(logging.Formatter("%(message)s"))  # Sadece mesajı göster
+    logging.getLogger().addHandler(console_handler)  # Konsola yazdırmayı etkinleştir
 
 
-# Logging Ayarları
-logging.basicConfig(
-    filename="training.log",  # Çıkışların kaydedileceği dosya
-    level=logging.INFO,  # Kaydedilecek minimum seviye
-    format="%(asctime)s - %(levelname)s - %(message)s",  # Log formatı
-)
-console_handler = logging.StreamHandler()  # Konsol için bir handler
-console_handler.setLevel(logging.INFO)  # Konsol seviyesini belirleyin
-logging.getLogger().addHandler(console_handler)  # Konsol çıktısını ekle
+# Custom Callback for Training Logs
+class TrainingLoggerCallback(TrainerCallback):
+    def __init__(self, logging_steps):
+        super().__init__()
+        self.logging_steps = logging_steps
 
-
-# Özel Callback Sınıfı
-class LoggingCallback(TrainerCallback):
-    def on_log(self, args, state, control, logs=None, **kwargs):
-        """Her loglama adımında metrikleri kaydet"""
-        if logs is not None:
-            logging.info(f"Adım: {state.global_step}, Metrikler: {logs}")
+    def on_step_end(self, args, state, control, **kwargs):
+        """Log metrikleri belirli adımlarda yazdır."""
+        if state.global_step % self.logging_steps == 0:  # logging_steps sıklığında kontrol
+            logs = state.log_history[-1] if state.log_history else {}
+            metrics = {k: v for k, v in logs.items() if k in ["loss", "grad_norm", "learning_rate", "epoch"]}
+            logging.info(f"Training Logs at step {state.global_step}: {metrics}")
 
 
 class Trainer:
-    def __init__(self, model_name: str, output_dir: str):
+    def __init__(self, model_name: str, output_dir: str, log_file: str):
         self.model_name = model_name
         self.output_dir = output_dir
+        setup_logging(log_file)
 
     def load_model_and_tokenizer(self):
         logging.info(f"Model ve tokenizer yükleniyor: {self.model_name}")
@@ -74,18 +65,20 @@ class Trainer:
         if tokenizer.pad_token is None:
             tokenizer.pad_token = tokenizer.eos_token
 
-        logging.info("Model ve tokenizer başarıyla yüklendi.")
+        logging.info(f"Model ve tokenizer başarıyla yüklendi: {self.model_name}")
         return model, tokenizer
 
     def fine_tune(self, model, tokenizer, train_dataset):
+        logging.info(f"Model {self.model_name} ince ayar işlemi başlatılıyor.")
+        logging_steps = 10  # Konsola yazıldığı sıklık
         training_args = TrainingArguments(
             output_dir=self.output_dir,
             per_device_train_batch_size=1,  # GPU bellek sınırına göre ayarlanabilir 
             gradient_accumulation_steps=4,
-            num_train_epochs=3,  # 5 10 20 ile de denedim çok bir şey değişmedi o yüzden 3 yaptım.
+            num_train_epochs=3,
             logging_dir=f"{self.output_dir}/logs",
-            logging_steps=100,  # Daha sık loglama için ayarlandı
-            learning_rate=5e-5,
+            logging_steps=logging_steps,
+            learning_rate=1e-5,
             warmup_steps=500,
             weight_decay=0.01,
             fp16=True,
@@ -99,11 +92,11 @@ class Trainer:
             train_dataset=train_dataset,
             tokenizer=tokenizer,
             args=training_args,
-            callbacks=[LoggingCallback()],  # Özel callback eklendi
+            callbacks=[TrainingLoggerCallback(logging_steps)],  # Eğitim log callback'i eklendi
         )
 
-        logging.info(f"Model {self.model_name} eğitiliyor...")
         trainer.train()
+        logging.info(f"Model {self.model_name} ince ayar işlemi başarıyla tamamlandı.")
 
         logging.info(f"Model ve tokenizer kaydediliyor: {self.output_dir}")
         model.save_pretrained(self.output_dir)
@@ -116,15 +109,19 @@ def train_model(model_name, dataset_name, dataset_path):
     """
     Her model-dataset kombinasyonu için eğitim işlemini yürütür.
     """
+    log_file = f"logs/{model_name.split('/')[-1]}_{dataset_name}.log"
+    os.makedirs("logs", exist_ok=True)  # logs dizinini oluştur
+    setup_logging(log_file)  # Loglama yapılandırmasını başlat
     logging.info(f"[INFO] Eğitim başlıyor: Model={model_name}, Dataset={dataset_name}")
 
     # Dataset yöneticisi ve yükleme
     dataset_manager = DatasetManager({dataset_name: dataset_path})
     train_dataset = dataset_manager.load_dataset(dataset_name)
+    logging.info(f"Dataset başarıyla yüklendi: {dataset_name}")
 
     # Çıktı dizinini oluştur
     output_dir = f"./models/{model_name.split('/')[-1]}_{dataset_name}"
-    trainer = Trainer(model_name, output_dir)
+    trainer = Trainer(model_name, output_dir, log_file)
 
     # Model ve tokenizer yükle
     model, tokenizer = trainer.load_model_and_tokenizer()

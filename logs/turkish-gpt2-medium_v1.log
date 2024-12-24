@@ -1,0 +1,18 @@
+2024-12-24 13:02:36,629 - INFO - [INFO] Eğitim başlıyor: Model=ytu-ce-cosmos/turkish-gpt2-medium, Dataset=v1
+2024-12-24 13:02:37,580 - INFO - Dataset başarıyla yüklendi: v1
+2024-12-24 13:02:37,580 - INFO - Model ve tokenizer yükleniyor: ytu-ce-cosmos/turkish-gpt2-medium
+2024-12-24 13:02:42,908 - INFO - Model ve tokenizer başarıyla yüklendi: ytu-ce-cosmos/turkish-gpt2-medium
+2024-12-24 13:02:42,908 - INFO - Model ytu-ce-cosmos/turkish-gpt2-medium ince ayar işlemi başlatılıyor.
+2024-12-24 13:02:47,265 - INFO - Training Logs at step 10: {}
+2024-12-24 13:02:49,927 - INFO - Training Logs at step 20: {'loss': 3.7527, 'grad_norm': 8.714944839477539, 'learning_rate': 1.8e-07, 'epoch': 0.002390914524805738}
+2024-12-24 13:02:52,603 - INFO - Training Logs at step 30: {'loss': 3.58, 'grad_norm': 7.467380523681641, 'learning_rate': 3.8e-07, 'epoch': 0.004781829049611476}
+2024-12-24 13:02:55,334 - INFO - Training Logs at step 40: {'loss': 3.6468, 'grad_norm': 5.788285732269287, 'learning_rate': 5.800000000000001e-07, 'epoch': 0.007172743574417215}
+2024-12-24 13:02:58,043 - INFO - Training Logs at step 50: {'loss': 3.4311, 'grad_norm': 9.396625518798828, 'learning_rate': 7.8e-07, 'epoch': 0.009563658099222952}
+2024-12-24 13:03:00,654 - INFO - Training Logs at step 60: {'loss': 3.5224, 'grad_norm': 8.314935684204102, 'learning_rate': 9.800000000000001e-07, 'epoch': 0.011954572624028692}
+2024-12-24 13:03:03,321 - INFO - Training Logs at step 70: {'loss': 3.4969, 'grad_norm': 7.786797523498535, 'learning_rate': 1.1800000000000001e-06, 'epoch': 0.01434548714883443}
+2024-12-24 13:03:05,972 - INFO - Training Logs at step 80: {'loss': 3.5892, 'grad_norm': 6.583681583404541, 'learning_rate': 1.3800000000000001e-06, 'epoch': 0.016736401673640166}
+2024-12-24 13:03:08,610 - INFO - Training Logs at step 90: {'loss': 3.5995, 'grad_norm': 6.25071382522583, 'learning_rate': 1.5800000000000001e-06, 'epoch': 0.019127316198445904}
+2024-12-24 13:03:11,314 - INFO - Training Logs at step 100: {'loss': 3.401, 'grad_norm': 8.986160278320312, 'learning_rate': 1.7800000000000001e-06, 'epoch': 0.021518230723251645}
+2024-12-24 13:03:14,056 - INFO - Training Logs at step 110: {'loss': 3.3654, 'grad_norm': 6.9035325050354, 'learning_rate': 1.98e-06, 'epoch': 0.023909145248057383}
+2024-12-24 13:03:16,823 - INFO - Training Logs at step 120: {'loss': 3.7007, 'grad_norm': 8.787809371948242, 'learning_rate': 2.1800000000000003e-06, 'epoch': 0.02630005977286312}
+2024-12-24 13:03:19,652 - INFO - Training Logs at step 130: {'loss': 3.4359, 'grad_norm': 9.140788078308105, 'learning_rate': 2.38e-06, 'epoch': 0.02869097429766886}
