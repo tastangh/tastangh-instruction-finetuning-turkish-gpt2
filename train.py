@@ -11,16 +11,17 @@ import logging
 
 # Logging Yapılandırması
 def setup_logging(log_file):
+    """Logları hem terminale hem dosyaya yönlendirme."""
     logging.basicConfig(
         filename=log_file,
-        filemode="w",
+        filemode="w",  # Her çalıştırmada log dosyasını sıfırlar
         level=logging.INFO,
         format="%(asctime)s - %(levelname)s - %(message)s",
     )
-    console_handler = logging.StreamHandler()
-    console_handler.setLevel(logging.INFO)
-    console_handler.setFormatter(logging.Formatter("%(message)s"))
-    logging.getLogger().addHandler(console_handler)
+    console_handler = logging.StreamHandler()  # Konsol için handler
+    console_handler.setLevel(logging.INFO)  # Konsol seviyesini belirle
+    console_handler.setFormatter(logging.Formatter("%(message)s"))  # Sadece mesajı göster
+    logging.getLogger().addHandler(console_handler)  # Konsola yazdırmayı etkinleştir
 
 
 # Custom Callback for Training Logs
@@ -30,8 +31,9 @@ class TrainingLoggerCallback(TrainerCallback):
         self.logging_steps = logging_steps
 
     def on_step_end(self, args, state, control, **kwargs):
-        if state.global_step % self.logging_steps == 0:
-            logs = state.log_history[-1] if state.log_history else {}
+        """Belirli adımlarda log metrikleri yazdır."""
+        if state.global_step % self.logging_steps == 0 and state.log_history:
+            logs = state.log_history[-1]
             metrics = {k: v for k, v in logs.items() if k in ["loss", "grad_norm", "learning_rate", "epoch"]}
             logging.info(f"Training Logs at step {state.global_step}: {metrics}")
 
@@ -47,19 +49,21 @@ class Trainer:
         tokenizer = AutoTokenizer.from_pretrained(self.model_name)
         model = AutoModelForCausalLM.from_pretrained(self.model_name)
 
+        # Lora Konfigürasyonu
         lora_config = LoraConfig(
-            r=32,
-            lora_alpha=64,
-            target_modules=["c_attn", "c_proj", "q_attn", "v_proj"],
-            lora_dropout=0.1,
-            bias="none",
+            r=32,  # Daha yüksek kapasite için
+            lora_alpha=64,  # Modelin öğrenme kapasitesini artırır
+            target_modules=["c_attn", "c_proj", "q_attn", "v_proj"],  # Dikkat mekanizması katmanları
+            lora_dropout=0.1,  # Aşırı öğrenmeyi engellemek için düşük dropout
+            bias="none",  # Bias terimlerini dondur
         )
-
         model = get_peft_model(model, lora_config)
 
+        # Cihaz Ayarı
         device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
         model = model.to(device)
 
+        # Pad token kontrolü
         if tokenizer.pad_token is None:
             tokenizer.pad_token = tokenizer.eos_token
 
@@ -68,26 +72,25 @@ class Trainer:
 
     def fine_tune(self, model, tokenizer, train_dataset):
         logging.info(f"Model {self.model_name} ince ayar işlemi başlatılıyor.")
-        logging_steps = 1000
 
-        # `bf16` desteği kontrolü
-        bf16_available = torch.cuda.is_available() and torch.cuda.get_device_capability(0)[0] >= 8
+        # bf16 veya fp16 otomatik seçimi
+        use_bf16 = torch.cuda.is_bf16_supported()
 
         training_args = TrainingArguments(
             output_dir=self.output_dir,
-            per_device_train_batch_size=1,
-            gradient_accumulation_steps=4,
-            num_train_epochs=3,
+            per_device_train_batch_size=8,  # GPU bellek sınırına göre ayarlanabilir (artırıldı)
+            gradient_accumulation_steps=16,  # Büyük veri kümeleri için (etkili batch size = 8*16)
+            num_train_epochs=2,  # Eğitim süresi azaltıldı
             logging_dir=f"{self.output_dir}/logs",
-            logging_steps=logging_steps,
+            logging_steps=1000,  # Belirli adımlarda loglama
             learning_rate=1e-5,
             warmup_steps=500,
             weight_decay=0.01,
-            bf16=bf16_available,  # bf16 varsa kullanılır
-            fp16=not bf16_available,  # bf16 yoksa fp16 kullanılır
-            save_total_limit=1,
-            save_steps=None,
-            save_strategy="no",
+            bf16=use_bf16,  # bf16 destekliyorsa kullan
+            fp16=not use_bf16,  # Aksi durumda fp16 kullan
+            save_total_limit=1,  # Sadece en son modeli sakla
+            save_steps=None,  # Adımlarda kaydetmeyi devre dışı bırak
+            save_strategy="no",  # Eğitim sırasında model kaydedilmez
         )
 
         trainer = SFTTrainer(
@@ -95,7 +98,7 @@ class Trainer:
             train_dataset=train_dataset,
             tokenizer=tokenizer,
             args=training_args,
-            callbacks=[TrainingLoggerCallback(logging_steps)],
+            callbacks=[TrainingLoggerCallback(logging_steps=1000)],  # Eğitim log callback'i
         )
 
         trainer.train()
@@ -109,25 +112,34 @@ class Trainer:
 
 
 def train_model(model_name, dataset_name, dataset_path):
+    """
+    Her model-dataset kombinasyonu için eğitim işlemini yürütür.
+    """
     log_file = f"logs/{model_name.split('/')[-1]}_{dataset_name}.log"
-    os.makedirs("logs", exist_ok=True)
-    setup_logging(log_file)
+    os.makedirs("logs", exist_ok=True)  # logs dizinini oluştur
+    setup_logging(log_file)  # Loglama yapılandırmasını başlat
     logging.info(f"[INFO] Eğitim başlıyor: Model={model_name}, Dataset={dataset_name}")
 
+    # Dataset yöneticisi ve yükleme
     dataset_manager = DatasetManager({dataset_name: dataset_path})
     train_dataset = dataset_manager.load_dataset(dataset_name)
     logging.info(f"Dataset başarıyla yüklendi: {dataset_name}")
 
+    # Çıktı dizinini oluştur
     output_dir = f"./models/{model_name.split('/')[-1]}_{dataset_name}"
     trainer = Trainer(model_name, output_dir, log_file)
 
+    # Model ve tokenizer yükle
     model, tokenizer = trainer.load_model_and_tokenizer()
+
+    # Modeli ince ayar yaparak eğit
     trainer.fine_tune(model, tokenizer, train_dataset)
 
     logging.info(f"[SUCCESS] Eğitim tamamlandı: Model={model_name}, Dataset={dataset_name}")
 
 
 if __name__ == "__main__":
+    # Eğitimde kullanılacak veri kümeleri ve modeller
     datasets = {
         "v1": "./dataset/v1.csv",
         "v2": "./dataset/v2.csv",
