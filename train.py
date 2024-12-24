@@ -92,7 +92,7 @@ class Trainer:
             logging_dir=f"{self.output_dir}/logs",
             logging_steps=100,  # Daha sık loglama
             learning_rate=1e-4,  # Daha yüksek başlangıç öğrenme oranı
-            warmup_steps=100,  # Sıcak başlangıç
+            warmup_steps=100,  
             weight_decay=0.01,
             bf16=use_bf16,  # bf16 destekliyorsa kullan
             fp16=not use_bf16,  # Aksi durumda fp16 kullan
