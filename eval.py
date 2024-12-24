@@ -1,4 +1,4 @@
-import os 
+import os  # Klasör kontrolü ve oluşturma için gerekli
 import pandas as pd
 import torch
 from transformers import AutoModelForCausalLM, AutoTokenizer
@@ -85,50 +85,68 @@ class Evaluator:
         test_data = pd.read_csv(self.test_dataset_path)
         results = []
 
+        # TXT dosyasına kaydetme için dosya yolu
+        txt_file_path = self.output_excel.replace(".xlsx", ".txt")
+
         # Her modeli sırayla test et
         for idx, model_dir in enumerate(self.model_dirs, start=1):
             model, tokenizer = self.load_model_and_tokenizer(model_dir)
             print(f"Model {model_dir} test ediliyor...")
 
-            for _, row in test_data.iterrows():
-                question = row["soru"]
-                reference = row["cevap"]
-                inputs = tokenizer(f"{question}\n", return_tensors="pt").to(model.device)
+            with open(txt_file_path, "a", encoding="utf-8") as txt_file:
+                for _, row in test_data.iterrows():
+                    question = row["soru"]
+                    reference = row["cevap"]
+                    inputs = tokenizer(f"{question}\n", return_tensors="pt").to(model.device)
 
-                # Yanıt üretimi optimize edilmiş parametrelerle
-                outputs = model.generate(
-                    **inputs,
-                    max_new_tokens=150,
-                    do_sample=False,
-                    repetition_penalty=1.2,
-                    no_repeat_ngram_size=3
-                )
-                prediction = tokenizer.decode(outputs[0], skip_special_tokens=True)
+                    # Yanıt üretimi optimize edilmiş parametrelerle
+                    outputs = model.generate(
+                        **inputs,
+                        max_new_tokens=150,
+                        do_sample=False,
+                        repetition_penalty=1.2,
+                        no_repeat_ngram_size=3
+                    )
+                    prediction = tokenizer.decode(outputs[0], skip_special_tokens=True)
 
-                # Metrik hesaplamaları
-                bleu_score = self.calculate_bleu(reference, prediction)
-                rouge_scores = self.calculate_rouge(reference, prediction)
-                semantic_similarity = self.calculate_semantic_similarity(reference, prediction)
+                    # Metrik hesaplamaları
+                    bleu_score = self.calculate_bleu(reference, prediction)
+                    rouge_scores = self.calculate_rouge(reference, prediction)
+                    semantic_similarity = self.calculate_semantic_similarity(reference, prediction)
 
-                # Sonuçları sakla
-                results.append({
-                    "model": model_dir,
-                    "question": question,
-                    "reference": reference,
-                    "prediction": prediction,
-                    "bleu": bleu_score,
-                    "rouge1": rouge_scores["rouge1"].fmeasure,
-                    "rouge2": rouge_scores["rouge2"].fmeasure,
-                    "rougeL": rouge_scores["rougeL"].fmeasure,
-                    "semantic_similarity": semantic_similarity,
-                })
+                    # Sonuçları sakla
+                    results.append({
+                        "model": model_dir,
+                        "question": question,
+                        "reference": reference,
+                        "prediction": prediction,
+                        "bleu": bleu_score,
+                        "rouge1": rouge_scores["rouge1"].fmeasure,
+                        "rouge2": rouge_scores["rouge2"].fmeasure,
+                        "rougeL": rouge_scores["rougeL"].fmeasure,
+                        "semantic_similarity": semantic_similarity,
+                    })
 
-            print(f"Model {model_dir} test işlemi tamamlandı.")
+                    # TXT dosyasına kaydet
+                    txt_file.write(
+                        f"Model: {model_dir}\n"
+                        f"Soru: {question}\n"
+                        f"Referans: {reference}\n"
+                        f"Tahmin: {prediction}\n"
+                        f"BLEU Skoru: {bleu_score:.4f}\n"
+                        f"ROUGE-1: {rouge_scores['rouge1'].fmeasure:.4f}\n"
+                        f"ROUGE-2: {rouge_scores['rouge2'].fmeasure:.4f}\n"
+                        f"ROUGE-L: {rouge_scores['rougeL'].fmeasure:.4f}\n"
+                        f"Semantik Benzerlik: {semantic_similarity:.4f}\n"
+                        f"{'-'*50}\n"
+                    )
+
+                print(f"Model {model_dir} test işlemi tamamlandı.")
 
         # Sonuçları Excel dosyasına kaydet
         results_df = pd.DataFrame(results)
         results_df.to_excel(self.output_excel, index=False, engine="openpyxl")
-        print(f"Sonuçlar {self.output_excel} dosyasına kaydedildi.")
+        print(f"Sonuçlar {self.output_excel} ve {txt_file_path} dosyasına kaydedildi.")
 
 
 if __name__ == "__main__":
