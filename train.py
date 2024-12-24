@@ -39,19 +39,16 @@ class Trainer:
         training_args = TrainingArguments(
             output_dir=self.output_dir,
             per_device_train_batch_size=1,  # GPU bellek sınırına göre ayarlanabilir 
-            #colabte per_device_train_batch_size
-            #  v1 medium 8
-            #  v1 large 6 
-            #
             gradient_accumulation_steps=4,
-            num_train_epochs=5,
-            save_steps=5000,
+            num_train_epochs=3,
             logging_dir=f"{self.output_dir}/logs",
             learning_rate=5e-5,
             warmup_steps=500,
             weight_decay=0.01,
             fp16=True,
-            save_total_limit=2,
+            save_total_limit=1,  # Sadece en son modeli sakla
+            save_steps=None,  # Adımlarda kaydetmeyi devre dışı bırak
+            save_strategy="no",  # Eğitim sırasında hiç kaydetme
         )
 
         trainer = SFTTrainer(
@@ -96,7 +93,7 @@ def train_model(model_name, dataset_name, dataset_path):
 if __name__ == "__main__":
     # Eğitimde kullanılacak veri kümeleri ve modeller
     datasets = {
-        # "v1": "./dataset/v1.csv",
+        "v1": "./dataset/v1.csv",
         "v2": "./dataset/v2.csv",
         "v3": "./dataset/v3.csv",
     }
@@ -106,7 +103,6 @@ if __name__ == "__main__":
         "ytu-ce-cosmos/turkish-gpt2-large",
     ]
 
-    # Paralel işlem havuzu oluştur
     for dataset_name, dataset_path in datasets.items():
         for model_name in models:
             train_model(model_name, dataset_name, dataset_path)
