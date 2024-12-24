@@ -52,9 +52,9 @@ class Trainer:
 
         # LoRA Konfigürasyonu
         lora_config = LoraConfig(
-            r=self.lora_params.get("r", 16),
-            lora_alpha=self.lora_params.get("lora_alpha", 32),
-            target_modules=self.lora_params.get("target_modules", ["c_attn", "c_proj"]),
+            r=self.lora_params.get("r", 32),
+            lora_alpha=self.lora_params.get("lora_alpha", 64),
+            target_modules=self.lora_params.get("target_modules", ["c_attn", "c_proj", "q_attn", "v_proj"]),
             lora_dropout=self.lora_params.get("lora_dropout", 0.1),
             bias=self.lora_params.get("bias", "none"),
             task_type="CAUSAL_LM",
@@ -75,33 +75,17 @@ class Trainer:
     def fine_tune(self, model, tokenizer, train_dataset):
         logging.info(f"Model {self.model_name} ince ayar işlemi başlatılıyor.")
 
-        # Veri seti tokenizasyon ve maksimum sekans uzunluğu ayarları
-        max_seq_length = 256
-        train_dataset = train_dataset.map(
-            lambda examples: tokenizer(
-                examples["text"],
-                truncation=True,
-                padding="max_length",
-                max_length=max_seq_length,
-            ),
-            batched=True,
-        )
-        logging.info(f"Dataset başarıyla işlendi: max_seq_length={max_seq_length}")
-
-        # bf16 veya fp16 otomatik seçimi
-        use_bf16 = torch.cuda.is_bf16_supported()
-
         training_args = TrainingArguments(
             output_dir=self.output_dir,
             per_device_train_batch_size=1,  # Colab İçin Düşük Batch Size
             gradient_accumulation_steps=8,  # Etkin Batch Size Artırır
-            num_train_epochs=1,  # Hızlı Deneme Eğitimi
+            num_train_epochs=5,  # Hızlı Deneme Eğitimi
             learning_rate=5e-5,  # Daha Stabil Öğrenme Oranı
             warmup_steps=100,  # Isınma Adımları
             weight_decay=0.01,
             fp16=True,  # Daha Az Bellek Kullanımı için FP16
             logging_dir=f"{self.output_dir}/logs",
-            logging_steps=50,  # Daha Sık Loglama
+            logging_steps=500,  # Daha Sık Loglama
             save_strategy="epoch",  # Her Epoch’ta Kaydetme
         )
 
@@ -110,7 +94,7 @@ class Trainer:
             train_dataset=train_dataset,
             tokenizer=tokenizer,
             args=training_args,
-            callbacks=[TrainingLoggerCallback(logging_steps=50)],  # Eğitim log callback'i
+            callbacks=[TrainingLoggerCallback(logging_steps=500)],  # Eğitim log callback'i
         )
 
         trainer.train()
@@ -164,10 +148,10 @@ if __name__ == "__main__":
     ]
 
     lora_params = {
-        "r": 16,
-        "lora_alpha": 32,
+        "r": 32,
+        "lora_alpha": 64,
         "lora_dropout": 0.1,
-        "target_modules": ["c_attn", "c_proj"],
+        "target_modules": ["c_attn", "c_proj", "q_attn", "v_proj"], 
         "bias": "none",
     }
 
