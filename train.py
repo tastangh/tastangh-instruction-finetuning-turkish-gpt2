@@ -70,7 +70,7 @@ class Trainer:
 
     def fine_tune(self, model, tokenizer, train_dataset):
         logging.info(f"Model {self.model_name} ince ayar işlemi başlatılıyor.")
-        logging_steps = 10  # Konsola yazıldığı sıklık
+        logging_steps = 1000  # Konsola yazıldığı sıklık
         training_args = TrainingArguments(
             output_dir=self.output_dir,
             per_device_train_batch_size=1,  # GPU bellek sınırına göre ayarlanabilir 
