@@ -16,3 +16,4 @@
 2024-12-24 13:03:14,056 - INFO - Training Logs at step 110: {'loss': 3.3654, 'grad_norm': 6.9035325050354, 'learning_rate': 1.98e-06, 'epoch': 0.023909145248057383}
 2024-12-24 13:03:16,823 - INFO - Training Logs at step 120: {'loss': 3.7007, 'grad_norm': 8.787809371948242, 'learning_rate': 2.1800000000000003e-06, 'epoch': 0.02630005977286312}
 2024-12-24 13:03:19,652 - INFO - Training Logs at step 130: {'loss': 3.4359, 'grad_norm': 9.140788078308105, 'learning_rate': 2.38e-06, 'epoch': 0.02869097429766886}
+2024-12-24 13:03:22,357 - INFO - Training Logs at step 140: {'loss': 3.6902, 'grad_norm': 8.473749160766602, 'learning_rate': 2.5800000000000003e-06, 'epoch': 0.031081888822474597}
