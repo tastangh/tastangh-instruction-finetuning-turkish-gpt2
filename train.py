@@ -39,9 +39,10 @@ class TrainingLoggerCallback(TrainerCallback):
 
 
 class Trainer:
-    def __init__(self, model_name: str, output_dir: str, log_file: str):
+    def __init__(self, model_name: str, output_dir: str, log_file: str, lora_params: dict):
         self.model_name = model_name
         self.output_dir = output_dir
+        self.lora_params = lora_params
         setup_logging(log_file)
 
     def load_model_and_tokenizer(self):
@@ -49,21 +50,14 @@ class Trainer:
         tokenizer = AutoTokenizer.from_pretrained(self.model_name)
         model = AutoModelForCausalLM.from_pretrained(self.model_name)
 
-        # Geliştirilmiş LoRA Konfigürasyonu
+        # LoRA Konfigürasyonu
         lora_config = LoraConfig(
-            r=16,  # Adaptasyon matrisi boyutu
-            lora_alpha=32,  # Etkinlik artırıcı ölçekleme
-            target_modules=[
-                "q_proj", "k_proj", "v_proj",  # Ayrıştırılmış dikkat modülleri
-                "c_attn",  # Birleşik dikkat modülü
-                "o_proj",  # Dikkat çıktı projeksiyonu
-                "ffn_up_proj", "ffn_down_proj",  # Feedforward projeksiyonları
-                "embed_tokens", "embed_positions",  # Gömülü temsiller
-                "norm"  # Normalizasyon
-            ],
-            lora_dropout=0.1,  # Aşırı öğrenmeyi önlemek için dropout
-            bias="none",  # Eklenen biasları eğitme
-            task_type="CAUSAL_LM",  # Nedensel dil modelleme
+            r=self.lora_params.get("r", 16),
+            lora_alpha=self.lora_params.get("lora_alpha", 32),
+            target_modules=self.lora_params.get("target_modules", ["c_attn", "c_proj"]),
+            lora_dropout=self.lora_params.get("lora_dropout", 0.1),
+            bias=self.lora_params.get("bias", "none"),
+            task_type="CAUSAL_LM",
         )
         model = get_peft_model(model, lora_config)
 
@@ -81,22 +75,34 @@ class Trainer:
     def fine_tune(self, model, tokenizer, train_dataset):
         logging.info(f"Model {self.model_name} ince ayar işlemi başlatılıyor.")
 
+        # Veri seti tokenizasyon ve maksimum sekans uzunluğu ayarları
+        max_seq_length = 256
+        train_dataset = train_dataset.map(
+            lambda examples: tokenizer(
+                examples["text"],
+                truncation=True,
+                padding="max_length",
+                max_length=max_seq_length,
+            ),
+            batched=True,
+        )
+        logging.info(f"Dataset başarıyla işlendi: max_seq_length={max_seq_length}")
+
         # bf16 veya fp16 otomatik seçimi
         use_bf16 = torch.cuda.is_bf16_supported()
 
         training_args = TrainingArguments(
             output_dir=self.output_dir,
-            per_device_train_batch_size=2,  # GPU bellek sınırına göre ayarlanabilir
-            gradient_accumulation_steps=8,  # Daha büyük efektif batch size
-            num_train_epochs=1,  # Daha kısa süreli ince ayar için 1 epoch
-            logging_dir=f"{self.output_dir}/logs",
-            logging_steps=100,  # Daha sık loglama
-            learning_rate=1e-4,  # Daha yüksek başlangıç öğrenme oranı
-            warmup_steps=100,  
+            per_device_train_batch_size=1,  # Colab İçin Düşük Batch Size
+            gradient_accumulation_steps=8,  # Etkin Batch Size Artırır
+            num_train_epochs=1,  # Hızlı Deneme Eğitimi
+            learning_rate=5e-5,  # Daha Stabil Öğrenme Oranı
+            warmup_steps=100,  # Isınma Adımları
             weight_decay=0.01,
-            bf16=use_bf16,  # bf16 destekliyorsa kullan
-            fp16=not use_bf16,  # Aksi durumda fp16 kullan
-            save_strategy="no",  # Eğitim sırasında model kaydedilmez
+            fp16=True,  # Daha Az Bellek Kullanımı için FP16
+            logging_dir=f"{self.output_dir}/logs",
+            logging_steps=50,  # Daha Sık Loglama
+            save_strategy="epoch",  # Her Epoch’ta Kaydetme
         )
 
         trainer = SFTTrainer(
@@ -104,7 +110,7 @@ class Trainer:
             train_dataset=train_dataset,
             tokenizer=tokenizer,
             args=training_args,
-            callbacks=[TrainingLoggerCallback(logging_steps=100)],  # Eğitim log callback'i
+            callbacks=[TrainingLoggerCallback(logging_steps=50)],  # Eğitim log callback'i
         )
 
         trainer.train()
@@ -117,7 +123,7 @@ class Trainer:
         logging.info(f"Model {self.output_dir} dizinine başarıyla kaydedildi.")
 
 
-def train_model(model_name, dataset_name, dataset_path):
+def train_model(model_name, dataset_name, dataset_path, lora_params):
     """
     Her model-dataset kombinasyonu için eğitim işlemini yürütür.
     """
@@ -133,7 +139,7 @@ def train_model(model_name, dataset_name, dataset_path):
 
     # Çıktı dizinini oluştur
     output_dir = f"./models/{model_name.split('/')[-1]}_{dataset_name}"
-    trainer = Trainer(model_name, output_dir, log_file)
+    trainer = Trainer(model_name, output_dir, log_file, lora_params)
 
     # Model ve tokenizer yükle
     model, tokenizer = trainer.load_model_and_tokenizer()
@@ -145,18 +151,26 @@ def train_model(model_name, dataset_name, dataset_path):
 
 
 if __name__ == "__main__":
-    # Eğitimde kullanılacak veri kümeleri ve modeller
+    # Eğitimde kullanılacak veri kümeleri ve modeller 
     datasets = {
-        "v1": "./dataset/v1.csv",
-        "v2": "./dataset/v2.csv",
         "v3": "./dataset/v3.csv",
+        "v2": "./dataset/v2.csv",
+        "v1": "./dataset/v1.csv",
     }
 
     models = [
-        "ytu-ce-cosmos/turkish-gpt2-medium",
         "ytu-ce-cosmos/turkish-gpt2-large",
+        "ytu-ce-cosmos/turkish-gpt2-medium",
     ]
+
+    lora_params = {
+        "r": 16,
+        "lora_alpha": 32,
+        "lora_dropout": 0.1,
+        "target_modules": ["c_attn", "c_proj"],
+        "bias": "none",
+    }
 
     for dataset_name, dataset_path in datasets.items():
         for model_name in models:
-            train_model(model_name, dataset_name, dataset_path)
+            train_model(model_name, dataset_name, dataset_path, lora_params)
