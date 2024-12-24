@@ -1,3 +1,5 @@
-2024-12-24 13:08:26,918 - INFO - [INFO] Eğitim başlıyor: Model=ytu-ce-cosmos/turkish-gpt2-medium, Dataset=v1
-2024-12-24 13:08:27,821 - INFO - Dataset başarıyla yüklendi: v1
-2024-12-24 13:08:27,822 - INFO - Model ve tokenizer yükleniyor: ytu-ce-cosmos/turkish-gpt2-medium
+2024-12-24 16:04:31,798 - INFO - [INFO] Eğitim başlıyor: Model=ytu-ce-cosmos/turkish-gpt2-medium, Dataset=v1
+2024-12-24 16:04:32,822 - INFO - Dataset başarıyla yüklendi: v1
+2024-12-24 16:04:32,822 - INFO - Model ve tokenizer yükleniyor: ytu-ce-cosmos/turkish-gpt2-medium
+2024-12-24 16:04:46,463 - INFO - Model ve tokenizer başarıyla yüklendi: ytu-ce-cosmos/turkish-gpt2-medium
+2024-12-24 16:04:46,463 - INFO - Model ytu-ce-cosmos/turkish-gpt2-medium ince ayar işlemi başlatılıyor.
