@@ -49,13 +49,21 @@ class Trainer:
         tokenizer = AutoTokenizer.from_pretrained(self.model_name)
         model = AutoModelForCausalLM.from_pretrained(self.model_name)
 
-        # Lora Konfigürasyonu
+        # Geliştirilmiş LoRA Konfigürasyonu
         lora_config = LoraConfig(
-            r=32,  # Daha yüksek kapasite için
-            lora_alpha=64,  # Modelin öğrenme kapasitesini artırır
-            target_modules=["c_attn", "c_proj", "q_attn", "v_proj"],  # Dikkat mekanizması katmanları
-            lora_dropout=0.1,  # Aşırı öğrenmeyi engellemek için düşük dropout
-            bias="none",  # Bias terimlerini dondur
+            r=16,  # Adaptasyon matrisi boyutu
+            lora_alpha=32,  # Etkinlik artırıcı ölçekleme
+            target_modules=[
+                "q_proj", "k_proj", "v_proj",  # Ayrıştırılmış dikkat modülleri
+                "c_attn",  # Birleşik dikkat modülü
+                "o_proj",  # Dikkat çıktı projeksiyonu
+                "ffn_up_proj", "ffn_down_proj",  # Feedforward projeksiyonları
+                "embed_tokens", "embed_positions",  # Gömülü temsiller
+                "norm"  # Normalizasyon
+            ],
+            lora_dropout=0.1,  # Aşırı öğrenmeyi önlemek için dropout
+            bias="none",  # Eklenen biasları eğitme
+            task_type="CAUSAL_LM",  # Nedensel dil modelleme
         )
         model = get_peft_model(model, lora_config)
 
@@ -78,18 +86,16 @@ class Trainer:
 
         training_args = TrainingArguments(
             output_dir=self.output_dir,
-            per_device_train_batch_size=8,  # GPU bellek sınırına göre ayarlanabilir (artırıldı)
-            gradient_accumulation_steps=16,  # Büyük veri kümeleri için (etkili batch size = 8*16)
-            num_train_epochs=2,  # Eğitim süresi azaltıldı
+            per_device_train_batch_size=2,  # GPU bellek sınırına göre ayarlanabilir
+            gradient_accumulation_steps=8,  # Daha büyük efektif batch size
+            num_train_epochs=1,  # Daha kısa süreli ince ayar için 1 epoch
             logging_dir=f"{self.output_dir}/logs",
-            logging_steps=1000,  # Belirli adımlarda loglama
-            learning_rate=1e-5,
-            warmup_steps=500,
+            logging_steps=100,  # Daha sık loglama
+            learning_rate=1e-4,  # Daha yüksek başlangıç öğrenme oranı
+            warmup_steps=100,  # Sıcak başlangıç
             weight_decay=0.01,
             bf16=use_bf16,  # bf16 destekliyorsa kullan
             fp16=not use_bf16,  # Aksi durumda fp16 kullan
-            save_total_limit=1,  # Sadece en son modeli sakla
-            save_steps=None,  # Adımlarda kaydetmeyi devre dışı bırak
             save_strategy="no",  # Eğitim sırasında model kaydedilmez
         )
 
@@ -98,7 +104,7 @@ class Trainer:
             train_dataset=train_dataset,
             tokenizer=tokenizer,
             args=training_args,
-            callbacks=[TrainingLoggerCallback(logging_steps=1000)],  # Eğitim log callback'i
+            callbacks=[TrainingLoggerCallback(logging_steps=100)],  # Eğitim log callback'i
         )
 
         trainer.train()
