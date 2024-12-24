@@ -6,7 +6,6 @@ from peft import LoraConfig, get_peft_model
 from dataset_manager import DatasetManager
 import os
 import shutil
-from concurrent.futures import ProcessPoolExecutor
 
 
 class Trainer:
@@ -39,7 +38,11 @@ class Trainer:
     def fine_tune(self, model, tokenizer, train_dataset):
         training_args = TrainingArguments(
             output_dir=self.output_dir,
-            per_device_train_batch_size=8,  # GPU bellek sınırına göre ayarlanabilir
+            per_device_train_batch_size=1,  # GPU bellek sınırına göre ayarlanabilir 
+            #colabte per_device_train_batch_size
+            #  v1 medium 8
+            #  v1 large 6 
+            #
             gradient_accumulation_steps=4,
             num_train_epochs=5,
             save_steps=5000,
@@ -93,7 +96,7 @@ def train_model(model_name, dataset_name, dataset_path):
 if __name__ == "__main__":
     # Eğitimde kullanılacak veri kümeleri ve modeller
     datasets = {
-        "v1": "./dataset/v1.csv",
+        # "v1": "./dataset/v1.csv",
         "v2": "./dataset/v2.csv",
         "v3": "./dataset/v3.csv",
     }
