@@ -1,0 +1,17 @@
+2024-12-25 13:33:37,748 - INFO - [INFO] Eğitim başlıyor: Model=ytu-ce-cosmos/turkish-gpt2-large, Dataset=v2
+2024-12-25 13:33:40,139 - INFO - Dataset başarıyla yüklendi: v2
+2024-12-25 13:33:40,140 - INFO - Model ve tokenizer yükleniyor: ytu-ce-cosmos/turkish-gpt2-large
+2024-12-25 13:33:46,466 - INFO - Model ve tokenizer başarıyla yüklendi: ytu-ce-cosmos/turkish-gpt2-large
+2024-12-25 13:33:46,466 - INFO - Model ytu-ce-cosmos/turkish-gpt2-large ince ayar işlemi başlatılıyor.
+2024-12-25 13:33:50,065 - INFO - Dataset başarıyla işlendi: max_seq_length=256
+2024-12-25 13:45:47,802 - INFO - Training Logs at step 500: {'loss': 2.7831, 'grad_norm': 6.687928199768066, 'learning_rate': 4.692671394799055e-05, 'epoch': 0.07602203087425335}
+2024-12-25 13:57:46,343 - INFO - Training Logs at step 1000: {'loss': 2.7748, 'grad_norm': 4.559295654296875, 'learning_rate': 4.29866036249015e-05, 'epoch': 0.1535955317663486}
+2024-12-25 14:09:45,493 - INFO - Training Logs at step 1500: {'loss': 2.7093, 'grad_norm': 4.548541069030762, 'learning_rate': 3.9046493301812456e-05, 'epoch': 0.23116903265844388}
+2024-12-25 14:21:44,825 - INFO - Training Logs at step 2000: {'loss': 2.7699, 'grad_norm': 5.461319923400879, 'learning_rate': 3.5106382978723407e-05, 'epoch': 0.30874253355053916}
+2024-12-25 14:33:43,642 - INFO - Training Logs at step 2500: {'loss': 2.695, 'grad_norm': 5.961654186248779, 'learning_rate': 3.116627265563436e-05, 'epoch': 0.3863160344426344}
+2024-12-25 14:45:42,586 - INFO - Training Logs at step 3000: {'loss': 2.7108, 'grad_norm': 4.382173538208008, 'learning_rate': 2.723404255319149e-05, 'epoch': 0.46388953533472965}
+2024-12-25 14:57:41,522 - INFO - Training Logs at step 3500: {'loss': 2.5341, 'grad_norm': 6.372058391571045, 'learning_rate': 2.3293932230102444e-05, 'epoch': 0.5414630362268249}
+2024-12-25 15:09:40,557 - INFO - Training Logs at step 4000: {'loss': 2.5266, 'grad_norm': 4.650078296661377, 'learning_rate': 1.93538219070134e-05, 'epoch': 0.6190365371189201}
+2024-12-25 15:21:39,885 - INFO - Training Logs at step 4500: {'loss': 2.6417, 'grad_norm': 4.627566814422607, 'learning_rate': 1.5413711583924352e-05, 'epoch': 0.6966100380110154}
+2024-12-25 15:33:39,243 - INFO - Training Logs at step 5000: {'loss': 2.6841, 'grad_norm': 4.776987075805664, 'learning_rate': 1.1473601260835305e-05, 'epoch': 0.7741835389031106}
+2024-12-25 15:45:38,665 - INFO - Training Logs at step 5500: {'loss': 2.6068, 'grad_norm': 4.946924209594727, 'learning_rate': 7.5413711583924356e-06, 'epoch': 0.851757039795206}

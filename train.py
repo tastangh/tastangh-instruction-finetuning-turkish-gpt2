@@ -74,18 +74,30 @@ class Trainer:
 
     def fine_tune(self, model, tokenizer, train_dataset):
         logging.info(f"Model {self.model_name} ince ayar işlemi başlatılıyor.")
+        #  Veri seti tokenizasyon ve maksimum sekans uzunluğu ayarları
+        max_seq_length = 256
+        train_dataset = train_dataset.map(
+            lambda examples: tokenizer(
+                examples["text"],
+                truncation=True,
+                padding="max_length",
+                max_length=max_seq_length,
+            ),
+            batched=True,
+        )
+        logging.info(f"Dataset başarıyla işlendi: max_seq_length={max_seq_length}")
 
         training_args = TrainingArguments(
             output_dir=self.output_dir,
-            per_device_train_batch_size=1,  # Colab İçin Düşük Batch Size
-            gradient_accumulation_steps=8,  # Etkin Batch Size Artırır
-            num_train_epochs=5,  # Hızlı Deneme Eğitimi
+            per_device_train_batch_size=2,  # Colab İçin Düşük Batch Size
+            gradient_accumulation_steps=4,  # Etkin Batch Size Artırır
+            num_train_epochs=1,  # Hızlı Deneme Eğitimi
             learning_rate=5e-5,  # Daha Stabil Öğrenme Oranı
             warmup_steps=100,  # Isınma Adımları
             weight_decay=0.01,
             fp16=True,  # Daha Az Bellek Kullanımı için FP16
             logging_dir=f"{self.output_dir}/logs",
-            logging_steps=500,  # Daha Sık Loglama
+            logging_steps=10,  # Daha Sık Loglama
             save_strategy="epoch",  # Her Epoch’ta Kaydetme
         )
 
@@ -137,7 +149,7 @@ def train_model(model_name, dataset_name, dataset_path, lora_params):
 if __name__ == "__main__":
     # Eğitimde kullanılacak veri kümeleri ve modeller 
     datasets = {
-        "v3": "./dataset/v3.csv",
+        # "v3": "./dataset/v3.csv",
         "v2": "./dataset/v2.csv",
         "v1": "./dataset/v1.csv",
     }
