@@ -1,0 +1,14 @@
+2024-12-25 17:20:43,229 - INFO - [INFO] Eğitim başlıyor: Model=ytu-ce-cosmos/turkish-gpt2-large, Dataset=v1
+2024-12-25 17:20:44,200 - INFO - Dataset başarıyla yüklendi: v1
+2024-12-25 17:20:44,201 - INFO - Model ve tokenizer yükleniyor: ytu-ce-cosmos/turkish-gpt2-large
+2024-12-25 17:20:47,023 - INFO - Model ve tokenizer başarıyla yüklendi: ytu-ce-cosmos/turkish-gpt2-large
+2024-12-25 17:20:47,023 - INFO - Model ytu-ce-cosmos/turkish-gpt2-large ince ayar işlemi başlatılıyor.
+2024-12-25 17:20:48,256 - INFO - Dataset başarıyla işlendi: max_seq_length=256
+2024-12-25 17:32:49,063 - INFO - Training Logs at step 500: {'loss': 2.9199, 'grad_norm': 6.793178558349609, 'learning_rate': 4.020592667001507e-05, 'epoch': 0.23430962343096234}
+2024-12-25 17:44:50,007 - INFO - Training Logs at step 1000: {'loss': 2.9921, 'grad_norm': 5.984130859375, 'learning_rate': 2.7649422400803614e-05, 'epoch': 0.4734010759115362}
+2024-12-25 17:56:51,220 - INFO - Training Logs at step 1500: {'loss': 3.0724, 'grad_norm': 7.090162754058838, 'learning_rate': 1.511803114013059e-05, 'epoch': 0.71249252839211}
+2024-12-25 18:08:52,900 - INFO - Training Logs at step 2000: {'loss': 2.9274, 'grad_norm': 6.436634063720703, 'learning_rate': 2.5615268709191364e-06, 'epoch': 0.9515839808726838}
+2024-12-25 18:11:05,849 - INFO - Model ytu-ce-cosmos/turkish-gpt2-large ince ayar işlemi başarıyla tamamlandı.
+2024-12-25 18:11:05,849 - INFO - Model ve tokenizer kaydediliyor: ./models/turkish-gpt2-large_v1
+2024-12-25 18:11:15,103 - INFO - Model ./models/turkish-gpt2-large_v1 dizinine başarıyla kaydedildi.
+2024-12-25 18:11:15,103 - INFO - [SUCCESS] Eğitim tamamlandı: Model=ytu-ce-cosmos/turkish-gpt2-large, Dataset=v1

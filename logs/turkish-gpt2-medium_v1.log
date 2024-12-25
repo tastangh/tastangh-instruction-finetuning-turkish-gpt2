@@ -1,0 +1,18 @@
+2024-12-25 16:08:20,643 - INFO - Model ytu-ce-cosmos/turkish-gpt2-large ince ayar işlemi başarıyla tamamlandı.
+2024-12-25 16:08:20,643 - INFO - Model ve tokenizer kaydediliyor: ./models/turkish-gpt2-large_v2
+2024-12-25 16:08:29,303 - INFO - Model ./models/turkish-gpt2-large_v2 dizinine başarıyla kaydedildi.
+2024-12-25 16:08:29,303 - INFO - [SUCCESS] Eğitim tamamlandı: Model=ytu-ce-cosmos/turkish-gpt2-large, Dataset=v2
+2024-12-25 18:11:15,104 - INFO - [INFO] Eğitim başlıyor: Model=ytu-ce-cosmos/turkish-gpt2-medium, Dataset=v1
+2024-12-25 18:11:16,061 - INFO - Dataset başarıyla yüklendi: v1
+2024-12-25 18:11:16,061 - INFO - Model ve tokenizer yükleniyor: ytu-ce-cosmos/turkish-gpt2-medium
+2024-12-25 18:11:17,515 - INFO - Model ve tokenizer başarıyla yüklendi: ytu-ce-cosmos/turkish-gpt2-medium
+2024-12-25 18:11:17,515 - INFO - Model ytu-ce-cosmos/turkish-gpt2-medium ince ayar işlemi başlatılıyor.
+2024-12-25 18:11:18,780 - INFO - Dataset başarıyla işlendi: max_seq_length=256
+2024-12-25 18:16:53,636 - INFO - Training Logs at step 500: {'loss': 2.9836, 'grad_norm': 7.899641513824463, 'learning_rate': 4.0256152687091915e-05, 'epoch': 0.23430962343096234}
+2024-12-25 18:22:29,104 - INFO - Training Logs at step 1000: {'loss': 3.066, 'grad_norm': 6.737143039703369, 'learning_rate': 2.7699648417880465e-05, 'epoch': 0.4734010759115362}
+2024-12-25 18:28:04,576 - INFO - Training Logs at step 1500: {'loss': 3.1745, 'grad_norm': 8.309062957763672, 'learning_rate': 1.5143144148669012e-05, 'epoch': 0.71249252839211}
+2024-12-25 18:33:39,736 - INFO - Training Logs at step 2000: {'loss': 3.0358, 'grad_norm': 8.315180778503418, 'learning_rate': 2.5866398794575594e-06, 'epoch': 0.9515839808726838}
+2024-12-25 18:34:42,045 - INFO - Model ytu-ce-cosmos/turkish-gpt2-medium ince ayar işlemi başarıyla tamamlandı.
+2024-12-25 18:34:42,045 - INFO - Model ve tokenizer kaydediliyor: ./models/turkish-gpt2-medium_v1
+2024-12-25 18:34:47,433 - INFO - Model ./models/turkish-gpt2-medium_v1 dizinine başarıyla kaydedildi.
+2024-12-25 18:34:47,433 - INFO - [SUCCESS] Eğitim tamamlandı: Model=ytu-ce-cosmos/turkish-gpt2-medium, Dataset=v1

@@ -1,0 +1,22 @@
+2024-12-25 16:08:29,306 - INFO - [INFO] Eğitim başlıyor: Model=ytu-ce-cosmos/turkish-gpt2-medium, Dataset=v2
+2024-12-25 16:08:31,863 - INFO - Dataset başarıyla yüklendi: v2
+2024-12-25 16:08:31,864 - INFO - Model ve tokenizer yükleniyor: ytu-ce-cosmos/turkish-gpt2-medium
+2024-12-25 16:08:33,336 - INFO - Model ve tokenizer başarıyla yüklendi: ytu-ce-cosmos/turkish-gpt2-medium
+2024-12-25 16:08:33,336 - INFO - Model ytu-ce-cosmos/turkish-gpt2-medium ince ayar işlemi başlatılıyor.
+2024-12-25 16:08:37,684 - INFO - Dataset başarıyla işlendi: max_seq_length=256
+2024-12-25 16:14:12,430 - INFO - Training Logs at step 500: {'loss': 2.8812, 'grad_norm': 8.330891609191895, 'learning_rate': 4.6934594168636724e-05, 'epoch': 0.07602203087425335}
+2024-12-25 16:19:47,681 - INFO - Training Logs at step 1000: {'loss': 2.839, 'grad_norm': 5.3422465324401855, 'learning_rate': 4.299448384554768e-05, 'epoch': 0.1535955317663486}
+2024-12-25 16:25:23,101 - INFO - Training Logs at step 1500: {'loss': 2.8074, 'grad_norm': 5.012750625610352, 'learning_rate': 3.905437352245863e-05, 'epoch': 0.23116903265844388}
+2024-12-25 16:30:58,502 - INFO - Training Logs at step 2000: {'loss': 2.8735, 'grad_norm': 7.302667617797852, 'learning_rate': 3.511426319936958e-05, 'epoch': 0.30874253355053916}
+2024-12-25 16:36:34,431 - INFO - Training Logs at step 2500: {'loss': 2.825, 'grad_norm': 6.8580145835876465, 'learning_rate': 3.1182033096926716e-05, 'epoch': 0.3863160344426344}
+2024-12-25 16:42:09,825 - INFO - Training Logs at step 3000: {'loss': 2.8065, 'grad_norm': 5.149231910705566, 'learning_rate': 2.724192277383767e-05, 'epoch': 0.46388953533472965}
+2024-12-25 16:47:45,088 - INFO - Training Logs at step 3500: {'loss': 2.6439, 'grad_norm': 7.46339225769043, 'learning_rate': 2.330181245074862e-05, 'epoch': 0.5414630362268249}
+2024-12-25 16:53:20,210 - INFO - Training Logs at step 4000: {'loss': 2.6436, 'grad_norm': 5.397789001464844, 'learning_rate': 1.9361702127659575e-05, 'epoch': 0.6190365371189201}
+2024-12-25 16:58:55,003 - INFO - Training Logs at step 4500: {'loss': 2.7333, 'grad_norm': 5.193175792694092, 'learning_rate': 1.5429472025216708e-05, 'epoch': 0.6966100380110154}
+2024-12-25 17:04:29,593 - INFO - Training Logs at step 5000: {'loss': 2.7894, 'grad_norm': 5.7710747718811035, 'learning_rate': 1.1497241922773838e-05, 'epoch': 0.7741835389031106}
+2024-12-25 17:10:04,276 - INFO - Training Logs at step 5500: {'loss': 2.7385, 'grad_norm': 5.904901027679443, 'learning_rate': 7.557131599684791e-06, 'epoch': 0.851757039795206}
+2024-12-25 17:15:39,036 - INFO - Training Logs at step 6000: {'loss': 2.8016, 'grad_norm': 6.207382678985596, 'learning_rate': 3.6170212765957445e-06, 'epoch': 0.9293305406873013}
+2024-12-25 17:20:38,105 - INFO - Model ytu-ce-cosmos/turkish-gpt2-medium ince ayar işlemi başarıyla tamamlandı.
+2024-12-25 17:20:38,105 - INFO - Model ve tokenizer kaydediliyor: ./models/turkish-gpt2-medium_v2
+2024-12-25 17:20:43,225 - INFO - Model ./models/turkish-gpt2-medium_v2 dizinine başarıyla kaydedildi.
+2024-12-25 17:20:43,226 - INFO - [SUCCESS] Eğitim tamamlandı: Model=ytu-ce-cosmos/turkish-gpt2-medium, Dataset=v2
