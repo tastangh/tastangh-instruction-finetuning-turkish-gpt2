@@ -127,7 +127,7 @@ def train_model(model_name, dataset_name, dataset_path, lora_params):
     """
     Her model-dataset kombinasyonu için eğitim işlemini yürütür.
     """
-    log_file = f"logs/{model_name.split('/')[-1]}_{dataset_name}.log"
+    log_file = f"logs/train_started_with_{model_name.split('/')[-1]}_{dataset_name}.log"
     os.makedirs("logs", exist_ok=True)  # logs dizinini oluştur
     setup_logging(log_file)  # Loglama yapılandırmasını başlat
     logging.info(f"[INFO] Eğitim başlıyor: Model={model_name}, Dataset={dataset_name}")
