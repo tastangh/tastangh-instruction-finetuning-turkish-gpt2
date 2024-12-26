@@ -37,7 +37,7 @@ class Trainer:
     def fine_tune(self, model, tokenizer, train_dataset):
         training_args = TrainingArguments(
             output_dir=self.output_dir,
-            per_device_train_batch_size=8,  # GPU bellek sınırına göre ayarlanabilir
+            per_device_train_batch_size=1,  # GPU bellek sınırına göre ayarlanabilir
             gradient_accumulation_steps=4,
             num_train_epochs=5,
             save_steps=5000,
