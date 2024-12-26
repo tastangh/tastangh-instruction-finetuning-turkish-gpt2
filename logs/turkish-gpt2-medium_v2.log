@@ -1,0 +1,72 @@
+2024-12-24 14:26:02,096 - INFO - [INFO] Eğitim başlıyor: Model=ytu-ce-cosmos/turkish-gpt2-medium, Dataset=v2
+2024-12-24 14:26:06,218 - INFO - Dataset başarıyla yüklendi: v2
+2024-12-24 14:26:06,219 - INFO - Model ve tokenizer yükleniyor: ytu-ce-cosmos/turkish-gpt2-medium
+2024-12-24 14:26:07,705 - INFO - Model ve tokenizer başarıyla yüklendi: ytu-ce-cosmos/turkish-gpt2-medium
+2024-12-24 14:26:07,705 - INFO - Model ytu-ce-cosmos/turkish-gpt2-medium ince ayar işlemi başlatılıyor.
+2024-12-24 14:29:54,645 - INFO - Training Logs at step 200: {'loss': 27.2259, 'grad_norm': 13.300454139709473, 'learning_rate': 0.0001, 'epoch': 0.015515001066656323}
+2024-12-24 14:31:39,172 - INFO - Training Logs at step 300: {'loss': 24.7379, 'grad_norm': 9.096693992614746, 'learning_rate': 9.842395587076438e-05, 'epoch': 0.031030002133312647}
+2024-12-24 14:33:23,897 - INFO - Training Logs at step 400: {'loss': 23.9743, 'grad_norm': 11.2190523147583, 'learning_rate': 9.684791174152877e-05, 'epoch': 0.04654500319996897}
+2024-12-24 14:35:07,591 - INFO - Training Logs at step 500: {'loss': 23.7244, 'grad_norm': 8.976948738098145, 'learning_rate': 9.527186761229316e-05, 'epoch': 0.06206000426662529}
+2024-12-24 14:36:50,584 - INFO - Training Logs at step 600: {'loss': 23.5567, 'grad_norm': 11.834121704101562, 'learning_rate': 9.369582348305753e-05, 'epoch': 0.07757500533328161}
+2024-12-24 14:38:34,645 - INFO - Training Logs at step 700: {'loss': 23.5661, 'grad_norm': 15.189053535461426, 'learning_rate': 9.21197793538219e-05, 'epoch': 0.09309000639993795}
+2024-12-24 14:40:18,339 - INFO - Training Logs at step 800: {'loss': 23.3545, 'grad_norm': 11.59620475769043, 'learning_rate': 9.05437352245863e-05, 'epoch': 0.10860500746659427}
+2024-12-24 14:42:02,073 - INFO - Training Logs at step 900: {'loss': 23.3797, 'grad_norm': 8.818305969238281, 'learning_rate': 8.896769109535067e-05, 'epoch': 0.12412000853325059}
+2024-12-24 14:43:46,725 - INFO - Training Logs at step 1000: {'loss': 23.2933, 'grad_norm': 14.310741424560547, 'learning_rate': 8.739164696611506e-05, 'epoch': 0.1396350095999069}
+2024-12-24 14:45:29,878 - INFO - Training Logs at step 1100: {'loss': 23.383, 'grad_norm': 15.328141212463379, 'learning_rate': 8.581560283687943e-05, 'epoch': 0.15515001066656323}
+2024-12-24 14:47:13,060 - INFO - Training Logs at step 1200: {'loss': 23.4975, 'grad_norm': 10.20352840423584, 'learning_rate': 8.423955870764382e-05, 'epoch': 0.17066501173321955}
+2024-12-24 14:48:57,154 - INFO - Training Logs at step 1300: {'loss': 23.2504, 'grad_norm': 9.951447486877441, 'learning_rate': 8.26635145784082e-05, 'epoch': 0.1861800127998759}
+2024-12-24 14:50:41,022 - INFO - Training Logs at step 1400: {'loss': 23.2137, 'grad_norm': 11.526590347290039, 'learning_rate': 8.108747044917257e-05, 'epoch': 0.2016950138665322}
+2024-12-24 14:52:22,112 - INFO - Training Logs at step 1500: {'loss': 22.9823, 'grad_norm': 14.968658447265625, 'learning_rate': 7.951142631993697e-05, 'epoch': 0.21721001493318853}
+2024-12-24 14:54:05,579 - INFO - Training Logs at step 1600: {'loss': 23.548, 'grad_norm': 9.175704956054688, 'learning_rate': 7.793538219070135e-05, 'epoch': 0.23272501599984485}
+2024-12-24 14:55:50,498 - INFO - Training Logs at step 1700: {'loss': 23.2249, 'grad_norm': 13.260287284851074, 'learning_rate': 7.635933806146572e-05, 'epoch': 0.24824001706650117}
+2024-12-24 14:57:34,553 - INFO - Training Logs at step 1800: {'loss': 22.966, 'grad_norm': 14.139552116394043, 'learning_rate': 7.47832939322301e-05, 'epoch': 0.2637550181331575}
+2024-12-24 14:59:17,792 - INFO - Training Logs at step 1900: {'loss': 23.0131, 'grad_norm': 14.991910934448242, 'learning_rate': 7.320724980299448e-05, 'epoch': 0.2792700191998138}
+2024-12-24 15:01:01,231 - INFO - Training Logs at step 2000: {'loss': 22.9406, 'grad_norm': 12.997880935668945, 'learning_rate': 7.163120567375887e-05, 'epoch': 0.29478502026647013}
+2024-12-24 15:02:44,341 - INFO - Training Logs at step 2100: {'loss': 23.2763, 'grad_norm': 13.90025806427002, 'learning_rate': 7.005516154452325e-05, 'epoch': 0.31030002133312645}
+2024-12-24 15:04:29,013 - INFO - Training Logs at step 2200: {'loss': 23.0272, 'grad_norm': 12.335017204284668, 'learning_rate': 6.847911741528764e-05, 'epoch': 0.32581502239978277}
+2024-12-24 15:06:12,599 - INFO - Training Logs at step 2300: {'loss': 22.6371, 'grad_norm': 15.929800987243652, 'learning_rate': 6.690307328605201e-05, 'epoch': 0.3413300234664391}
+2024-12-24 15:07:56,027 - INFO - Training Logs at step 2400: {'loss': 22.7284, 'grad_norm': 12.547198295593262, 'learning_rate': 6.53270291568164e-05, 'epoch': 0.3568450245330954}
+2024-12-24 15:09:38,924 - INFO - Training Logs at step 2500: {'loss': 22.9507, 'grad_norm': 13.257390975952148, 'learning_rate': 6.375098502758077e-05, 'epoch': 0.3723600255997518}
+2024-12-24 15:11:24,025 - INFO - Training Logs at step 2600: {'loss': 22.6482, 'grad_norm': 9.819438934326172, 'learning_rate': 6.217494089834516e-05, 'epoch': 0.3878750266664081}
+2024-12-24 15:13:08,071 - INFO - Training Logs at step 2700: {'loss': 22.8019, 'grad_norm': 13.485616683959961, 'learning_rate': 6.059889676910954e-05, 'epoch': 0.4033900277330644}
+2024-12-24 15:15:07,333 - INFO - Training Logs at step 2800: {'loss': 22.955, 'grad_norm': 14.3606538772583, 'learning_rate': 5.902285263987392e-05, 'epoch': 0.41890502879972075}
+2024-12-24 15:16:52,613 - INFO - Training Logs at step 2900: {'loss': 23.0086, 'grad_norm': 13.625813484191895, 'learning_rate': 5.744680851063831e-05, 'epoch': 0.43442002986637707}
+2024-12-24 15:18:38,101 - INFO - Training Logs at step 3000: {'loss': 22.6821, 'grad_norm': 11.337991714477539, 'learning_rate': 5.587076438140268e-05, 'epoch': 0.4499350309330334}
+2024-12-24 15:20:22,860 - INFO - Training Logs at step 3100: {'loss': 23.0839, 'grad_norm': 12.545059204101562, 'learning_rate': 5.4294720252167063e-05, 'epoch': 0.4654500319996897}
+2024-12-24 15:22:06,546 - INFO - Training Logs at step 3200: {'loss': 22.3842, 'grad_norm': 11.350878715515137, 'learning_rate': 5.2718676122931445e-05, 'epoch': 0.480965033066346}
+2024-12-24 15:23:48,610 - INFO - Training Logs at step 3300: {'loss': 22.5839, 'grad_norm': 10.92038631439209, 'learning_rate': 5.114263199369582e-05, 'epoch': 0.49648003413300235}
+2024-12-24 15:25:31,945 - INFO - Training Logs at step 3400: {'loss': 22.8097, 'grad_norm': 16.888648986816406, 'learning_rate': 4.956658786446021e-05, 'epoch': 0.5119950351996587}
+2024-12-24 15:27:17,041 - INFO - Training Logs at step 3500: {'loss': 22.8775, 'grad_norm': 13.400810241699219, 'learning_rate': 4.799054373522459e-05, 'epoch': 0.527510036266315}
+2024-12-24 15:29:00,928 - INFO - Training Logs at step 3600: {'loss': 22.4861, 'grad_norm': 13.58720588684082, 'learning_rate': 4.641449960598897e-05, 'epoch': 0.5430250373329714}
+2024-12-24 15:30:43,792 - INFO - Training Logs at step 3700: {'loss': 22.3739, 'grad_norm': 17.536001205444336, 'learning_rate': 4.4838455476753346e-05, 'epoch': 0.5585400383996276}
+2024-12-24 15:32:36,544 - INFO - Training Logs at step 3800: {'loss': 22.6276, 'grad_norm': 11.939547538757324, 'learning_rate': 4.3262411347517734e-05, 'epoch': 0.574055039466284}
+2024-12-24 15:34:21,492 - INFO - Training Logs at step 3900: {'loss': 22.588, 'grad_norm': 10.634812355041504, 'learning_rate': 4.1686367218282116e-05, 'epoch': 0.5895700405329403}
+2024-12-24 15:36:07,310 - INFO - Training Logs at step 4000: {'loss': 22.6442, 'grad_norm': 16.01542854309082, 'learning_rate': 4.01103230890465e-05, 'epoch': 0.6050850415995966}
+2024-12-24 15:37:52,110 - INFO - Training Logs at step 4100: {'loss': 22.8256, 'grad_norm': 12.204719543457031, 'learning_rate': 3.853427895981088e-05, 'epoch': 0.6206000426662529}
+2024-12-24 15:39:35,864 - INFO - Training Logs at step 4200: {'loss': 22.6861, 'grad_norm': 13.43908977508545, 'learning_rate': 3.6958234830575254e-05, 'epoch': 0.6361150437329093}
+2024-12-24 15:41:18,412 - INFO - Training Logs at step 4300: {'loss': 22.4893, 'grad_norm': 13.097580909729004, 'learning_rate': 3.538219070133964e-05, 'epoch': 0.6516300447995655}
+2024-12-24 15:43:02,473 - INFO - Training Logs at step 4400: {'loss': 22.6689, 'grad_norm': 14.499741554260254, 'learning_rate': 3.380614657210402e-05, 'epoch': 0.6671450458662219}
+2024-12-24 15:44:46,547 - INFO - Training Logs at step 4500: {'loss': 22.3353, 'grad_norm': 14.149691581726074, 'learning_rate': 3.2230102442868405e-05, 'epoch': 0.6826600469328782}
+2024-12-24 15:46:30,301 - INFO - Training Logs at step 4600: {'loss': 22.5406, 'grad_norm': 13.116188049316406, 'learning_rate': 3.065405831363278e-05, 'epoch': 0.6981750479995346}
+2024-12-24 15:48:12,297 - INFO - Training Logs at step 4700: {'loss': 22.9209, 'grad_norm': 10.319910049438477, 'learning_rate': 2.9078014184397162e-05, 'epoch': 0.7136900490661908}
+2024-12-24 15:49:56,041 - INFO - Training Logs at step 4800: {'loss': 22.7451, 'grad_norm': 14.981142044067383, 'learning_rate': 2.7501970055161547e-05, 'epoch': 0.7292050501328472}
+2024-12-24 15:51:40,965 - INFO - Training Logs at step 4900: {'loss': 22.3905, 'grad_norm': 13.243226051330566, 'learning_rate': 2.5925925925925925e-05, 'epoch': 0.7447200511995036}
+2024-12-24 15:53:26,148 - INFO - Training Logs at step 5000: {'loss': 22.712, 'grad_norm': 12.439848899841309, 'learning_rate': 2.4349881796690306e-05, 'epoch': 0.7602350522661598}
+2024-12-24 15:55:10,805 - INFO - Training Logs at step 5100: {'loss': 22.5598, 'grad_norm': 15.232660293579102, 'learning_rate': 2.2773837667454688e-05, 'epoch': 0.7757500533328162}
+2024-12-24 15:56:54,807 - INFO - Training Logs at step 5200: {'loss': 22.466, 'grad_norm': 10.97149658203125, 'learning_rate': 2.119779353821907e-05, 'epoch': 0.7912650543994725}
+2024-12-24 15:58:38,714 - INFO - Training Logs at step 5300: {'loss': 22.5828, 'grad_norm': 11.130417823791504, 'learning_rate': 1.9621749408983455e-05, 'epoch': 0.8067800554661289}
+2024-12-24 16:00:23,575 - INFO - Training Logs at step 5400: {'loss': 22.2125, 'grad_norm': 15.776784896850586, 'learning_rate': 1.8045705279747836e-05, 'epoch': 0.8222950565327851}
+2024-12-24 16:02:07,596 - INFO - Training Logs at step 5500: {'loss': 22.3326, 'grad_norm': 14.539828300476074, 'learning_rate': 1.6469661150512214e-05, 'epoch': 0.8378100575994415}
+2024-12-24 16:03:50,238 - INFO - Training Logs at step 5600: {'loss': 22.5711, 'grad_norm': 13.848270416259766, 'learning_rate': 1.4893617021276596e-05, 'epoch': 0.8533250586660978}
+2024-12-24 16:05:35,954 - INFO - Training Logs at step 5700: {'loss': 22.4199, 'grad_norm': 12.743803024291992, 'learning_rate': 1.3317572892040977e-05, 'epoch': 0.8688400597327541}
+2024-12-24 16:07:19,020 - INFO - Training Logs at step 5800: {'loss': 22.4184, 'grad_norm': 14.597373962402344, 'learning_rate': 1.1741528762805359e-05, 'epoch': 0.8843550607994104}
+2024-12-24 16:09:02,132 - INFO - Training Logs at step 5900: {'loss': 22.7422, 'grad_norm': 11.944026947021484, 'learning_rate': 1.016548463356974e-05, 'epoch': 0.8998700618660668}
+2024-12-24 16:10:52,803 - INFO - Training Logs at step 6000: {'loss': 22.572, 'grad_norm': 13.0065336227417, 'learning_rate': 8.589440504334122e-06, 'epoch': 0.915385062932723}
+2024-12-24 16:12:38,406 - INFO - Training Logs at step 6100: {'loss': 22.4968, 'grad_norm': 13.306680679321289, 'learning_rate': 7.013396375098504e-06, 'epoch': 0.9309000639993794}
+2024-12-24 16:14:21,991 - INFO - Training Logs at step 6200: {'loss': 22.3222, 'grad_norm': 12.94417953491211, 'learning_rate': 5.4373522458628844e-06, 'epoch': 0.9464150650660357}
+2024-12-24 16:16:13,719 - INFO - Training Logs at step 6300: {'loss': 22.4971, 'grad_norm': 16.648977279663086, 'learning_rate': 3.861308116627266e-06, 'epoch': 0.961930066132692}
+2024-12-24 16:17:57,462 - INFO - Training Logs at step 6400: {'loss': 22.1615, 'grad_norm': 13.161920547485352, 'learning_rate': 2.2852639873916467e-06, 'epoch': 0.9774450671993483}
+2024-12-24 16:18:43,499 - INFO - Model ytu-ce-cosmos/turkish-gpt2-medium ince ayar işlemi başarıyla tamamlandı.
+2024-12-24 16:18:43,499 - INFO - Model ve tokenizer kaydediliyor: ./models/turkish-gpt2-medium_v2
+2024-12-24 16:18:44,313 - INFO - Model ./models/turkish-gpt2-medium_v2 dizinine başarıyla kaydedildi.
+2024-12-24 16:18:44,314 - INFO - [SUCCESS] Eğitim tamamlandı: Model=ytu-ce-cosmos/turkish-gpt2-medium, Dataset=v2

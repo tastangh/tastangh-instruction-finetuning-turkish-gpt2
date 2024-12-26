@@ -1,5 +1,6 @@
-import os  # Klasör kontrolü ve oluşturma için gerekli
+import os
 import pandas as pd
+import matplotlib.pyplot as plt
 import torch
 from transformers import AutoModelForCausalLM, AutoTokenizer
 from rouge_score import rouge_scorer
@@ -14,6 +15,7 @@ class Evaluator:
             model_dirs (list): Tüm modellerin bulunduğu dizinlerin listesi.
             test_dataset_path (str): Test veri kümesi dosya yolu.
             output_excel (str): Çıktıların kaydedileceği Excel dosya yolu.
+            use_semantic_model (bool): Semantik benzerlik için Sentence-Transformers kullanımı.
         """
         self.model_dirs = model_dirs
         self.test_dataset_path = test_dataset_path
@@ -21,9 +23,6 @@ class Evaluator:
         self.semantic_model = SentenceTransformer("dbmdz/bert-base-turkish-cased")
 
     def load_model_and_tokenizer(self, model_dir):
-        """
-        Model ve tokenizer'ı verilen dizinden yükler.
-        """
         tokenizer = AutoTokenizer.from_pretrained(model_dir)
         model = AutoModelForCausalLM.from_pretrained(model_dir)
         device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
@@ -31,18 +30,12 @@ class Evaluator:
         return model, tokenizer
 
     def calculate_bleu(self, reference, prediction):
-        """
-        BLEU skorunu hesaplar.
-        """
         reference_tokens = reference.split()
         prediction_tokens = prediction.split()
         smooth_fn = SmoothingFunction().method1
         return sentence_bleu([reference_tokens], prediction_tokens, smoothing_function=smooth_fn)
 
     def calculate_rouge(self, reference, prediction):
-        """
-        ROUGE skorlarını hesaplar.
-        """
         scorer = rouge_scorer.RougeScorer(["rouge1", "rouge2", "rougeL"], use_stemmer=True)
         scores = scorer.score(reference, prediction)
         return scores
@@ -56,16 +49,9 @@ class Evaluator:
         return util.cos_sim(ref_emb, pred_emb).item()
 
     def evaluate(self):
-        """
-        Tüm modelleri test eder ve sonuçları metriklerle birlikte tabloya yazar.
-        """
-        # Klasör yoksa oluştur
-        output_dir = os.path.dirname(self.output_excel)
-        if not os.path.exists(output_dir):
-            os.makedirs(output_dir)
-            print(f"Çıktı klasörü oluşturuldu: {output_dir}")
+        if not os.path.exists(self.output_dir):
+            os.makedirs(self.output_dir)
 
-        # Test veri kümesini yükle
         test_data = pd.read_csv(self.test_dataset_path)
         results = []
 
@@ -79,15 +65,15 @@ class Evaluator:
                 reference = row["cevap"]
                 inputs = tokenizer(f"{question}\n", return_tensors="pt").to(model.device)
 
-                # Yanıt üretimi optimize edilmiş parametrelerle
-                outputs = model.generate(
-                    **inputs,
-                    max_new_tokens=150,
-                    do_sample=False,
-                    repetition_penalty=1.2,
-                    no_repeat_ngram_size=3
-                )
-                prediction = tokenizer.decode(outputs[0], skip_special_tokens=True)
+                    # Yanıt üretimi optimize edilmiş parametrelerle
+                    outputs = model.generate(
+                        **inputs,
+                        max_new_tokens=150,
+                        do_sample=False,
+                        repetition_penalty=1.2,
+                        no_repeat_ngram_size=3
+                    )
+                    prediction = tokenizer.decode(outputs[0], skip_special_tokens=True)
 
                 # Metrik hesaplamaları
                 bleu_score = self.calculate_bleu(reference, prediction)
@@ -134,20 +120,18 @@ class Evaluator:
 
 
 if __name__ == "__main__":
-    # Test için kullanılacak modeller
     models = [
         "./models/turkish-gpt2-medium_v1",
         "./models/turkish-gpt2-medium_v2",
         "./models/turkish-gpt2-medium_v3",
-        "./models/turkish-gpt2-large_v1",
-        "./models/turkish-gpt2-large_v2",
-        "./models/turkish-gpt2-large_v3",
+        # "./models/turkish-gpt2-large_v1",
+        # "./models/turkish-gpt2-large_v2",
+        # "./models/turkish-gpt2-large_v3",
     ]
 
-    # Test veri kümesi ve çıktı dosyası
     test_dataset_path = "./dataset/test.csv"
-    output_excel = "./outputs/test_results.xlsx"
+    output_dir = "./outputs"
 
     # Değerlendirme işlemini başlat
-    evaluator = Evaluator(models, test_dataset_path, output_excel)
+    evaluator = Evaluator(models, test_dataset_path, output_excel, use_semantic_model=False)  # TF-IDF ile benzerlik
     evaluator.evaluate()
