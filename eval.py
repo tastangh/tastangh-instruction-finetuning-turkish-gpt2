@@ -4,30 +4,21 @@ import torch
 from transformers import AutoModelForCausalLM, AutoTokenizer
 from rouge_score import rouge_scorer
 from nltk.translate.bleu_score import sentence_bleu, SmoothingFunction
-from sklearn.feature_extraction.text import TfidfVectorizer
-from sklearn.metrics.pairwise import cosine_similarity
+from sentence_transformers import SentenceTransformer, util
 
 
 class Evaluator:
-    def __init__(self, model_dirs: list, test_dataset_path: str, output_excel: str, use_semantic_model=False):
+    def __init__(self, model_dirs: list, test_dataset_path: str, output_excel: str):
         """
         Args:
             model_dirs (list): Tüm modellerin bulunduğu dizinlerin listesi.
             test_dataset_path (str): Test veri kümesi dosya yolu.
             output_excel (str): Çıktıların kaydedileceği Excel dosya yolu.
-            use_semantic_model (bool): Semantik benzerlik için Sentence-Transformers kullanımı.
         """
         self.model_dirs = model_dirs
         self.test_dataset_path = test_dataset_path
         self.output_excel = output_excel
-        self.use_semantic_model = use_semantic_model
-
-        # Semantik model veya alternatif benzerlik yöntemini seç
-        if use_semantic_model:
-            from sentence_transformers import SentenceTransformer, util
-            self.semantic_model = SentenceTransformer("paraphrase-multilingual-MiniLM-L12-v2")
-        else:
-            self.semantic_model = None
+        self.semantic_model = SentenceTransformer("dbmdz/bert-base-turkish-cased")
 
     def load_model_and_tokenizer(self, model_dir):
         """
@@ -58,18 +49,11 @@ class Evaluator:
 
     def calculate_semantic_similarity(self, reference, prediction):
         """
-        Semantik benzerliği hesaplar (model tabanlı veya TF-IDF ile).
+        Semantik benzerliği hesaplar.
         """
-        if self.semantic_model:
-            # SentenceTransformer kullanımı
-            ref_emb = self.semantic_model.encode(reference, convert_to_tensor=True)
-            pred_emb = self.semantic_model.encode(prediction, convert_to_tensor=True)
-            return float(torch.cosine_similarity(ref_emb, pred_emb).item())
-        else:
-            # TF-IDF ile Kosinüs Benzerliği
-            vectorizer = TfidfVectorizer()
-            tfidf_matrix = vectorizer.fit_transform([reference, prediction])
-            return cosine_similarity(tfidf_matrix[0:1], tfidf_matrix[1:2])[0][0]
+        ref_emb = self.semantic_model.encode(reference, convert_to_tensor=True)
+        pred_emb = self.semantic_model.encode(prediction, convert_to_tensor=True)
+        return util.cos_sim(ref_emb, pred_emb).item()
 
     def evaluate(self):
         """
@@ -85,68 +69,68 @@ class Evaluator:
         test_data = pd.read_csv(self.test_dataset_path)
         results = []
 
-        # TXT dosyasına kaydetme için dosya yolu
-        txt_file_path = self.output_excel.replace(".xlsx", ".txt")
-
         # Her modeli sırayla test et
         for idx, model_dir in enumerate(self.model_dirs, start=1):
             model, tokenizer = self.load_model_and_tokenizer(model_dir)
             print(f"Model {model_dir} test ediliyor...")
 
-            with open(txt_file_path, "a", encoding="utf-8") as txt_file:
-                for _, row in test_data.iterrows():
-                    question = row["soru"]
-                    reference = row["cevap"]
-                    inputs = tokenizer(f"{question}\n", return_tensors="pt").to(model.device)
+            for _, row in test_data.iterrows():
+                question = row["soru"]
+                reference = row["cevap"]
+                inputs = tokenizer(f"{question}\n", return_tensors="pt").to(model.device)
 
-                    # Yanıt üretimi optimize edilmiş parametrelerle
-                    outputs = model.generate(
-                        **inputs,
-                        max_new_tokens=150,
-                        do_sample=False,
-                        repetition_penalty=1.2,
-                        no_repeat_ngram_size=3
-                    )
-                    prediction = tokenizer.decode(outputs[0], skip_special_tokens=True)
+                # Yanıt üretimi optimize edilmiş parametrelerle
+                outputs = model.generate(
+                    **inputs,
+                    max_new_tokens=150,
+                    do_sample=False,
+                    repetition_penalty=1.2,
+                    no_repeat_ngram_size=3
+                )
+                prediction = tokenizer.decode(outputs[0], skip_special_tokens=True)
 
-                    # Metrik hesaplamaları
-                    bleu_score = self.calculate_bleu(reference, prediction)
-                    rouge_scores = self.calculate_rouge(reference, prediction)
-                    semantic_similarity = self.calculate_semantic_similarity(reference, prediction)
+                # Metrik hesaplamaları
+                bleu_score = self.calculate_bleu(reference, prediction)
+                rouge_scores = self.calculate_rouge(reference, prediction)
+                semantic_similarity = self.calculate_semantic_similarity(reference, prediction)
 
-                    # Sonuçları sakla
-                    results.append({
-                        "model": model_dir,
-                        "question": question,
-                        "reference": reference,
-                        "prediction": prediction,
-                        "bleu": bleu_score,
-                        "rouge1": rouge_scores["rouge1"].fmeasure,
-                        "rouge2": rouge_scores["rouge2"].fmeasure,
-                        "rougeL": rouge_scores["rougeL"].fmeasure,
-                        "semantic_similarity": semantic_similarity,
-                    })
+                # Sonuçları sakla
+                results.append({
+                    "model": model_dir,
+                    "question": question,
+                    "reference": reference,
+                    "prediction": prediction,
+                    "bleu": bleu_score,
+                    "rouge1": rouge_scores["rouge1"].fmeasure,
+                    "rouge2": rouge_scores["rouge2"].fmeasure,
+                    "rougeL": rouge_scores["rougeL"].fmeasure,
+                    "semantic_similarity": semantic_similarity,
+                })
 
-                    # TXT dosyasına kaydet
+            print(f"Model {model_dir} test işlemi tamamlandı.")
+
+            # Sonuçları Excel dosyasına kaydet
+            results_df = pd.DataFrame(results)
+            results_df.to_excel(self.output_excel, index=False, engine="openpyxl")
+            print(f"Sonuçlar {self.output_excel} dosyasına kaydedildi.")
+
+            # Sonuçları TXT dosyasına kaydet
+            txt_file_path = self.output_excel.replace(".xlsx", ".txt")  # Aynı isimli bir .txt dosyası oluştur
+            with open(txt_file_path, "w", encoding="utf-8") as txt_file:
+                for result in results:
                     txt_file.write(
-                        f"Model: {model_dir}\n"
-                        f"Soru: {question}\n"
-                        f"Referans: {reference}\n"
-                        f"Tahmin: {prediction}\n"
-                        f"BLEU Skoru: {bleu_score:.4f}\n"
-                        f"ROUGE-1: {rouge_scores['rouge1'].fmeasure:.4f}\n"
-                        f"ROUGE-2: {rouge_scores['rouge2'].fmeasure:.4f}\n"
-                        f"ROUGE-L: {rouge_scores['rougeL'].fmeasure:.4f}\n"
-                        f"Semantik Benzerlik: {semantic_similarity:.4f}\n"
+                        f"Model: {result['model']}\n"
+                        f"Soru: {result['question']}\n"
+                        f"Referans: {result['reference']}\n"
+                        f"Tahmin: {result['prediction']}\n"
+                        f"BLEU Skoru: {result['bleu']:.4f}\n"
+                        f"ROUGE-1: {result['rouge1']:.4f}\n"
+                        f"ROUGE-2: {result['rouge2']:.4f}\n"
+                        f"ROUGE-L: {result['rougeL']:.4f}\n"
+                        f"Semantik Benzerlik: {result['semantic_similarity']:.4f}\n"
                         f"{'-'*50}\n"
                     )
-
-                print(f"Model {model_dir} test işlemi tamamlandı.")
-
-        # Sonuçları Excel dosyasına kaydet
-        results_df = pd.DataFrame(results)
-        results_df.to_excel(self.output_excel, index=False, engine="openpyxl")
-        print(f"Sonuçlar {self.output_excel} ve {txt_file_path} dosyasına kaydedildi.")
+            print(f"Sonuçlar {txt_file_path} dosyasına kaydedildi.")
 
 
 if __name__ == "__main__":
@@ -165,5 +149,5 @@ if __name__ == "__main__":
     output_excel = "./outputs/test_results.xlsx"
 
     # Değerlendirme işlemini başlat
-    evaluator = Evaluator(models, test_dataset_path, output_excel, use_semantic_model=False)  # TF-IDF ile benzerlik
+    evaluator = Evaluator(models, test_dataset_path, output_excel)
     evaluator.evaluate()

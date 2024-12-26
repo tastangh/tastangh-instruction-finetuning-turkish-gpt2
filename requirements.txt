@@ -1,3 +1,10 @@
 peft
 trl
 openpyxl
+pandas
+torch
+transformers
+rouge-score
+nltk 
+sentence-transformers
+
